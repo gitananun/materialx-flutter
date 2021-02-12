@@ -2,19 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class AboutAppRoute extends StatefulWidget {
-
   AboutAppRoute();
 
   @override
   AboutAppRouteState createState() => new AboutAppRouteState();
 }
 
-
 class AboutAppRouteState extends State<AboutAppRoute> {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -24,11 +20,13 @@ class AboutAppRouteState extends State<AboutAppRoute> {
           title: Text("About"),
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
-            onPressed: () {Navigator.pop(context);},
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
           actions: <Widget>[
             PopupMenuButton<String>(
-              onSelected: (String value){},
+              onSelected: (String value) {},
               itemBuilder: (context) => [
                 PopupMenuItem(
                   value: "Settings",
@@ -36,14 +34,15 @@ class AboutAppRouteState extends State<AboutAppRoute> {
                 ),
               ],
             )
-          ]
-      ),
+          ]),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Container(height: 10),
             Card(
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(2),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(2),
+              ),
               margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               color: Colors.white,
               elevation: 2,
@@ -57,7 +56,8 @@ class AboutAppRouteState extends State<AboutAppRoute> {
                       children: <Widget>[
                         Container(
                           child: Image.asset(Img.get('logo_small_round.png'), color: Colors.amber[600]),
-                          width: 50, height: 50,
+                          width: 50,
+                          height: 50,
                         ),
                         Container(width: 15),
                         Column(
@@ -81,7 +81,9 @@ class AboutAppRouteState extends State<AboutAppRoute> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("Version", style: MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.w500)),
+                            Text("Version",
+                                style: MyText.subhead(context)
+                                    .copyWith(color: MyColors.grey_60, fontWeight: FontWeight.w500)),
                             Container(height: 2),
                             Text("4.2", style: MyText.caption(context).copyWith(color: MyColors.grey_40))
                           ],
@@ -112,7 +114,9 @@ class AboutAppRouteState extends State<AboutAppRoute> {
               ),
             ),
             Card(
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(2),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(2),
+              ),
               margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               color: Colors.white,
               elevation: 2,
@@ -125,7 +129,9 @@ class AboutAppRouteState extends State<AboutAppRoute> {
                     Row(
                       children: <Widget>[
                         Container(width: 6),
-                        Text("Author", style: MyText.subhead(context).copyWith(color: MyColors.grey_80, fontWeight: FontWeight.w500))
+                        Text("Author",
+                            style:
+                                MyText.subhead(context).copyWith(color: MyColors.grey_80, fontWeight: FontWeight.w500))
                       ],
                     ),
                     Container(height: 20),
@@ -137,7 +143,9 @@ class AboutAppRouteState extends State<AboutAppRoute> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("Roberts Turner", style: MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.w500)),
+                            Text("Roberts Turner",
+                                style: MyText.subhead(context)
+                                    .copyWith(color: MyColors.grey_60, fontWeight: FontWeight.w500)),
                             Container(height: 2),
                             Text("United State", style: MyText.caption(context).copyWith(color: MyColors.grey_40))
                           ],
@@ -150,7 +158,9 @@ class AboutAppRouteState extends State<AboutAppRoute> {
                       children: <Widget>[
                         Container(child: Icon(Icons.file_download, color: MyColors.grey_40), width: 50),
                         Container(width: 15),
-                        Text("Download From Cloud", style: MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.w500)),
+                        Text("Download From Cloud",
+                            style:
+                                MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.w500)),
                         Spacer(),
                       ],
                     )
@@ -159,7 +169,9 @@ class AboutAppRouteState extends State<AboutAppRoute> {
               ),
             ),
             Card(
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(2),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(2),
+              ),
               margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               color: Colors.white,
               elevation: 2,
@@ -172,7 +184,9 @@ class AboutAppRouteState extends State<AboutAppRoute> {
                     Row(
                       children: <Widget>[
                         Container(width: 6),
-                        Text("Company", style: MyText.subhead(context).copyWith(color: MyColors.grey_80, fontWeight: FontWeight.w500))
+                        Text("Company",
+                            style:
+                                MyText.subhead(context).copyWith(color: MyColors.grey_80, fontWeight: FontWeight.w500))
                       ],
                     ),
                     Container(height: 20),
@@ -184,9 +198,12 @@ class AboutAppRouteState extends State<AboutAppRoute> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("Dream Space Inc.", style: MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.w500)),
+                            Text("Dream Space Inc.",
+                                style: MyText.subhead(context)
+                                    .copyWith(color: MyColors.grey_60, fontWeight: FontWeight.w500)),
                             Container(height: 2),
-                            Text("Android App Specialist", style: MyText.caption(context).copyWith(color: MyColors.grey_40))
+                            Text("Android App Specialist",
+                                style: MyText.caption(context).copyWith(color: MyColors.grey_40))
                           ],
                         ),
                         Spacer(),
@@ -198,7 +215,10 @@ class AboutAppRouteState extends State<AboutAppRoute> {
                         Container(child: Icon(Icons.location_on, color: MyColors.grey_40), width: 50),
                         Container(width: 15),
                         Expanded(
-                          child: Text("3265  Hinkle Deegan Lake Road, Dundee New York, United State", style: MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.w500),
+                          child: Text(
+                            "3265  Hinkle Deegan Lake Road, Dundee New York, United State",
+                            style:
+                                MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.w500),
                             textAlign: TextAlign.left,
                           ),
                         ),
@@ -215,4 +235,3 @@ class AboutAppRouteState extends State<AboutAppRoute> {
     );
   }
 }
-

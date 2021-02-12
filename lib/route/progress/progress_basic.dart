@@ -6,16 +6,13 @@ import 'package:materialx_flutter/widget/my_text.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
 
 class ProgressBasicRoute extends StatefulWidget {
-
   ProgressBasicRoute();
 
   @override
   ProgressBasicRouteState createState() => new ProgressBasicRouteState();
 }
 
-
 class ProgressBasicRouteState extends State<ProgressBasicRoute> {
-
   double progressValue = 0.0;
   double progressValue2 = 0.0;
 
@@ -27,7 +24,6 @@ class ProgressBasicRouteState extends State<ProgressBasicRoute> {
 
   @override
   Widget build(BuildContext context) {
-
     return new Scaffold(
       backgroundColor: Colors.white,
       appBar: CommonAppBar.getPrimarySettingAppbar(context, "Basic"),
@@ -37,9 +33,7 @@ class ProgressBasicRouteState extends State<ProgressBasicRoute> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("Determine Primary", style: MyText.subhead(context).copyWith(
-                color: Colors.grey[800]
-            )),
+            Text("Determine Primary", style: MyText.subhead(context).copyWith(color: Colors.grey[800])),
             Container(height: 5),
             Container(
               height: 5,
@@ -50,9 +44,7 @@ class ProgressBasicRouteState extends State<ProgressBasicRoute> {
               ),
             ),
             Container(height: 20),
-            Text("Indetermine Primary", style: MyText.subhead(context).copyWith(
-                color: Colors.grey[800]
-            )),
+            Text("Indetermine Primary", style: MyText.subhead(context).copyWith(color: Colors.grey[800])),
             Container(height: 5),
             Container(
               height: 5,
@@ -62,9 +54,7 @@ class ProgressBasicRouteState extends State<ProgressBasicRoute> {
               ),
             ),
             Container(height: 20),
-            Text("Determine", style: MyText.subhead(context).copyWith(
-                color: Colors.grey[800]
-            )),
+            Text("Determine", style: MyText.subhead(context).copyWith(color: Colors.grey[800])),
             Container(height: 5),
             Container(
               height: 5,
@@ -74,9 +64,7 @@ class ProgressBasicRouteState extends State<ProgressBasicRoute> {
               ),
             ),
             Container(height: 20),
-            Text("Indetermine", style: MyText.subhead(context).copyWith(
-                color: Colors.grey[800]
-            )),
+            Text("Indetermine", style: MyText.subhead(context).copyWith(color: Colors.grey[800])),
             Container(height: 5),
             Container(
               height: 5,
@@ -90,9 +78,7 @@ class ProgressBasicRouteState extends State<ProgressBasicRoute> {
               children: <Widget>[
                 Column(
                   children: <Widget>[
-                    Text("Determine", style: MyText.subhead(context).copyWith(
-                        color: Colors.grey[800]
-                    )),
+                    Text("Determine", style: MyText.subhead(context).copyWith(color: Colors.grey[800])),
                     Container(height: 20),
                     CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(MyColors.primary),
@@ -104,9 +90,7 @@ class ProgressBasicRouteState extends State<ProgressBasicRoute> {
                 Container(width: 20),
                 Column(
                   children: <Widget>[
-                    Text("Indetermine", style: MyText.subhead(context).copyWith(
-                        color: Colors.grey[800]
-                    )),
+                    Text("Indetermine", style: MyText.subhead(context).copyWith(color: Colors.grey[800])),
                     Container(height: 20),
                     CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(MyColors.primary),
@@ -121,9 +105,7 @@ class ProgressBasicRouteState extends State<ProgressBasicRoute> {
               children: <Widget>[
                 Column(
                   children: <Widget>[
-                    Text("Determine", style: MyText.subhead(context).copyWith(
-                        color: Colors.grey[800]
-                    )),
+                    Text("Determine", style: MyText.subhead(context).copyWith(color: Colors.grey[800])),
                     Container(height: 20),
                     CircularProgressIndicator(
                       backgroundColor: Colors.grey[300],
@@ -134,9 +116,7 @@ class ProgressBasicRouteState extends State<ProgressBasicRoute> {
                 Container(width: 20),
                 Column(
                   children: <Widget>[
-                    Text("Indetermine", style: MyText.subhead(context).copyWith(
-                        color: Colors.grey[800]
-                    )),
+                    Text("Indetermine", style: MyText.subhead(context).copyWith(color: Colors.grey[800])),
                     Container(height: 20),
                     CircularProgressIndicator(),
                   ],
@@ -171,4 +151,3 @@ class ProgressBasicRouteState extends State<ProgressBasicRoute> {
     });
   }
 }
-

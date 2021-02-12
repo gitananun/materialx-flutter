@@ -7,16 +7,13 @@ import 'package:materialx_flutter/widget/my_text.dart';
 import 'package:materialx_flutter/widget/star_rating.dart';
 
 class ShoppingProductDetailsRoute extends StatefulWidget {
-
   ShoppingProductDetailsRoute();
 
   @override
   ShoppingProductDetailsRouteState createState() => new ShoppingProductDetailsRouteState();
 }
 
-
 class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute> with TickerProviderStateMixin {
-
   bool expand1 = true, expand2 = false, expand3 = false;
   AnimationController controller1, controller2, controller3;
   Animation<double> animation1, animation1View;
@@ -26,9 +23,15 @@ class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute
   @override
   void initState() {
     super.initState();
-    controller1 = AnimationController(vsync: this, duration: Duration(milliseconds: 200),);
-    controller2 = AnimationController(vsync: this, duration: Duration(milliseconds: 200),);
-    controller3 = AnimationController(vsync: this, duration: Duration(milliseconds: 200),);
+    controller1 = AnimationController(
+      duration: Duration(milliseconds: 200),
+    );
+    controller2 = AnimationController(
+      duration: Duration(milliseconds: 200),
+    );
+    controller3 = AnimationController(
+      duration: Duration(milliseconds: 200),
+    );
 
     animation1 = Tween(begin: 0.0, end: 180.0).animate(controller1);
     animation1View = CurvedAnimation(parent: controller1, curve: Curves.linear);
@@ -39,9 +42,15 @@ class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute
     animation3 = Tween(begin: 0.0, end: 180.0).animate(controller3);
     animation3View = CurvedAnimation(parent: controller3, curve: Curves.linear);
 
-    controller1.addListener(() { setState(() {}); });
-    controller2.addListener(() { setState(() {}); });
-    controller3.addListener(() { setState(() {}); });
+    controller1.addListener(() {
+      setState(() {});
+    });
+    controller2.addListener(() {
+      setState(() {});
+    });
+    controller3.addListener(() {
+      setState(() {});
+    });
 
     controller1.forward();
   }
@@ -55,7 +64,8 @@ class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute
           return <Widget>[
             SliverAppBar(
               expandedHeight: 350,
-              floating: false, pinned: true,
+              floating: false,
+              pinned: true,
               backgroundColor: MyColors.primary,
               flexibleSpace: FlexibleSpaceBar(
                 collapseMode: CollapseMode.parallax,
@@ -72,27 +82,30 @@ class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute
               bottom: PreferredSize(
                 preferredSize: Size.fromHeight(55),
                 child: Container(
-                  color: MyColors.primary,
-                  padding: EdgeInsets.all(15),
-                  alignment: Alignment.centerLeft,
-                  constraints: BoxConstraints.expand(height: 110),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text("Roll-Up Neocity Backpack", style: MyText.title(context).copyWith(color: Colors.white)),
-                      Container(height: 5),
-                      Text("Shop Adidas", style: MyText.body1(context).copyWith(color: MyColors.grey_10)),
-                      Container(height: 20),
-                      Row(children: <Widget>[
-                        StarRating(starCount: 5, rating: 3.5, color: Colors.yellow, size: 14),
-                        Container(width: 5),
-                        Text("381,380", style: MyText.caption(context).copyWith(color: MyColors.grey_10)),
-                        Spacer(),
-                        Text("\$ 80.00", style: MyText.title(context).copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
-                      ],)
-                    ],
-                  )
-                ),
+                    color: MyColors.primary,
+                    padding: EdgeInsets.all(15),
+                    alignment: Alignment.centerLeft,
+                    constraints: BoxConstraints.expand(height: 110),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text("Roll-Up Neocity Backpack", style: MyText.title(context).copyWith(color: Colors.white)),
+                        Container(height: 5),
+                        Text("Shop Adidas", style: MyText.body1(context).copyWith(color: MyColors.grey_10)),
+                        Container(height: 20),
+                        Row(
+                          children: <Widget>[
+                            StarRating(starCount: 5, rating: 3.5, color: Colors.yellow, size: 14),
+                            Container(width: 5),
+                            Text("381,380", style: MyText.caption(context).copyWith(color: MyColors.grey_10)),
+                            Spacer(),
+                            Text("\$ 80.00",
+                                style:
+                                    MyText.title(context).copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
+                          ],
+                        )
+                      ],
+                    )),
               ),
               automaticallyImplyLeading: false,
             ),
@@ -115,7 +128,9 @@ class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute
                       child: IconButton(
                         padding: EdgeInsets.all(0),
                         icon: Icon(Icons.arrow_drop_down, color: MyColors.grey_60),
-                        onPressed: (){togglePanel1();},
+                        onPressed: () {
+                          togglePanel1();
+                        },
                       ),
                     ),
                   ],
@@ -157,7 +172,9 @@ class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute
                       child: IconButton(
                         padding: EdgeInsets.all(0),
                         icon: Icon(Icons.arrow_drop_down, color: MyColors.grey_60),
-                        onPressed: (){togglePanel2();},
+                        onPressed: () {
+                          togglePanel2();
+                        },
                       ),
                     ),
                   ],
@@ -170,36 +187,46 @@ class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute
                     children: <Widget>[
                       Row(
                         children: <Widget>[
-                          Container(width: 65), StarRating(starCount: 5, rating: 4.0, color: Colors.amber, size: 14),
-                          Container(width: 10), Text("Adams Green"),
+                          Container(width: 65),
+                          StarRating(starCount: 5, rating: 4.0, color: Colors.amber, size: 14),
+                          Container(width: 10),
+                          Text("Adams Green"),
                         ],
                       ),
                       Container(height: 10),
                       Row(
                         children: <Widget>[
-                          Container(width: 65), StarRating(starCount: 5, rating: 5.0, color: Colors.amber, size: 14),
-                          Container(width: 10), Text("Anderson Thomas"),
+                          Container(width: 65),
+                          StarRating(starCount: 5, rating: 5.0, color: Colors.amber, size: 14),
+                          Container(width: 10),
+                          Text("Anderson Thomas"),
                         ],
                       ),
                       Container(height: 10),
                       Row(
                         children: <Widget>[
-                          Container(width: 65), StarRating(starCount: 5, rating: 5.0, color: Colors.amber, size: 14),
-                          Container(width: 10), Text("Roberts Turner"),
+                          Container(width: 65),
+                          StarRating(starCount: 5, rating: 5.0, color: Colors.amber, size: 14),
+                          Container(width: 10),
+                          Text("Roberts Turner"),
                         ],
                       ),
                       Container(height: 10),
                       Row(
                         children: <Widget>[
-                          Container(width: 65), StarRating(starCount: 5, rating: 4.5, color: Colors.amber, size: 14),
-                          Container(width: 10), Text("Evans Collins"),
+                          Container(width: 65),
+                          StarRating(starCount: 5, rating: 4.5, color: Colors.amber, size: 14),
+                          Container(width: 10),
+                          Text("Evans Collins"),
                         ],
                       ),
                       Container(height: 10),
                       Row(
                         children: <Widget>[
-                          Container(width: 65), StarRating(starCount: 5, rating: 5, color: Colors.amber, size: 14),
-                          Container(width: 10), Text("Garcia Lewis"),
+                          Container(width: 65),
+                          StarRating(starCount: 5, rating: 5, color: Colors.amber, size: 14),
+                          Container(width: 10),
+                          Text("Garcia Lewis"),
                         ],
                       ),
                       Container(height: 20),
@@ -226,7 +253,9 @@ class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute
                       child: IconButton(
                         padding: EdgeInsets.all(0),
                         icon: Icon(Icons.arrow_drop_down, color: MyColors.grey_60),
-                        onPressed: (){togglePanel3();},
+                        onPressed: () {
+                          togglePanel3();
+                        },
                       ),
                     ),
                   ],
@@ -256,9 +285,8 @@ class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute
     );
   }
 
-
-  void togglePanel1(){
-    if(!expand1){
+  void togglePanel1() {
+    if (!expand1) {
       controller1.forward();
     } else {
       controller1.reverse();
@@ -266,8 +294,8 @@ class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute
     expand1 = !expand1;
   }
 
-  void togglePanel2(){
-    if(!expand2){
+  void togglePanel2() {
+    if (!expand2) {
       controller2.forward();
     } else {
       controller2.reverse();
@@ -275,8 +303,8 @@ class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute
     expand2 = !expand2;
   }
 
-  void togglePanel3(){
-    if(!expand3){
+  void togglePanel3() {
+    if (!expand3) {
       controller3.forward();
     } else {
       controller3.reverse();
@@ -291,6 +319,4 @@ class ShoppingProductDetailsRouteState extends State<ShoppingProductDetailsRoute
     controller3.dispose();
     super.dispose();
   }
-
 }
-

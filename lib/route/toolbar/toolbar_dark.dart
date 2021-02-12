@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class ToolbarDarkRoute extends StatefulWidget {
-
   ToolbarDarkRoute();
 
   @override
   ToolbarDarkRouteState createState() => new ToolbarDarkRouteState();
 }
 
-
 class ToolbarDarkRouteState extends State<ToolbarDarkRoute> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,11 +30,9 @@ class ToolbarDarkRouteState extends State<ToolbarDarkRoute> {
             IconButton(
               icon: Icon(Icons.more_vert, color: Colors.white),
               onPressed: () {},
-            ),// overflow menu
-          ]
-      ),
+            ), // overflow menu
+          ]),
       body: Container(),
     );
   }
 }
-

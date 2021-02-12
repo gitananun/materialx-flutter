@@ -3,14 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/dummy.dart';
 import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
-import 'package:materialx_flutter/included/include_releases_content.dart';
 import 'package:materialx_flutter/model/bottom_nav.dart';
 import 'package:materialx_flutter/model/shop_category.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class BottomNavigationShop extends StatefulWidget {
-
   BottomNavigationShop();
   final List<BottomNav> itemsNav = <BottomNav>[
     BottomNav('Home', Icons.home, null),
@@ -24,14 +21,13 @@ class BottomNavigationShop extends StatefulWidget {
 }
 
 class BottomNavigationIconRouteState extends State<BottomNavigationShop> with SingleTickerProviderStateMixin {
-
   TabController _tabController;
 
   int currentIndex = 1;
   BuildContext ctx;
 
-  void onBackPress(){
-    if(Navigator.of(ctx).canPop()){
+  void onBackPress() {
+    if (Navigator.of(ctx).canPop()) {
       Navigator.of(ctx).pop();
     }
   }
@@ -39,14 +35,12 @@ class BottomNavigationIconRouteState extends State<BottomNavigationShop> with Si
   @override
   void initState() {
     super.initState();
-
   }
 
   @override
   void dispose() {
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -62,15 +56,17 @@ class BottomNavigationIconRouteState extends State<BottomNavigationShop> with Si
           title: new Text("Shop"),
           leading: IconButton(
             icon: const Icon(Icons.menu),
-            onPressed: () { Navigator.pop(context);},
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.notifications_none),
               onPressed: () {},
-            ),// overflow menu
+            ), // overflow menu
             PopupMenuButton<String>(
-              onSelected: (String value){},
+              onSelected: (String value) {},
               itemBuilder: (context) => [
                 PopupMenuItem(
                   value: "Settings",
@@ -78,8 +74,7 @@ class BottomNavigationIconRouteState extends State<BottomNavigationShop> with Si
                 ),
               ],
             )
-          ]
-      ),
+          ]),
       body: Container(
         child: Column(
           children: <Widget>[
@@ -93,7 +88,7 @@ class BottomNavigationIconRouteState extends State<BottomNavigationShop> with Si
                         Container(
                           height: 200,
                           width: double.infinity,
-                          child: Image.asset(Img.get('image_18.jpg'),fit: BoxFit.cover),
+                          child: Image.asset(Img.get('image_18.jpg'), fit: BoxFit.cover),
                         ),
                         Container(
                           color: Colors.black.withOpacity(0.4),
@@ -101,11 +96,10 @@ class BottomNavigationIconRouteState extends State<BottomNavigationShop> with Si
                           width: double.infinity,
                           child: Align(
                             alignment: Alignment.center,
-                            child: Text("Browse Through Million of Products\nin Many Category", textAlign : TextAlign.center,
-                                style: MyText.medium(context).copyWith(
-                                    color: Colors.white, fontWeight: FontWeight.bold
-                                )
-                            ),
+                            child: Text("Browse Through Million of Products\nin Many Category",
+                                textAlign: TextAlign.center,
+                                style:
+                                    MyText.medium(context).copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
                           ),
                         ),
                       ],
@@ -135,7 +129,7 @@ class BottomNavigationIconRouteState extends State<BottomNavigationShop> with Si
             currentIndex = index;
           });
         },
-        items: widget.itemsNav.map((BottomNav d){
+        items: widget.itemsNav.map((BottomNav d) {
           return BottomNavigationBarItem(
             icon: Icon(d.icon),
             title: Text(d.title),
@@ -145,16 +139,12 @@ class BottomNavigationIconRouteState extends State<BottomNavigationShop> with Si
     );
   }
 
-  List<Widget> getGridViewCategory(List<ShopCategory> lc){
+  List<Widget> getGridViewCategory(List<ShopCategory> lc) {
     List<Widget> wc = [];
-    for(int i = 0; i < lc.length / 2; i++){
+    for (int i = 0; i < lc.length / 2; i++) {
       Widget w;
       w = Row(
-        children: <Widget>[
-          getItemViewGrid(lc[i*2]),
-          Container(width: 2),
-          getItemViewGrid(lc[(i*2)+1])
-        ],
+        children: <Widget>[getItemViewGrid(lc[i * 2]), Container(width: 2), getItemViewGrid(lc[(i * 2) + 1])],
       );
 
       wc.add(w);
@@ -162,11 +152,13 @@ class BottomNavigationIconRouteState extends State<BottomNavigationShop> with Si
     return wc;
   }
 
-  Widget getItemViewGrid(ShopCategory s){
+  Widget getItemViewGrid(ShopCategory s) {
     return Expanded(
       flex: 1,
       child: Card(
-        shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(4),),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
         color: Colors.white,
         elevation: 2,
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -181,17 +173,12 @@ class BottomNavigationIconRouteState extends State<BottomNavigationShop> with Si
                 padding: EdgeInsets.all(10),
                 child: Icon(s.icon, size: 40, color: Colors.grey[600]),
               ),
-              Text(s.title, textAlign : TextAlign.center,
-                  style: MyText.subhead(context).copyWith(
-                      color: Colors.grey[800]
-                  )
-              ),
+              Text(s.title,
+                  textAlign: TextAlign.center, style: MyText.subhead(context).copyWith(color: Colors.grey[800])),
             ],
           ),
         ),
       ),
     );
   }
-
 }
-

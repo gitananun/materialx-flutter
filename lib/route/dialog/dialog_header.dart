@@ -4,7 +4,7 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
+
 import 'package:toast/toast.dart';
 
 class DialogHeaderRoute extends StatefulWidget {
@@ -24,25 +24,27 @@ class DialogCustomInfoRouteState extends State<DialogHeaderRoute> {
   Widget build(BuildContext context) {
     return new Scaffold(
       backgroundColor: Colors.white,
-      appBar:AppBar(
+      appBar: AppBar(
           backgroundColor: Colors.white,
           brightness: Brightness.dark,
           iconTheme: IconThemeData(color: MyColors.grey_60),
-          title: Text("Dialog Header", style: MyText.title(context).copyWith(
-              color: MyColors.grey_60
-          )),
-          leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
-            Navigator.pop(context);
-          }),
+          title: Text("Dialog Header", style: MyText.title(context).copyWith(color: MyColors.grey_60)),
+          leading: IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Navigator.pop(context);
+              }),
           actions: <Widget>[
             PopupMenuButton<String>(
-              onSelected: (String value){},
+              onSelected: (String value) {},
               itemBuilder: (context) => [
-                PopupMenuItem(value: "Settings", child: Text("Settings"),),
+                PopupMenuItem(
+                  value: "Settings",
+                  child: Text("Settings"),
+                ),
               ],
             )
-          ]
-      ),
+          ]),
       body: Container(
         alignment: Alignment.center,
         child: Column(
@@ -50,8 +52,7 @@ class DialogCustomInfoRouteState extends State<DialogHeaderRoute> {
           children: <Widget>[
             GestureDetector(
                 onTap: () {
-                  showDialog(
-                      context: context, builder: (_) => CustomHeaderDialog());
+                  showDialog(context: context, builder: (_) => CustomHeaderDialog());
                 },
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(25, 5, 25, 5),
@@ -75,8 +76,7 @@ class DialogCustomInfoRouteState extends State<DialogHeaderRoute> {
                 )),
             GestureDetector(
                 onTap: () {
-                  showDialog(
-                      context: context, builder: (_) => CustomBlueDialog());
+                  showDialog(context: context, builder: (_) => CustomBlueDialog());
                 },
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(25, 5, 25, 5),
@@ -100,8 +100,7 @@ class DialogCustomInfoRouteState extends State<DialogHeaderRoute> {
                 )),
             GestureDetector(
                 onTap: () {
-                  showDialog(
-                      context: context, builder: (_) => CustomYellowDialog());
+                  showDialog(context: context, builder: (_) => CustomYellowDialog());
                 },
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(25, 5, 25, 5),
@@ -125,8 +124,7 @@ class DialogCustomInfoRouteState extends State<DialogHeaderRoute> {
                 )),
             GestureDetector(
                 onTap: () {
-                  showDialog(
-                      context: context, builder: (_) => CustomNewsDialog());
+                  showDialog(context: context, builder: (_) => CustomNewsDialog());
                 },
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(25, 5, 25, 5),
@@ -180,9 +178,7 @@ class CustomHeaderDialogState extends State<CustomHeaderDialog> {
               Container(
                 width: double.infinity,
                 child: Column(
-                  children: <Widget>[
-                    Image.asset(Img.get('bg_polygon.png'), fit: BoxFit.cover)
-                  ],
+                  children: <Widget>[Image.asset(Img.get('bg_polygon.png'), fit: BoxFit.cover)],
                 ),
               ),
               Container(
@@ -193,16 +189,13 @@ class CustomHeaderDialogState extends State<CustomHeaderDialog> {
                     Container(
                       padding: EdgeInsets.fromLTRB(5, 5, 5, 0),
                       alignment: Alignment.centerLeft,
-                      child: Text("Invitation",
-                          style: MyText.title(context)
-                              .copyWith(color: MyColors.grey_90)),
+                      child: Text("Invitation", style: MyText.title(context).copyWith(color: MyColors.grey_90)),
                     ),
                     Container(height: 10),
                     Container(
                       padding: EdgeInsets.fromLTRB(5, 5, 5, 0),
                       child: Text(MyStrings.medium_lorem_ipsum,
-                          style: MyText.body1(context)
-                              .copyWith(color: MyColors.grey_60)),
+                          style: MyText.body1(context).copyWith(color: MyColors.grey_60)),
                     ),
                     Container(
                       height: 10,
@@ -281,17 +274,13 @@ class CustomBlueDialogState extends State<CustomBlueDialog> {
                     Container(
                       padding: EdgeInsets.fromLTRB(10, 15, 10, 5),
                       alignment: Alignment.centerLeft,
-                      child: Text("Maecenas Quis",
-                          style: MyText.title(context)
-                              .copyWith(color: MyColors.grey_90)),
+                      child: Text("Maecenas Quis", style: MyText.title(context).copyWith(color: MyColors.grey_90)),
                     ),
                     Container(height: 5),
                     Container(
                       alignment: Alignment.centerLeft,
                       padding: EdgeInsets.fromLTRB(10, 0, 10, 5),
-                      child: Text("\$9.20",
-                          style: MyText.subhead(context)
-                              .copyWith(color: Colors.green[500])),
+                      child: Text("\$9.20", style: MyText.subhead(context).copyWith(color: Colors.green[500])),
                     ),
                     new Divider(thickness: 1, color: Colors.grey[10]),
                     Container(
@@ -299,13 +288,11 @@ class CustomBlueDialogState extends State<CustomBlueDialog> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: <Widget>[
-                            new Icon(Icons.favorite,
-                                color: Colors.blue[500], size: 25),
+                            new Icon(Icons.favorite, color: Colors.blue[500], size: 25),
                             Container(
                               width: 10,
                             ),
-                            Icon(Icons.add_box,
-                                color: Colors.blue[500], size: 25),
+                            Icon(Icons.add_box, color: Colors.blue[500], size: 25),
                           ],
                         ))
                   ],
@@ -366,24 +353,19 @@ class CustomYellowDialogState extends State<CustomYellowDialog> {
                         Container(
                           padding: EdgeInsets.fromLTRB(10, 15, 10, 5),
                           alignment: Alignment.centerLeft,
-                          child: Text("Maecenas Quis",
-                              style: MyText.title(context)
-                                  .copyWith(color: MyColors.grey_90)),
+                          child: Text("Maecenas Quis", style: MyText.title(context).copyWith(color: MyColors.grey_90)),
                         ),
                         Container(
                           alignment: Alignment.centerLeft,
                           padding: EdgeInsets.fromLTRB(10, 0, 10, 15),
-                          child: Text("\$9.20",
-                              style: MyText.subhead(context)
-                                  .copyWith(color: Colors.orange[500])),
+                          child: Text("\$9.20", style: MyText.subhead(context).copyWith(color: Colors.orange[500])),
                         ),
                       ],
                     ),
                     Container(
                       alignment: Alignment.center,
                       padding: EdgeInsets.only(right: 15),
-                      child: new Icon(Icons.favorite,
-                          color: Colors.orange[500], size: 25),
+                      child: new Icon(Icons.favorite, color: Colors.orange[500], size: 25),
                     )
                   ],
                 ),
@@ -421,9 +403,7 @@ class CustomNewsDialogState extends State<CustomNewsDialog> {
               Container(
                 width: double.infinity,
                 child: Column(
-                  children: <Widget>[
-                    Image.asset(Img.get('image_30.jpg'), fit: BoxFit.cover)
-                  ],
+                  children: <Widget>[Image.asset(Img.get('image_30.jpg'), fit: BoxFit.cover)],
                 ),
               ),
               Container(
@@ -435,29 +415,26 @@ class CustomNewsDialogState extends State<CustomNewsDialog> {
                     Container(
                       padding: EdgeInsets.fromLTRB(5, 5, 5, 0),
                       child: Text(MyStrings.medium_lorem_ipsum,
-                          style: MyText.subhead(context)
-                              .copyWith(color: Colors.black)),
+                          style: MyText.subhead(context).copyWith(color: Colors.black)),
                     ),
-
                     Container(
-                      padding: EdgeInsets.fromLTRB(7,10,7,0),
+                      padding: EdgeInsets.fromLTRB(7, 10, 7, 0),
                       child: new Divider(thickness: 1, color: Colors.grey[10]),
                     ),
                     Container(
-                      padding: EdgeInsets.fromLTRB(10,10,10,20),
-                      child:  Row(
+                      padding: EdgeInsets.fromLTRB(10, 10, 10, 20),
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          new Icon(Icons.favorite,
-                              color: MyColors.accent, size: 20),
-                          Container(width: 10,),
+                          new Icon(Icons.favorite, color: MyColors.accent, size: 20),
+                          Container(
+                            width: 10,
+                          ),
                           Text("1.4k peoples like this news",
-                              style: MyText.caption(context)
-                                  .copyWith(color: MyColors.grey_60)),
+                              style: MyText.caption(context).copyWith(color: MyColors.grey_60)),
                         ],
                       ),
                     )
-
                   ],
                 ),
               ),

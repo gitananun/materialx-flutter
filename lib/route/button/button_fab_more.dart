@@ -5,14 +5,11 @@ import 'package:materialx_flutter/adapter/list_basic_adapter.dart';
 import 'package:materialx_flutter/data/dummy.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/model/people.dart';
-import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/star_rating.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
-import 'package:materialx_flutter/data/my_strings.dart';
+
 import 'package:toast/toast.dart';
 
 class ButtonFabMoreRoute extends StatefulWidget {
-
   ButtonFabMoreRoute();
 
   @override
@@ -20,7 +17,6 @@ class ButtonFabMoreRoute extends StatefulWidget {
 }
 
 class ButtonFabMoreRouteState extends State<ButtonFabMoreRoute> {
-
   BuildContext context;
   void onItemClick(int index, People obj) {
     Toast.show(obj.name, context, duration: Toast.LENGTH_SHORT);
@@ -28,7 +24,6 @@ class ButtonFabMoreRouteState extends State<ButtonFabMoreRoute> {
 
   @override
   Widget build(BuildContext context) {
-
     this.context = context;
 
     List<People> items = Dummy.getPeopleData();
@@ -36,11 +31,10 @@ class ButtonFabMoreRouteState extends State<ButtonFabMoreRoute> {
     items.addAll(Dummy.getPeopleData());
 
     return Scaffold(
-      backgroundColor: MyColors.grey_5,
-      appBar: CommonAppBar.getPrimaryAppbar(context, "FAB"),
-      body: ListBasicAdapter(items, onItemClick).getView(),
-      floatingActionButton : buildSpeedDial()
-    );
+        backgroundColor: MyColors.grey_5,
+        appBar: CommonAppBar.getPrimaryAppbar(context, "FAB"),
+        body: ListBasicAdapter(items, onItemClick).getView(),
+        floatingActionButton: buildSpeedDial());
   }
 
   Widget buildSpeedDial() {
@@ -66,5 +60,4 @@ class ButtonFabMoreRouteState extends State<ButtonFabMoreRoute> {
       ],
     );
   }
-
 }

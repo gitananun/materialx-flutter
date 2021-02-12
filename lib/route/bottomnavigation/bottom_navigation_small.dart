@@ -4,10 +4,8 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/included/include_releases_content.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class BottomNavigationSmall extends StatefulWidget {
-
   BottomNavigationSmall();
 
   @override
@@ -15,14 +13,12 @@ class BottomNavigationSmall extends StatefulWidget {
 }
 
 class BottomNavigationIconRouteState extends State<BottomNavigationSmall> with SingleTickerProviderStateMixin {
-
   TabController _tabController;
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 5, vsync: this,initialIndex: 2);
-    _tabController.addListener((){ });
-
+    _tabController = TabController(length: 5, initialIndex: 2);
+    _tabController.addListener(() {});
   }
 
   @override
@@ -30,7 +26,6 @@ class BottomNavigationIconRouteState extends State<BottomNavigationSmall> with S
     _tabController.dispose();
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -40,13 +35,14 @@ class BottomNavigationIconRouteState extends State<BottomNavigationSmall> with S
           elevation: 0,
           backgroundColor: Colors.white,
           brightness: Brightness.dark,
-          leading: IconButton(icon: Icon(Icons.menu, color: MyColors.grey_40), onPressed: () {
-            Navigator.pop(context);
-          }),
+          leading: IconButton(
+              icon: Icon(Icons.menu, color: MyColors.grey_40),
+              onPressed: () {
+                Navigator.pop(context);
+              }),
           actions: <Widget>[
-            IconButton(icon: Icon(Icons.search, color: MyColors.grey_40), onPressed: () {}),// overflow menu
-          ]
-      ),
+            IconButton(icon: Icon(Icons.search, color: MyColors.grey_40), onPressed: () {}), // overflow menu
+          ]),
       body: Container(
         child: Column(
           children: <Widget>[
@@ -57,16 +53,21 @@ class BottomNavigationIconRouteState extends State<BottomNavigationSmall> with S
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text("Recommended", style: MyText.medium(context).copyWith(
-                          color: Colors.grey[900], fontWeight: FontWeight.w500
-                      )),
+                      Text("Recommended",
+                          style: MyText.medium(context).copyWith(color: Colors.grey[900], fontWeight: FontWeight.w500)),
                       Container(height: 10),
                       Card(
-                        shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(3),
+                        ),
                         clipBehavior: Clip.antiAliasWithSaveLayer,
-                        elevation: 0, margin: EdgeInsets.all(0),
-                        child: Image.asset(Img.get('image_18.jpg'),
-                          height: 180, width: double.infinity, fit: BoxFit.cover,
+                        elevation: 0,
+                        margin: EdgeInsets.all(0),
+                        child: Image.asset(
+                          Img.get('image_18.jpg'),
+                          height: 180,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
                         ),
                       ),
                       Container(height: 10),
@@ -75,89 +76,113 @@ class BottomNavigationIconRouteState extends State<BottomNavigationSmall> with S
                           Spacer(),
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 5),
-                            height: 7, width: 7,
+                            height: 7,
+                            width: 7,
                             child: CircleAvatar(backgroundColor: MyColors.grey_20),
                           ),
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 5),
-                            height: 7, width: 7,
+                            height: 7,
+                            width: 7,
                             child: CircleAvatar(backgroundColor: MyColors.grey_20),
                           ),
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 5),
-                            height: 7, width: 7,
+                            height: 7,
+                            width: 7,
                             child: CircleAvatar(backgroundColor: MyColors.primaryLight),
                           ),
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 5),
-                            height: 7, width: 7,
+                            height: 7,
+                            width: 7,
                             child: CircleAvatar(backgroundColor: MyColors.grey_20),
                           ),
                           Spacer(),
                         ],
                       ),
                       Container(height: 15),
-                      Text("Featured", style: MyText.medium(context).copyWith(
-                          color: Colors.grey[900], fontWeight: FontWeight.w500
-                      )),
+                      Text("Featured",
+                          style: MyText.medium(context).copyWith(color: Colors.grey[900], fontWeight: FontWeight.w500)),
                       Container(height: 10),
                       Row(
                         children: <Widget>[
                           Expanded(
                             child: Card(
-                              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(3),
+                              ),
                               clipBehavior: Clip.antiAliasWithSaveLayer,
-                              elevation: 0, margin: EdgeInsets.all(0),
-                              child: Image.asset(Img.get('image_21.jpg'),
-                                height: 100, width: double.infinity, fit: BoxFit.cover,
+                              elevation: 0,
+                              margin: EdgeInsets.all(0),
+                              child: Image.asset(
+                                Img.get('image_21.jpg'),
+                                height: 100,
+                                width: double.infinity,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
                           Container(width: 10),
                           Expanded(
                             child: Card(
-                              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(3),
+                              ),
                               clipBehavior: Clip.antiAliasWithSaveLayer,
-                              elevation: 0, margin: EdgeInsets.all(0),
-                              child: Image.asset(Img.get('image_23.jpg'),
-                                height: 100, width: double.infinity, fit: BoxFit.cover,
+                              elevation: 0,
+                              margin: EdgeInsets.all(0),
+                              child: Image.asset(
+                                Img.get('image_23.jpg'),
+                                height: 100,
+                                width: double.infinity,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
                           Container(width: 10),
                           Expanded(
                             child: Card(
-                              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(3),
+                              ),
                               clipBehavior: Clip.antiAliasWithSaveLayer,
-                              elevation: 0, margin: EdgeInsets.all(0),
-                              child: Image.asset(Img.get('image_19.jpg'),
-                                height: 100, width: double.infinity, fit: BoxFit.cover,
+                              elevation: 0,
+                              margin: EdgeInsets.all(0),
+                              child: Image.asset(
+                                Img.get('image_19.jpg'),
+                                height: 100,
+                                width: double.infinity,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
                         ],
                       ),
                       Container(height: 15),
-                      Text("Categories", style: MyText.medium(context).copyWith(
-                          color: Colors.grey[900], fontWeight: FontWeight.w500
-                      )),
+                      Text("Categories",
+                          style: MyText.medium(context).copyWith(color: Colors.grey[900], fontWeight: FontWeight.w500)),
                       Container(height: 10),
                       Row(
                         children: <Widget>[
                           Expanded(
-                            child: Container(width: double.infinity, height: 50,
+                            child: Container(
+                                width: double.infinity,
+                                height: 50,
                                 alignment: Alignment.center,
                                 child: Text("AUTOMOTIVE", style: MyText.subhead(context).copyWith(color: Colors.white)),
-                                decoration: BoxDecoration(color: Colors.red[400], borderRadius: BorderRadius.all(Radius.circular(3)))
-                            ),
+                                decoration: BoxDecoration(
+                                    color: Colors.red[400], borderRadius: BorderRadius.all(Radius.circular(3)))),
                           ),
                           Container(width: 10),
                           Expanded(
-                            child: Container(width: double.infinity, height: 50,
+                            child: Container(
+                                width: double.infinity,
+                                height: 50,
                                 alignment: Alignment.center,
                                 child: Text("TECNOLOGY", style: MyText.subhead(context).copyWith(color: Colors.white)),
-                                decoration: BoxDecoration(color: Colors.blue[400], borderRadius: BorderRadius.all(Radius.circular(3)))
-                            ),
+                                decoration: BoxDecoration(
+                                    color: Colors.blue[400], borderRadius: BorderRadius.all(Radius.circular(3)))),
                           ),
                         ],
                       ),
@@ -165,19 +190,23 @@ class BottomNavigationIconRouteState extends State<BottomNavigationSmall> with S
                       Row(
                         children: <Widget>[
                           Expanded(
-                            child: Container(width: double.infinity, height: 50,
+                            child: Container(
+                                width: double.infinity,
+                                height: 50,
                                 alignment: Alignment.center,
                                 child: Text("SPORT", style: MyText.subhead(context).copyWith(color: Colors.white)),
-                                decoration: BoxDecoration(color: Colors.indigo[400], borderRadius: BorderRadius.all(Radius.circular(3)))
-                            ),
+                                decoration: BoxDecoration(
+                                    color: Colors.indigo[400], borderRadius: BorderRadius.all(Radius.circular(3)))),
                           ),
                           Container(width: 10),
                           Expanded(
-                            child: Container(width: double.infinity, height: 50,
+                            child: Container(
+                                width: double.infinity,
+                                height: 50,
                                 alignment: Alignment.center,
                                 child: Text("FASHION", style: MyText.subhead(context).copyWith(color: Colors.white)),
-                                decoration: BoxDecoration(color: Colors.orange[400], borderRadius: BorderRadius.all(Radius.circular(3)))
-                            ),
+                                decoration: BoxDecoration(
+                                    color: Colors.orange[400], borderRadius: BorderRadius.all(Radius.circular(3)))),
                           ),
                         ],
                       ),
@@ -185,19 +214,23 @@ class BottomNavigationIconRouteState extends State<BottomNavigationSmall> with S
                       Row(
                         children: <Widget>[
                           Expanded(
-                            child: Container(width: double.infinity, height: 50,
+                            child: Container(
+                                width: double.infinity,
+                                height: 50,
                                 alignment: Alignment.center,
                                 child: Text("BUSINESS", style: MyText.subhead(context).copyWith(color: Colors.white)),
-                                decoration: BoxDecoration(color: Colors.lightGreen[400], borderRadius: BorderRadius.all(Radius.circular(3)))
-                            ),
+                                decoration: BoxDecoration(
+                                    color: Colors.lightGreen[400], borderRadius: BorderRadius.all(Radius.circular(3)))),
                           ),
                           Container(width: 10),
                           Expanded(
-                            child: Container(width: double.infinity, height: 50,
+                            child: Container(
+                                width: double.infinity,
+                                height: 50,
                                 alignment: Alignment.center,
                                 child: Text("POLITICS", style: MyText.subhead(context).copyWith(color: Colors.white)),
-                                decoration: BoxDecoration(color: Colors.blueGrey[400], borderRadius: BorderRadius.all(Radius.circular(3)))
-                            ),
+                                decoration: BoxDecoration(
+                                    color: Colors.blueGrey[400], borderRadius: BorderRadius.all(Radius.circular(3)))),
                           ),
                         ],
                       ),
@@ -209,7 +242,9 @@ class BottomNavigationIconRouteState extends State<BottomNavigationSmall> with S
             ),
             Card(
               elevation: 4,
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(0),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+              ),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               margin: EdgeInsets.all(0),
               color: Colors.white,
@@ -217,14 +252,16 @@ class BottomNavigationIconRouteState extends State<BottomNavigationSmall> with S
                 padding: EdgeInsets.symmetric(vertical: 4),
                 child: TabBar(
                   indicatorColor: Colors.transparent,
-                  indicatorSize: TabBarIndicatorSize.tab, indicatorWeight: 1,
-                  unselectedLabelColor: Colors.grey[400], labelColor: Colors.lightGreen[500],
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  indicatorWeight: 1,
+                  unselectedLabelColor: Colors.grey[400],
+                  labelColor: Colors.lightGreen[500],
                   tabs: [
-                    Tab(icon: Icon(Icons.home,size: 18)),
-                    Tab(icon: Icon(Icons.favorite,size: 18)),
-                    Tab(icon: Icon(Icons.apps,size: 18)),
-                    Tab(icon: Icon(Icons.notifications,size: 18)),
-                    Tab(icon: Icon(Icons.shopping_cart,size: 18)),
+                    Tab(icon: Icon(Icons.home, size: 18)),
+                    Tab(icon: Icon(Icons.favorite, size: 18)),
+                    Tab(icon: Icon(Icons.apps, size: 18)),
+                    Tab(icon: Icon(Icons.notifications, size: 18)),
+                    Tab(icon: Icon(Icons.shopping_cart, size: 18)),
                   ],
                   controller: _tabController,
                 ),
@@ -235,6 +272,4 @@ class BottomNavigationIconRouteState extends State<BottomNavigationSmall> with S
       ),
     );
   }
-
 }
-

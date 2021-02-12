@@ -3,19 +3,15 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/utils/tools.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class PaymentCardDetailsRoute extends StatefulWidget {
-
   PaymentCardDetailsRoute();
 
   @override
   PaymentCardDetailsRouteState createState() => new PaymentCardDetailsRouteState();
 }
 
-
 class PaymentCardDetailsRouteState extends State<PaymentCardDetailsRoute> {
-
   String card_no = "**** **** **** ****";
   String card_expire = "MM/YY";
   String card_cvv = "***";
@@ -26,14 +22,14 @@ class PaymentCardDetailsRouteState extends State<PaymentCardDetailsRoute> {
     return new Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-          backgroundColor: Colors.grey[900],
-          title: Text("Credit Card"),
-          leading: IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
+        backgroundColor: Colors.grey[900],
+        title: Text("Credit Card"),
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -46,20 +42,18 @@ class PaymentCardDetailsRouteState extends State<PaymentCardDetailsRoute> {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 child: Card(
-                  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10)),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   color: Colors.amber[900],
                   elevation: 2,
                   margin: EdgeInsets.all(0),
                   child: Stack(
                     fit: StackFit.expand,
                     children: <Widget>[
-                      Image.asset(Img.get('world_map.png'),fit: BoxFit.cover),
+                      Image.asset(Img.get('world_map.png'), fit: BoxFit.cover),
                       Container(
                         margin: EdgeInsets.all(20),
                         alignment: Alignment.bottomRight,
-                        child: Image.asset(Img.get("ic_copper_card.png"),
-                            width: 60, height: 60
-                        ),
+                        child: Image.asset(Img.get("ic_copper_card.png"), width: 60, height: 60),
                       ),
                       Padding(
                         padding: EdgeInsets.all(20),
@@ -69,15 +63,13 @@ class PaymentCardDetailsRouteState extends State<PaymentCardDetailsRoute> {
                             Row(
                               children: <Widget>[
                                 Spacer(),
-                                Image.asset(Img.get("ic_visa.png"), color : Colors.white,
-                                    fit: BoxFit.cover, width: 60, height: 30
-                                ),
+                                Image.asset(Img.get("ic_visa.png"),
+                                    color: Colors.white, fit: BoxFit.cover, width: 60, height: 30),
                               ],
                             ),
                             Container(height: 10),
-                            Text(card_no, style: MyText.headline(context).copyWith(
-                                color: Colors.white, fontFamily: "monospace"
-                            )),
+                            Text(card_no,
+                                style: MyText.headline(context).copyWith(color: Colors.white, fontFamily: "monospace")),
                             Container(height: 10),
                             Row(
                               children: <Widget>[
@@ -86,9 +78,9 @@ class PaymentCardDetailsRouteState extends State<PaymentCardDetailsRoute> {
                                   children: <Widget>[
                                     Text("EXPIRE", style: MyText.body1(context).copyWith(color: MyColors.grey_10)),
                                     Container(height: 5),
-                                    Text(card_expire, style: MyText.subhead(context).copyWith(
-                                        color: Colors.white, fontFamily: "monospace"
-                                    )),
+                                    Text(card_expire,
+                                        style: MyText.subhead(context)
+                                            .copyWith(color: Colors.white, fontFamily: "monospace")),
                                   ],
                                 ),
                                 Container(width: 20),
@@ -97,19 +89,17 @@ class PaymentCardDetailsRouteState extends State<PaymentCardDetailsRoute> {
                                   children: <Widget>[
                                     Text("CVV", style: MyText.body1(context).copyWith(color: MyColors.grey_10)),
                                     Container(height: 5),
-                                    Text(card_cvv, style: MyText.subhead(context).copyWith(
-                                        color: Colors.white, fontFamily: "monospace"
-                                    )),
+                                    Text(card_cvv,
+                                        style: MyText.subhead(context)
+                                            .copyWith(color: Colors.white, fontFamily: "monospace")),
                                   ],
                                 ),
                                 Container(width: 40)
                               ],
                             ),
-
                             Container(height: 25),
-                            Text(card_name, style: MyText.subhead(context).copyWith(
-                                color: Colors.white, fontFamily: "monospace"
-                            )),
+                            Text(card_name,
+                                style: MyText.subhead(context).copyWith(color: Colors.white, fontFamily: "monospace")),
                           ],
                         ),
                       )
@@ -118,19 +108,19 @@ class PaymentCardDetailsRouteState extends State<PaymentCardDetailsRoute> {
                 ),
               ),
             ),
-
             Container(
               padding: EdgeInsets.symmetric(horizontal: 18),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   TextField(
-                    maxLines: 1, maxLength: 19,
+                    maxLines: 1,
+                    maxLength: 19,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(hintText: "Credit card number", counterText: ''),
-                    onChanged: (val){
+                    onChanged: (val) {
                       setState(() {
-                        if(val.length < 2) {
+                        if (val.length < 2) {
                           card_no = "**** **** **** ****";
                         } else {
                           card_no = Tools.getFormattedCardNo(val);
@@ -143,10 +133,11 @@ class PaymentCardDetailsRouteState extends State<PaymentCardDetailsRoute> {
                     children: <Widget>[
                       Flexible(
                         child: TextField(
-                          maxLines: 1, maxLength: 5,
+                          maxLines: 1,
+                          maxLength: 5,
                           keyboardType: TextInputType.text,
                           decoration: InputDecoration(hintText: "MM/YY", counterText: ''),
-                          onChanged: (val){
+                          onChanged: (val) {
                             setState(() => card_expire = val);
                           },
                         ),
@@ -155,11 +146,12 @@ class PaymentCardDetailsRouteState extends State<PaymentCardDetailsRoute> {
                       Container(width: 15),
                       Flexible(
                         child: TextField(
-                          maxLines: 1, maxLength: 3,
+                          maxLines: 1,
+                          maxLength: 3,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(hintText: "CVV", counterText: ''),
-                          onChanged: (val){
-                            setState(() => card_cvv= val);
+                          onChanged: (val) {
+                            setState(() => card_cvv = val);
                           },
                         ),
                         flex: 1,
@@ -168,20 +160,24 @@ class PaymentCardDetailsRouteState extends State<PaymentCardDetailsRoute> {
                   ),
                   Container(height: 15),
                   TextField(
-                    maxLines: 1, maxLength: 50,
+                    maxLines: 1,
+                    maxLength: 50,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(hintText: "Name on card", counterText: ''),
-                    onChanged: (val){
-                      setState(() => card_name= val);
+                    onChanged: (val) {
+                      setState(() => card_name = val);
                     },
                   ),
                   Container(height: 25),
                   Container(
                     width: double.infinity,
                     child: FlatButton(
-                      child: Text("CONTINUE", style: TextStyle(color: Colors.white),),
+                      child: Text(
+                        "CONTINUE",
+                        style: TextStyle(color: Colors.white),
+                      ),
                       color: Colors.amber[900],
-                      onPressed: (){},
+                      onPressed: () {},
                     ),
                   ),
                 ],
@@ -193,4 +189,3 @@ class PaymentCardDetailsRouteState extends State<PaymentCardDetailsRoute> {
     );
   }
 }
-

@@ -3,25 +3,23 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/included/include_drawer_content.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
+
 import 'package:toast/toast.dart';
 
 class ProfileDrawerSimpleRoute extends StatefulWidget {
-
   ProfileDrawerSimpleRoute();
 
   @override
   ProfileDrawerSimpleRouteState createState() => new ProfileDrawerSimpleRouteState();
 }
 
-
 class ProfileDrawerSimpleRouteState extends State<ProfileDrawerSimpleRoute> {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   BuildContext context;
 
-  void onDrawerItemClicked(String name){
+  void onDrawerItemClicked(String name) {
     Navigator.pop(context);
-    Toast.show(name+" Selected", context);
+    Toast.show(name + " Selected", context);
   }
 
   @override
@@ -35,7 +33,7 @@ class ProfileDrawerSimpleRouteState extends State<ProfileDrawerSimpleRoute> {
   @override
   Widget build(BuildContext context) {
     this.context = context;
-    Widget widget =  Scaffold(
+    Widget widget = Scaffold(
       backgroundColor: Colors.white,
       appBar: new AppBar(
           title: new Text("Drawer Simple"),
@@ -43,7 +41,7 @@ class ProfileDrawerSimpleRouteState extends State<ProfileDrawerSimpleRoute> {
           leading: IconButton(
             icon: Icon(Icons.menu),
             onPressed: () {
-              if(scaffoldKey.currentState.isDrawerOpen){
+              if (scaffoldKey.currentState.isDrawerOpen) {
                 scaffoldKey.currentState.openEndDrawer();
               } else {
                 scaffoldKey.currentState.openDrawer();
@@ -53,10 +51,11 @@ class ProfileDrawerSimpleRouteState extends State<ProfileDrawerSimpleRoute> {
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.close),
-              onPressed: () { Navigator.pop(context); },
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-          ]
-      ),
+          ]),
       body: Scaffold(
         key: scaffoldKey,
         body: IncludeDrawerContent.get(context),
@@ -85,7 +84,8 @@ class ProfileDrawerSimpleRouteState extends State<ProfileDrawerSimpleRoute> {
                         Row(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            Icon(Icons.location_on, color: MyColors.grey_20, size: 15), Container(width : 5),
+                            Icon(Icons.location_on, color: MyColors.grey_20, size: 15),
+                            Container(width: 5),
                             Text("San Francisco, CA", style: MyText.body1(context).copyWith(color: MyColors.grey_60)),
                           ],
                         ),
@@ -97,55 +97,67 @@ class ProfileDrawerSimpleRouteState extends State<ProfileDrawerSimpleRoute> {
                   Container(
                     height: 45,
                     child: ListTile(
-                      title: Text("Activity", style: MyText.subhead(context).copyWith(
-                          color: MyColors.grey_60, fontWeight: FontWeight.bold
-                      )),
-                      onTap: (){onDrawerItemClicked("Activity");},
+                      title: Text("Activity",
+                          style:
+                              MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.bold)),
+                      onTap: () {
+                        onDrawerItemClicked("Activity");
+                      },
                     ),
                   ),
                   Container(
                     height: 45,
                     child: ListTile(
-                      title: Text("Explore", style: MyText.subhead(context).copyWith(
-                          color: MyColors.grey_60, fontWeight: FontWeight.bold
-                      )),
-                      onTap: (){onDrawerItemClicked("Explore");},
+                      title: Text("Explore",
+                          style:
+                              MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.bold)),
+                      onTap: () {
+                        onDrawerItemClicked("Explore");
+                      },
                     ),
                   ),
                   Container(
                     height: 45,
                     child: ListTile(
-                      title: Text("Photos", style: MyText.subhead(context).copyWith(
-                          color: MyColors.grey_60, fontWeight: FontWeight.bold
-                      )),
-                      onTap: (){onDrawerItemClicked("Photos");},
+                      title: Text("Photos",
+                          style:
+                              MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.bold)),
+                      onTap: () {
+                        onDrawerItemClicked("Photos");
+                      },
                     ),
                   ),
                   Container(
                     height: 45,
                     child: ListTile(
-                      title: Text("Videos", style: MyText.subhead(context).copyWith(
-                          color: MyColors.grey_60, fontWeight: FontWeight.bold
-                      )),
-                      onTap: (){onDrawerItemClicked("Videos");},
+                      title: Text("Videos",
+                          style:
+                              MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.bold)),
+                      onTap: () {
+                        onDrawerItemClicked("Videos");
+                      },
                     ),
                   ),
                   Container(
                     height: 45,
                     child: ListTile(
-                      title: Text("Message", style: MyText.subhead(context).copyWith(
-                          color: MyColors.grey_60, fontWeight: FontWeight.bold
-                      )),
-                      onTap: (){onDrawerItemClicked("Message");},
+                      title: Text("Message",
+                          style:
+                              MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.bold)),
+                      onTap: () {
+                        onDrawerItemClicked("Message");
+                      },
                     ),
                   ),
                   Container(
                     height: 45,
                     child: ListTile(
-                      title: Text("Settings", style: MyText.subhead(context).copyWith(
-                          color: MyColors.grey_60, fontWeight: FontWeight.bold
-                      )),
-                      onTap: (){onDrawerItemClicked("Settings");},
+                      title: Text("Settings",
+                          style:
+                              MyText.subhead(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.bold)),
+                      onTap: () {
+                        onDrawerItemClicked("Settings");
+                      },
                     ),
                   ),
                 ],
@@ -157,7 +169,4 @@ class ProfileDrawerSimpleRouteState extends State<ProfileDrawerSimpleRoute> {
     );
     return widget;
   }
-
 }
-
-

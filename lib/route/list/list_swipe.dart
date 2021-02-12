@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:materialx_flutter/adapter/list_basic_adapter.dart';
+import 'package:materialx_flutter/widget/toolbar.dart';
 import 'package:materialx_flutter/adapter/list_swipe_adapter.dart';
 import 'package:materialx_flutter/data/dummy.dart';
 import 'package:materialx_flutter/model/people.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
+
 import 'package:toast/toast.dart';
 
 class ListSwipeRoute extends StatefulWidget {
-
   ListSwipeRoute();
 
   @override
@@ -41,4 +40,3 @@ class ListSwipeRouteState extends State<ListSwipeRoute> {
     );
   }
 }
-

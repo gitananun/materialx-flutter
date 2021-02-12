@@ -5,19 +5,18 @@ import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/included/include_releases_content.dart';
 import 'package:materialx_flutter/model/shop_product.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
+
 import 'package:path/path.dart';
 
 class ShoppingSubCategoryTabsRoute extends StatefulWidget {
-
   ShoppingSubCategoryTabsRoute();
 
   @override
   ShoppingSubCategoryTabsRouteState createState() => new ShoppingSubCategoryTabsRouteState();
 }
 
-
-class ShoppingSubCategoryTabsRouteState extends State<ShoppingSubCategoryTabsRoute> with SingleTickerProviderStateMixin {
+class ShoppingSubCategoryTabsRouteState extends State<ShoppingSubCategoryTabsRoute>
+    with SingleTickerProviderStateMixin {
   TabController _tabController;
   ScrollController _scrollController;
 
@@ -37,26 +36,29 @@ class ShoppingSubCategoryTabsRouteState extends State<ShoppingSubCategoryTabsRou
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: MyColors.grey_10,
       body: NestedScrollView(
         controller: _scrollController,
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScroller){
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScroller) {
           return <Widget>[
             SliverAppBar(
-              title: Text('Fashion'), pinned: true, floating: true,
+              title: Text('Fashion'),
+              pinned: true,
+              floating: true,
               backgroundColor: MyColors.primary,
-              leading: IconButton(icon: Icon(Icons.arrow_back), onPressed: () {
-                Navigator.pop(context);
-              }),
+              leading: IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
               actions: <Widget>[
                 IconButton(
                   icon: Icon(Icons.shopping_cart),
                   onPressed: () {},
-                ),// overflow menu
+                ), // overflow menu
                 PopupMenuButton<String>(
-                  onSelected: (String value){},
+                  onSelected: (String value) {},
                   itemBuilder: (context) => [
                     PopupMenuItem(
                       value: "Settings",
@@ -68,7 +70,8 @@ class ShoppingSubCategoryTabsRouteState extends State<ShoppingSubCategoryTabsRou
               bottom: TabBar(
                 indicatorColor: Colors.white,
                 isScrollable: true,
-                indicatorSize: TabBarIndicatorSize.tab, indicatorWeight: 4,
+                indicatorSize: TabBarIndicatorSize.tab,
+                indicatorWeight: 4,
                 labelStyle: MyText.body2(context).copyWith(fontWeight: FontWeight.w500, color: Colors.white),
                 unselectedLabelColor: Colors.grey[300],
                 tabs: [
@@ -97,13 +100,10 @@ class ShoppingSubCategoryTabsRouteState extends State<ShoppingSubCategoryTabsRou
     );
   }
 
-  Widget getGridContent(){
+  Widget getGridContent() {
     List<ShopProduct> items = Dummy.getShoppingProduct();
     return GridShopProductAdapter(items, onItemClick).getView();
   }
 
-  void onItemClick(int index, String obj) {
-
-  }
+  void onItemClick(int index, String obj) {}
 }
-

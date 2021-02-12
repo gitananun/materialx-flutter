@@ -3,19 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class DashboardFlightRoute extends StatefulWidget {
-
   DashboardFlightRoute();
 
   @override
   DashboardFlightRouteState createState() => new DashboardFlightRouteState();
 }
 
-
 class DashboardFlightRouteState extends State<DashboardFlightRoute> {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -27,31 +23,36 @@ class DashboardFlightRouteState extends State<DashboardFlightRoute> {
             children: <Widget>[
               Container(
                 color: Colors.orange[500],
-                width: double.infinity, height: 270,
-                child: Image.asset(Img.get('world_map.png'),fit: BoxFit.cover),
+                width: double.infinity,
+                height: 270,
+                child: Image.asset(Img.get('world_map.png'), fit: BoxFit.cover),
               )
             ],
           ),
           SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                AppBar(elevation: 0, backgroundColor: Colors.transparent,
+                AppBar(
+                    elevation: 0,
+                    backgroundColor: Colors.transparent,
                     leading: IconButton(
                       icon: Icon(Icons.menu),
-                      onPressed: () { Navigator.pop(context);},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                     ),
                     actions: <Widget>[
                       IconButton(
                         icon: Icon(Icons.more_vert),
                         onPressed: () {},
                       ),
-                    ]
-                ),
+                    ]),
                 Text("Where will go?", style: MyText.headline(context).copyWith(color: Colors.white)),
                 Container(height: 20),
                 Card(
-                  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(1)),
-                  color: Colors.white, elevation: 2,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(1)),
+                  color: Colors.white,
+                  elevation: 2,
                   margin: EdgeInsets.fromLTRB(10, 0, 10, 5),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   child: Container(
@@ -63,9 +64,7 @@ class DashboardFlightRouteState extends State<DashboardFlightRoute> {
                         Expanded(
                           child: TextField(
                             keyboardType: TextInputType.text,
-                            decoration: new InputDecoration.collapsed(
-                                hintText: 'Origin'
-                            ),
+                            decoration: new InputDecoration.collapsed(hintText: 'Origin'),
                           ),
                         ),
                         IconButton(icon: const Icon(Icons.search, color: MyColors.grey_40), onPressed: () {}),
@@ -75,8 +74,9 @@ class DashboardFlightRouteState extends State<DashboardFlightRoute> {
                 ),
                 Container(height: 5),
                 Card(
-                  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(1)),
-                  color: Colors.white, elevation: 2,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(1)),
+                  color: Colors.white,
+                  elevation: 2,
                   margin: EdgeInsets.fromLTRB(10, 0, 10, 5),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   child: Container(
@@ -88,9 +88,7 @@ class DashboardFlightRouteState extends State<DashboardFlightRoute> {
                         Expanded(
                           child: TextField(
                             keyboardType: TextInputType.text,
-                            decoration: InputDecoration.collapsed(
-                                hintText: 'Destination'
-                            ),
+                            decoration: InputDecoration.collapsed(hintText: 'Destination'),
                           ),
                         ),
                         IconButton(icon: Icon(Icons.search, color: MyColors.grey_40), onPressed: () {}),
@@ -100,8 +98,9 @@ class DashboardFlightRouteState extends State<DashboardFlightRoute> {
                 ),
                 Container(height: 5),
                 Card(
-                  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(1)),
-                  color: Colors.white, elevation: 2,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(1)),
+                  color: Colors.white,
+                  elevation: 2,
                   margin: EdgeInsets.fromLTRB(10, 0, 10, 5),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   child: Column(
@@ -119,7 +118,8 @@ class DashboardFlightRouteState extends State<DashboardFlightRoute> {
                               children: <Widget>[
                                 Icon(Icons.event, color: MyColors.grey_40),
                                 Container(width: 10),
-                                Text("Thus, 10 Mar 2018", style: MyText.body2(context).copyWith(color: MyColors.grey_60))
+                                Text("Thus, 10 Mar 2018",
+                                    style: MyText.body2(context).copyWith(color: MyColors.grey_60))
                               ],
                             ),
                             Container(height: 10),
@@ -188,4 +188,3 @@ class DashboardFlightRouteState extends State<DashboardFlightRoute> {
     );
   }
 }
-

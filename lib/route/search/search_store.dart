@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/included/include_releases_content.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class SearchStoreRoute extends StatefulWidget {
-
   SearchStoreRoute();
 
   @override
   SearchStoreRouteState createState() => new SearchStoreRouteState();
 }
 
-
-class SearchStoreRouteState extends State<SearchStoreRoute> with SingleTickerProviderStateMixin{
-
+class SearchStoreRouteState extends State<SearchStoreRoute> with SingleTickerProviderStateMixin {
   TabController _tabController;
   ScrollController _scrollController;
   bool finishLoading = true;
@@ -33,40 +29,49 @@ class SearchStoreRouteState extends State<SearchStoreRoute> with SingleTickerPro
     super.dispose();
   }
 
-  void onBackPress(){
-    if(Navigator.of(context).canPop()){
+  void onBackPress() {
+    if (Navigator.of(context).canPop()) {
       Navigator.of(context).pop();
     }
   }
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: NestedScrollView(
         controller: _scrollController,
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScroller){
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScroller) {
           return <Widget>[
             SliverAppBar(
               flexibleSpace: Card(
-                shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(2),),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(2),
+                ),
                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                margin: EdgeInsets.fromLTRB(8, 32, 8, 0), elevation: 1,
+                margin: EdgeInsets.fromLTRB(8, 32, 8, 0),
+                elevation: 1,
                 child: Row(
                   children: <Widget>[
                     InkWell(
-                      splashColor: Colors.grey[600], highlightColor: Colors.grey[600], onTap: onBackPress,
+                      splashColor: Colors.grey[600],
+                      highlightColor: Colors.grey[600],
+                      onTap: onBackPress,
                       child: Padding(
                         padding: EdgeInsets.all(12),
-                        child: Icon(Icons.search, color: Colors.grey[600],),
+                        child: Icon(
+                          Icons.search,
+                          color: Colors.grey[600],
+                        ),
                       ),
                     ),
                     Expanded(
-                      child: TextField(maxLines: 1,
+                      child: TextField(
+                        maxLines: 1,
                         controller: inputController,
                         style: TextStyle(color: Colors.grey[600], fontSize: 18),
                         keyboardType: TextInputType.text,
-                        onSubmitted: (term){
+                        onSubmitted: (term) {
                           setState(() {
                             finishLoading = false;
                           });
@@ -79,19 +84,23 @@ class SearchStoreRouteState extends State<SearchStoreRoute> with SingleTickerPro
                         ),
                       ),
                     ),
-                    IconButton(icon : Icon(Icons.close, color: Colors.grey[600]), onPressed: (){
-                      inputController.clear();
-                      setState(() {});
-                    }),
+                    IconButton(
+                        icon: Icon(Icons.close, color: Colors.grey[600]),
+                        onPressed: () {
+                          inputController.clear();
+                          setState(() {});
+                        }),
                   ],
                 ),
               ),
-              pinned: true, floating: false,
+              pinned: true,
+              floating: false,
               backgroundColor: Colors.blueGrey[600],
               automaticallyImplyLeading: false,
               bottom: TabBar(
                 indicatorColor: Colors.white,
-                indicatorSize: TabBarIndicatorSize.tab, indicatorWeight: 4,
+                indicatorSize: TabBarIndicatorSize.tab,
+                indicatorWeight: 4,
                 labelStyle: MyText.body2(context).copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                 unselectedLabelColor: Colors.grey[400],
                 tabs: [
@@ -118,7 +127,7 @@ class SearchStoreRouteState extends State<SearchStoreRoute> with SingleTickerPro
     );
   }
 
-  Widget buildBody(BuildContext context){
+  Widget buildBody(BuildContext context) {
     return Stack(
       children: <Widget>[
         AnimatedOpacity(
@@ -135,7 +144,7 @@ class SearchStoreRouteState extends State<SearchStoreRoute> with SingleTickerPro
     );
   }
 
-  Widget buildLoading(BuildContext context){
+  Widget buildLoading(BuildContext context) {
     return Align(
       child: Container(
         width: 80,
@@ -147,12 +156,11 @@ class SearchStoreRouteState extends State<SearchStoreRoute> with SingleTickerPro
     );
   }
 
-  void delayShowingContent(){
+  void delayShowingContent() {
     Future.delayed(Duration(seconds: 3), () {
       setState(() {
         finishLoading = true;
       });
     });
   }
-
 }

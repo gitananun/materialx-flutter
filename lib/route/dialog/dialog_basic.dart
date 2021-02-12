@@ -4,7 +4,6 @@ import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
 
 class DialogBasicRoute extends StatefulWidget {
-
   DialogBasicRoute();
 
   @override
@@ -30,9 +29,8 @@ class DialogBasicRouteState extends State<DialogBasicRoute> {
                   alignment: Alignment.centerLeft,
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                    child: Text("CONFIRMATION DIALOG", style: TextStyle(
-                        color: Colors.grey[700], fontWeight: FontWeight.w500
-                    )),
+                    child: Text("CONFIRMATION DIALOG",
+                        style: TextStyle(color: Colors.grey[700], fontWeight: FontWeight.w500)),
                   ),
                 ),
                 onTap: () {
@@ -49,9 +47,7 @@ class DialogBasicRouteState extends State<DialogBasicRoute> {
                   alignment: Alignment.centerLeft,
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                    child: Text("ALERT DIALOG", style: TextStyle(
-                        color: Colors.grey[700], fontWeight: FontWeight.w500
-                    )),
+                    child: Text("ALERT DIALOG", style: TextStyle(color: Colors.grey[700], fontWeight: FontWeight.w500)),
                   ),
                 ),
                 onTap: () {
@@ -68,13 +64,12 @@ class DialogBasicRouteState extends State<DialogBasicRoute> {
                   alignment: Alignment.centerLeft,
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                    child: Text("SINGLE CHOICE DIALOG", style: TextStyle(
-                        color: Colors.grey[700], fontWeight: FontWeight.w500
-                    )),
+                    child: Text("SINGLE CHOICE DIALOG",
+                        style: TextStyle(color: Colors.grey[700], fontWeight: FontWeight.w500)),
                   ),
                 ),
                 onTap: () {
-                  showDialog(context: context,builder: (_) => SingleChoiceDialog() );
+                  showDialog(context: context, builder: (_) => SingleChoiceDialog());
                 },
               ),
             ),
@@ -87,13 +82,12 @@ class DialogBasicRouteState extends State<DialogBasicRoute> {
                   alignment: Alignment.centerLeft,
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                    child: Text("MULTIPLE CHOICE DIALOG", style: TextStyle(
-                        color: Colors.grey[700], fontWeight: FontWeight.w500
-                    )),
+                    child: Text("MULTIPLE CHOICE DIALOG",
+                        style: TextStyle(color: Colors.grey[700], fontWeight: FontWeight.w500)),
                   ),
                 ),
                 onTap: () {
-                  showDialog(context: context,builder: (_) => MultiChoiceDialog() );
+                  showDialog(context: context, builder: (_) => MultiChoiceDialog());
                 },
               ),
             ),
@@ -159,89 +153,83 @@ class DialogBasicRouteState extends State<DialogBasicRoute> {
 }
 
 class SingleChoiceDialog extends StatefulWidget {
-
   SingleChoiceDialog({Key key}) : super(key: key);
 
   @override
   SingleChoiceDialogState createState() => new SingleChoiceDialogState();
 }
 
-class SingleChoiceDialogState extends State<SingleChoiceDialog>{
-
+class SingleChoiceDialogState extends State<SingleChoiceDialog> {
   String selectedRingtone = "None";
-  List<String> ringtone = [
-    "None", "Callisto", "Ganymede", "Luna"
-  ];
+  List<String> ringtone = ["None", "Callisto", "Ganymede", "Luna"];
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return new SimpleDialog(
       title: new Text("Phone Ringtone"),
-      children: ringtone.map((r) => RadioListTile(
-        title: Text(r),
-        groupValue: selectedRingtone,
-        selected: r == selectedRingtone,
-        value: r,
-        onChanged: (val) {
-          setState(() {
-            selectedRingtone = val;
-          });
-        },
-      )).toList(),
+      children: ringtone
+          .map((r) => RadioListTile(
+                title: Text(r),
+                groupValue: selectedRingtone,
+                selected: r == selectedRingtone,
+                value: r,
+                onChanged: (val) {
+                  setState(() {
+                    selectedRingtone = val;
+                  });
+                },
+              ))
+          .toList(),
     );
   }
 }
 
 class MultiChoiceDialog extends StatefulWidget {
-
   MultiChoiceDialog({Key key}) : super(key: key);
 
   @override
   MultiChoiceDialogState createState() => new MultiChoiceDialogState();
 }
 
-class MultiChoiceDialogState extends State<MultiChoiceDialog>{
+class MultiChoiceDialogState extends State<MultiChoiceDialog> {
+  List<String> colors = ["Red", "Green", "Blue", "Purple", "Olive"];
 
-  List<String> colors = [
-    "Red", "Green", "Blue", "Purple", "Olive"
-  ];
+  List<bool> status = [false, false, false, false, false];
 
-  List<bool> status = [
-    false, false, false, false, false
-  ];
-
-  bool getValue(String val){
+  bool getValue(String val) {
     int index = colors.indexOf(val);
-    if(index == -1) return false;
+    if (index == -1) return false;
     return status[index];
   }
 
-  void toggleValue(String name){
+  void toggleValue(String name) {
     int index = colors.indexOf(name);
-    if(index == -1) return;
+    if (index == -1) return;
     status[index] = !status[index];
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return new AlertDialog(
       title: new Text("Your prefered color"),
       contentPadding: EdgeInsets.fromLTRB(15, 15, 15, 0),
       content: Wrap(
         direction: Axis.vertical,
-        children: colors.map((c) => InkWell(
-          child: Row(
-            children: <Widget>[
-              Checkbox(value: getValue(c), onChanged: (value) {}),
-              Text(c),
-            ],
-          ),
-          onTap: (){
-            setState(() {
-              toggleValue(c);
-            });
-          },
-        )).toList(),
+        children: colors
+            .map((c) => InkWell(
+                  child: Row(
+                    children: <Widget>[
+                      Checkbox(value: getValue(c), onChanged: (value) {}),
+                      Text(c),
+                    ],
+                  ),
+                  onTap: () {
+                    setState(() {
+                      toggleValue(c);
+                    });
+                  },
+                ))
+            .toList(),
       ),
       actions: <Widget>[
         FlatButton(
@@ -260,4 +248,3 @@ class MultiChoiceDialogState extends State<MultiChoiceDialog>{
     );
   }
 }
-

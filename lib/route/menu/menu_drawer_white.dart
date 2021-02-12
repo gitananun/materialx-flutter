@@ -3,26 +3,23 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/included/include_drawer_content.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
+
 import 'package:toast/toast.dart';
 
 class MenuDrawerWhiteRoute extends StatefulWidget {
-
   MenuDrawerWhiteRoute();
 
   @override
   MenuDrawerWhiteRouteState createState() => new MenuDrawerWhiteRouteState();
 }
 
-
 class MenuDrawerWhiteRouteState extends State<MenuDrawerWhiteRoute> {
-
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   BuildContext context;
 
-  void onDrawerItemClicked(String name){
+  void onDrawerItemClicked(String name) {
     Navigator.pop(context);
-    Toast.show(name+" Selected", context);
+    Toast.show(name + " Selected", context);
   }
 
   @override
@@ -36,7 +33,7 @@ class MenuDrawerWhiteRouteState extends State<MenuDrawerWhiteRoute> {
   @override
   Widget build(BuildContext context) {
     this.context = context;
-    Widget widget =  Scaffold(
+    Widget widget = Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -44,15 +41,18 @@ class MenuDrawerWhiteRouteState extends State<MenuDrawerWhiteRoute> {
           backgroundColor: Colors.white,
           leading: IconButton(
             icon: Icon(Icons.menu, color: MyColors.grey_60),
-            onPressed: () { scaffoldKey.currentState.openDrawer(); },
+            onPressed: () {
+              scaffoldKey.currentState.openDrawer();
+            },
           ),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.close, color: MyColors.grey_60),
-              onPressed: () { Navigator.pop(context); },
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-          ]
-      ),
+          ]),
       drawer: Drawer(
         child: SingleChildScrollView(
           child: Column(
@@ -72,19 +72,21 @@ class MenuDrawerWhiteRouteState extends State<MenuDrawerWhiteRoute> {
                       ),
                     ),
                     Container(height: 7),
-                    Text("Evans Collins", style: MyText.body2(context).copyWith(
-                        color: Colors.blueGrey[800], fontWeight: FontWeight.w500
-                    )),
+                    Text("Evans Collins",
+                        style:
+                            MyText.body2(context).copyWith(color: Colors.blueGrey[800], fontWeight: FontWeight.w500)),
                     Container(height: 2),
-                    Text("evan.collins@mail.com", style: MyText.caption(context).copyWith(
-                        color: MyColors.grey_20, fontWeight: FontWeight.w500
-                    ))
+                    Text("evan.collins@mail.com",
+                        style: MyText.caption(context).copyWith(color: MyColors.grey_20, fontWeight: FontWeight.w500))
                   ],
                 ),
               ),
               Container(height: 8),
-              InkWell(onTap: (){},
-                child: Container(height: 40, padding: EdgeInsets.symmetric(horizontal: 20),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  height: 40,
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: <Widget>[
                       Icon(Icons.domain, color: MyColors.grey_20, size: 20),
@@ -95,8 +97,11 @@ class MenuDrawerWhiteRouteState extends State<MenuDrawerWhiteRoute> {
                 ),
               ),
               Container(height: 10),
-              InkWell(onTap: (){},
-                child: Container(height: 40, padding: EdgeInsets.symmetric(horizontal: 20),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  height: 40,
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: <Widget>[
                       Icon(Icons.data_usage, color: MyColors.grey_20, size: 20),
@@ -107,8 +112,11 @@ class MenuDrawerWhiteRouteState extends State<MenuDrawerWhiteRoute> {
                 ),
               ),
               Container(height: 10),
-              InkWell(onTap: (){},
-                child: Container(height: 40, padding: EdgeInsets.symmetric(horizontal: 20),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  height: 40,
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: <Widget>[
                       Icon(Icons.class_, color: MyColors.grey_20, size: 20),
@@ -119,8 +127,11 @@ class MenuDrawerWhiteRouteState extends State<MenuDrawerWhiteRoute> {
                 ),
               ),
               Container(height: 10),
-              InkWell(onTap: (){},
-                child: Container(height: 40, padding: EdgeInsets.symmetric(horizontal: 20),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  height: 40,
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: <Widget>[
                       Icon(Icons.menu, color: MyColors.grey_20, size: 20),
@@ -131,8 +142,11 @@ class MenuDrawerWhiteRouteState extends State<MenuDrawerWhiteRoute> {
                 ),
               ),
               Container(height: 10),
-              InkWell(onTap: (){},
-                child: Container(height: 40, padding: EdgeInsets.symmetric(horizontal: 20),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  height: 40,
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: <Widget>[
                       Icon(Icons.power_settings_new, color: MyColors.grey_20, size: 20),

@@ -3,13 +3,11 @@ import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
 
 class ButtonBasicRoute extends StatefulWidget {
-
   ButtonBasicRoute();
 
   @override
   ButtonBasicRouteState createState() => new ButtonBasicRouteState();
 }
-
 
 class ButtonBasicRouteState extends State<ButtonBasicRoute> {
   @override
@@ -25,21 +23,30 @@ class ButtonBasicRouteState extends State<ButtonBasicRoute> {
               children: <Widget>[
                 Spacer(),
                 RaisedButton(
-                  child: Text("NORMAL", style: TextStyle(color: Colors.grey[800]),),
+                  child: Text(
+                    "NORMAL",
+                    style: TextStyle(color: Colors.grey[800]),
+                  ),
                   color: Colors.grey[300],
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 Spacer(),
                 RaisedButton(
-                  child: Text("PRIMARY", style: TextStyle(color: Colors.white),),
+                  child: Text(
+                    "PRIMARY",
+                    style: TextStyle(color: Colors.white),
+                  ),
                   color: Colors.blue[700],
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 Spacer(),
                 RaisedButton(
-                  child: Text("ACCENT", style: TextStyle(color: Colors.white),),
+                  child: Text(
+                    "ACCENT",
+                    style: TextStyle(color: Colors.white),
+                  ),
                   color: Colors.pink,
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 Spacer(),
               ],
@@ -48,21 +55,30 @@ class ButtonBasicRouteState extends State<ButtonBasicRoute> {
               children: <Widget>[
                 Spacer(),
                 FlatButton(
-                  child: Text("NORMAL", style: TextStyle(color: Colors.grey[800]),),
+                  child: Text(
+                    "NORMAL",
+                    style: TextStyle(color: Colors.grey[800]),
+                  ),
                   color: Colors.transparent,
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 Spacer(),
                 FlatButton(
-                  child: Text("PRIMARY", style: TextStyle(color: MyColors.primary),),
+                  child: Text(
+                    "PRIMARY",
+                    style: TextStyle(color: MyColors.primary),
+                  ),
                   color: Colors.transparent,
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 Spacer(),
                 FlatButton(
-                  child: Text("ACCENT", style: TextStyle(color: MyColors.accent),),
+                  child: Text(
+                    "ACCENT",
+                    style: TextStyle(color: MyColors.accent),
+                  ),
                   color: Colors.transparent,
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 Spacer(),
               ],
@@ -78,15 +94,21 @@ class ButtonBasicRouteState extends State<ButtonBasicRoute> {
                 ),
                 Spacer(),
                 RaisedButton(
-                  child: Text("PRIMARY", style: TextStyle(color: MyColors.primary),),
+                  child: Text(
+                    "PRIMARY",
+                    style: TextStyle(color: MyColors.primary),
+                  ),
                   color: Colors.white,
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 Spacer(),
                 RaisedButton(
-                  child: Text("ACCENT", style: TextStyle(color: MyColors.accent),),
+                  child: Text(
+                    "ACCENT",
+                    style: TextStyle(color: MyColors.accent),
+                  ),
                   color: Colors.white,
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 Spacer(),
               ],
@@ -96,17 +118,23 @@ class ButtonBasicRouteState extends State<ButtonBasicRoute> {
               children: <Widget>[
                 IconButton(
                   icon: Icon(Icons.phone_paused),
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
                 Spacer(),
                 IconButton(
-                  icon: Icon(Icons.people, color: MyColors.primary,),
-                  onPressed: (){},
+                  icon: Icon(
+                    Icons.people,
+                    color: MyColors.primary,
+                  ),
+                  onPressed: () {},
                 ),
                 Spacer(),
                 IconButton(
-                  icon: Icon(Icons.mic, color: MyColors.accent,),
-                  onPressed: (){},
+                  icon: Icon(
+                    Icons.mic,
+                    color: MyColors.accent,
+                  ),
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -117,24 +145,39 @@ class ButtonBasicRouteState extends State<ButtonBasicRoute> {
                   heroTag: "fab1",
                   backgroundColor: Colors.white,
                   elevation: 3,
-                  child: Icon(Icons.mic, color: Colors.black87,),
-                  onPressed: () { print('Clicked'); },
+                  child: Icon(
+                    Icons.mic,
+                    color: Colors.black87,
+                  ),
+                  onPressed: () {
+                    print('Clicked');
+                  },
                 ),
                 Spacer(),
                 FloatingActionButton(
                   heroTag: "fab2",
                   backgroundColor: MyColors.primary,
                   elevation: 3,
-                  child: Icon(Icons.add, color: Colors.white,),
-                  onPressed: () { print('Clicked'); },
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    print('Clicked');
+                  },
                 ),
                 Spacer(),
                 FloatingActionButton(
                   heroTag: "fab3",
                   backgroundColor: MyColors.accent,
                   elevation: 3,
-                  child: Icon(Icons.create, color: Colors.white,),
-                  onPressed: () { print('Clicked'); },
+                  child: Icon(
+                    Icons.create,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    print('Clicked');
+                  },
                 ),
               ],
             ),
@@ -144,4 +187,3 @@ class ButtonBasicRouteState extends State<ButtonBasicRoute> {
     );
   }
 }
-

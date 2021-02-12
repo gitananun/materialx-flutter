@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class AboutAppSimpleBlueRoute extends StatefulWidget {
-
   AboutAppSimpleBlueRoute();
 
   @override
   AboutAppSimpleBlueRouteState createState() => new AboutAppSimpleBlueRouteState();
 }
 
-
 class AboutAppSimpleBlueRouteState extends State<AboutAppSimpleBlueRoute> {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -26,15 +21,16 @@ class AboutAppSimpleBlueRouteState extends State<AboutAppSimpleBlueRoute> {
           title: Text("About", style: TextStyle(color: Colors.white)),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {Navigator.pop(context);},
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.search, color: Colors.white),
               onPressed: () {},
             )
-          ]
-      ),
+          ]),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -44,7 +40,8 @@ class AboutAppSimpleBlueRouteState extends State<AboutAppSimpleBlueRoute> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text("MaterialX App", style: MyText.display1(context).copyWith(color: Colors.white, fontWeight: FontWeight.w300)),
+            Text("MaterialX App",
+                style: MyText.display1(context).copyWith(color: Colors.white, fontWeight: FontWeight.w300)),
             Container(height: 5),
             Container(width: 120, height: 3, color: Colors.white),
             Container(height: 15),
@@ -63,4 +60,3 @@ class AboutAppSimpleBlueRouteState extends State<AboutAppSimpleBlueRoute> {
     );
   }
 }
-

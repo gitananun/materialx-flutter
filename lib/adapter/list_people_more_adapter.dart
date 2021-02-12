@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
-import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/model/people.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
 import 'package:toast/toast.dart';
@@ -49,7 +48,7 @@ class ItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         onItemClick(object);
       },
       child: Padding(
@@ -64,8 +63,7 @@ class ItemTile extends StatelessWidget {
                   backgroundImage: AssetImage(object.image),
                 ),
                 width: 45,
-                height: 45
-            ),
+                height: 45),
             Container(width: 15),
             Expanded(
               child: Text(
@@ -76,18 +74,21 @@ class ItemTile extends StatelessWidget {
             PopupMenuButton<String>(
               offset: Offset(0, 40),
               icon: Icon(Icons.more_vert, color: MyColors.grey_40),
-              onSelected: (String value){
+              onSelected: (String value) {
                 showToastClicked(context, value);
               },
               itemBuilder: (context) => [
                 PopupMenuItem(
-                  value: "Preview item "+index.toString(), child: Text("Preview"),
+                  value: "Preview item " + index.toString(),
+                  child: Text("Preview"),
                 ),
                 PopupMenuItem(
-                  value: "Share item "+index.toString(), child: Text("Share"),
+                  value: "Share item " + index.toString(),
+                  child: Text("Share"),
                 ),
                 PopupMenuItem(
-                  value: "Get link item "+index.toString(), child: Text("Get link"),
+                  value: "Get link item " + index.toString(),
+                  child: Text("Get link"),
                 ),
               ],
             ),
@@ -98,9 +99,8 @@ class ItemTile extends StatelessWidget {
     );
   }
 
-  static void showToastClicked(BuildContext context, String action){
+  static void showToastClicked(BuildContext context, String action) {
     print(action);
-    Toast.show(action+" clicked", context);
+    Toast.show(action + " clicked", context);
   }
-
 }

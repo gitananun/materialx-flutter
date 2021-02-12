@@ -5,16 +5,13 @@ import 'package:materialx_flutter/widget/my_text.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
 
 class PickerDateDarkRoute extends StatefulWidget {
-
   PickerDateDarkRoute();
 
   @override
   PickerDateDarkRouteState createState() => new PickerDateDarkRouteState();
 }
 
-
 class PickerDateDarkRouteState extends State<PickerDateDarkRoute> {
-
   Future<DateTime> selectedDate;
   String date = "-";
 
@@ -30,7 +27,10 @@ class PickerDateDarkRouteState extends State<PickerDateDarkRoute> {
             width: double.infinity,
             height: 45,
             color: Colors.grey[300],
-            child: Text(date, style: MyText.title(context),),
+            child: Text(
+              date,
+              style: MyText.title(context),
+            ),
           ),
           Align(
             child: FlatButton(
@@ -38,7 +38,7 @@ class PickerDateDarkRouteState extends State<PickerDateDarkRoute> {
               child: Text("PICK DATE", style: TextStyle(color: Colors.white)),
               padding: EdgeInsets.symmetric(horizontal: 30),
               color: MyColors.accent,
-              onPressed: (){
+              onPressed: () {
                 showDialogPicker(context);
               },
             ),
@@ -49,9 +49,7 @@ class PickerDateDarkRouteState extends State<PickerDateDarkRoute> {
     );
   }
 
-
-
-  void showDialogPicker(BuildContext context){
+  void showDialogPicker(BuildContext context) {
     selectedDate = showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -66,7 +64,7 @@ class PickerDateDarkRouteState extends State<PickerDateDarkRoute> {
     );
     selectedDate.then((value) {
       setState(() {
-        if(value == null) return;
+        if (value == null) return;
         date = Tools.getFormattedDateSimple(value.millisecondsSinceEpoch);
       });
     }, onError: (error) {
@@ -74,4 +72,3 @@ class PickerDateDarkRouteState extends State<PickerDateDarkRoute> {
     });
   }
 }
-

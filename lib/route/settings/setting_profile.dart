@@ -4,7 +4,6 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class SettingProfileRoute extends StatefulWidget {
   SettingProfileRoute();
@@ -24,7 +23,8 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
           return <Widget>[
             SliverAppBar(
               expandedHeight: 180.0,
-              floating: false, pinned: true,
+              floating: false,
+              pinned: true,
               backgroundColor: MyColors.primary,
               flexibleSpace: FlexibleSpaceBar(),
               bottom: PreferredSize(
@@ -34,8 +34,7 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                     constraints: BoxConstraints.expand(height: 50),
                     child: Text("Evans Collins", style: MyText.headline(context).copyWith(color: Colors.white)),
                   ),
-                  preferredSize: Size.fromHeight(50)
-              ),
+                  preferredSize: Size.fromHeight(50)),
               leading: IconButton(
                 icon: Icon(Icons.arrow_back),
                 onPressed: () {
@@ -44,7 +43,7 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
               ),
               actions: <Widget>[
                 PopupMenuButton<String>(
-                  onSelected: (String value){},
+                  onSelected: (String value) {},
                   itemBuilder: (context) => [
                     PopupMenuItem(
                       value: "Settings",
@@ -61,7 +60,9 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
             children: <Widget>[
               Card(
                 margin: EdgeInsets.all(0),
-                shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(0),),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0),
+                ),
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 elevation: 1,
                 child: Column(
@@ -72,7 +73,9 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text("Info", style: MyText.subhead(context).copyWith(color: MyColors.primaryDark, fontWeight: FontWeight.bold)),
+                          Text("Info",
+                              style: MyText.subhead(context)
+                                  .copyWith(color: MyColors.primaryDark, fontWeight: FontWeight.bold)),
                         ],
                       ),
                     ),
@@ -80,7 +83,7 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                     InkWell(
                       highlightColor: Colors.grey.withOpacity(0.1),
                       splashColor: Colors.grey.withOpacity(0.1),
-                      onTap: () => (){},
+                      onTap: () => () {},
                       child: Container(
                           width: double.infinity,
                           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
@@ -90,14 +93,13 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                               Text("+61883762938", style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
                               Text("Phone", style: MyText.body1(context).copyWith(color: MyColors.grey_40)),
                             ],
-                          )
-                      ),
+                          )),
                     ),
                     Divider(height: 0),
                     InkWell(
                       highlightColor: Colors.grey.withOpacity(0.1),
                       splashColor: Colors.grey.withOpacity(0.1),
-                      onTap: () => (){},
+                      onTap: () => () {},
                       child: Container(
                           width: double.infinity,
                           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
@@ -107,25 +109,24 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                               Text("evanscollins", style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
                               Text("Username", style: MyText.body1(context).copyWith(color: MyColors.grey_40)),
                             ],
-                          )
-                      ),
+                          )),
                     ),
                     Divider(height: 0),
                     InkWell(
                       highlightColor: Colors.grey.withOpacity(0.1),
                       splashColor: Colors.grey.withOpacity(0.1),
-                      onTap: () => (){},
+                      onTap: () => () {},
                       child: Container(
                           width: double.infinity,
                           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text("UI and UX designer", style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
+                              Text("UI and UX designer",
+                                  style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
                               Text("Bio", style: MyText.body1(context).copyWith(color: MyColors.grey_40)),
                             ],
-                          )
-                      ),
+                          )),
                     ),
                   ],
                 ),
@@ -133,7 +134,9 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
               Container(height: 10),
               Card(
                 margin: EdgeInsets.all(0),
-                shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(0),),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0),
+                ),
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 elevation: 1,
                 child: Column(
@@ -144,7 +147,9 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text("Settings", style: MyText.subhead(context).copyWith(color: MyColors.primaryDark, fontWeight: FontWeight.bold)),
+                          Text("Settings",
+                              style: MyText.subhead(context)
+                                  .copyWith(color: MyColors.primaryDark, fontWeight: FontWeight.bold)),
                         ],
                       ),
                     ),
@@ -152,40 +157,43 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                     InkWell(
                       highlightColor: Colors.grey.withOpacity(0.1),
                       splashColor: Colors.grey.withOpacity(0.1),
-                      onTap: () => (){},
-                      child: Container(
-                          width: double.infinity,
-                          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                          child: Text("Notification and Sound", style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
-                      ),
-                    ),
-                    Divider(height: 0),
-                    InkWell(
-                      highlightColor: Colors.grey.withOpacity(0.1),
-                      splashColor: Colors.grey.withOpacity(0.1),
-                      onTap: () => (){},
+                      onTap: () => () {},
                       child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                        child: Text("Privacy and Security", style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
+                        child: Text("Notification and Sound",
+                            style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
                       ),
                     ),
                     Divider(height: 0),
                     InkWell(
                       highlightColor: Colors.grey.withOpacity(0.1),
                       splashColor: Colors.grey.withOpacity(0.1),
-                      onTap: () => (){},
+                      onTap: () => () {},
                       child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                        child: Text("Data and Storage", style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
+                        child: Text("Privacy and Security",
+                            style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
                       ),
                     ),
                     Divider(height: 0),
                     InkWell(
                       highlightColor: Colors.grey.withOpacity(0.1),
                       splashColor: Colors.grey.withOpacity(0.1),
-                      onTap: () => (){},
+                      onTap: () => () {},
+                      child: Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                        child:
+                            Text("Data and Storage", style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
+                      ),
+                    ),
+                    Divider(height: 0),
+                    InkWell(
+                      highlightColor: Colors.grey.withOpacity(0.1),
+                      splashColor: Colors.grey.withOpacity(0.1),
+                      onTap: () => () {},
                       child: Container(
                           width: double.infinity,
                           padding: EdgeInsets.symmetric(horizontal: 15),
@@ -195,19 +203,22 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                               Spacer(),
                               Switch(
                                 value: isSwitched1,
-                                onChanged: (value) {setState(() { isSwitched1 = value; });},
+                                onChanged: (value) {
+                                  setState(() {
+                                    isSwitched1 = value;
+                                  });
+                                },
                                 activeColor: MyColors.primary,
                                 inactiveThumbColor: Colors.grey,
                               )
                             ],
-                          )
-                      ),
+                          )),
                     ),
                     Divider(height: 0),
                     InkWell(
                       highlightColor: Colors.grey.withOpacity(0.1),
                       splashColor: Colors.grey.withOpacity(0.1),
-                      onTap: () => (){},
+                      onTap: () => () {},
                       child: Container(
                           width: double.infinity,
                           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
@@ -217,14 +228,13 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                               Spacer(),
                               Text("Default", style: MyText.subhead(context).copyWith(color: MyColors.primary)),
                             ],
-                          )
-                      ),
+                          )),
                     ),
                     Divider(height: 0),
                     InkWell(
                       highlightColor: Colors.grey.withOpacity(0.1),
                       splashColor: Colors.grey.withOpacity(0.1),
-                      onTap: () => (){},
+                      onTap: () => () {},
                       child: Container(
                           width: double.infinity,
                           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
@@ -234,8 +244,7 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                               Spacer(),
                               Text("English", style: MyText.subhead(context).copyWith(color: MyColors.primary)),
                             ],
-                          )
-                      ),
+                          )),
                     ),
                   ],
                 ),
@@ -243,7 +252,9 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
               Container(height: 10),
               Card(
                 margin: EdgeInsets.all(0),
-                shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(0),),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0),
+                ),
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 elevation: 1,
                 child: Column(
@@ -254,7 +265,9 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text("Support", style: MyText.subhead(context).copyWith(color: MyColors.primaryDark, fontWeight: FontWeight.bold)),
+                          Text("Support",
+                              style: MyText.subhead(context)
+                                  .copyWith(color: MyColors.primaryDark, fontWeight: FontWeight.bold)),
                         ],
                       ),
                     ),
@@ -262,7 +275,7 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                     InkWell(
                       highlightColor: Colors.grey.withOpacity(0.1),
                       splashColor: Colors.grey.withOpacity(0.1),
-                      onTap: () => (){},
+                      onTap: () => () {},
                       child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
@@ -273,7 +286,7 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                     InkWell(
                       highlightColor: Colors.grey.withOpacity(0.1),
                       splashColor: Colors.grey.withOpacity(0.1),
-                      onTap: () => (){},
+                      onTap: () => () {},
                       child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
@@ -284,7 +297,7 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
                     InkWell(
                       highlightColor: Colors.grey.withOpacity(0.1),
                       splashColor: Colors.grey.withOpacity(0.1),
-                      onTap: () => (){},
+                      onTap: () => () {},
                       child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
@@ -304,4 +317,3 @@ class SettingProfileRouteState extends State<SettingProfileRoute> {
     );
   }
 }
-

@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/utils/tools.dart';
-import 'package:materialx_flutter/widget/my_text.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
 
-class PickerDateLightRoute extends StatefulWidget {
+import 'package:materialx_flutter/widget/my_text.dart';
 
+class PickerDateLightRoute extends StatefulWidget {
   PickerDateLightRoute();
 
   @override
   PickerDateLightRouteState createState() => new PickerDateLightRouteState();
 }
 
-
 class PickerDateLightRouteState extends State<PickerDateLightRoute> {
-
   Future<DateTime> selectedDate;
   String date = "-";
 
@@ -30,7 +28,10 @@ class PickerDateLightRouteState extends State<PickerDateLightRoute> {
             width: double.infinity,
             height: 45,
             color: Colors.grey[300],
-            child: Text(date, style: MyText.title(context),),
+            child: Text(
+              date,
+              style: MyText.title(context),
+            ),
           ),
           Align(
             child: FlatButton(
@@ -38,7 +39,7 @@ class PickerDateLightRouteState extends State<PickerDateLightRoute> {
               child: Text("PICK DATE", style: TextStyle(color: Colors.white)),
               padding: EdgeInsets.symmetric(horizontal: 30),
               color: MyColors.accent,
-              onPressed: (){
+              onPressed: () {
                 showDialogPicker(context);
               },
             ),
@@ -49,9 +50,7 @@ class PickerDateLightRouteState extends State<PickerDateLightRoute> {
     );
   }
 
-
-
-  void showDialogPicker(BuildContext context){
+  void showDialogPicker(BuildContext context) {
     selectedDate = showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -66,7 +65,7 @@ class PickerDateLightRouteState extends State<PickerDateLightRoute> {
     );
     selectedDate.then((value) {
       setState(() {
-        if(value == null) return;
+        if (value == null) return;
         date = Tools.getFormattedDateSimple(value.millisecondsSinceEpoch);
       });
     }, onError: (error) {
@@ -74,4 +73,3 @@ class PickerDateLightRouteState extends State<PickerDateLightRoute> {
     });
   }
 }
-

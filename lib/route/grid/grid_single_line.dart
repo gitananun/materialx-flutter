@@ -15,8 +15,8 @@ class GridSingleLineRouteState extends State<GridSingleLineRoute> {
 
   void onItemClick(int index, String obj) {
     Scaffold.of(_scaffoldCtx).showSnackBar(SnackBar(
-        content: Text("Item " + index.toString() + " clicked"),
-        duration: Duration(seconds: 1),
+      content: Text("Item " + index.toString() + " clicked"),
+      duration: Duration(seconds: 1),
     ));
   }
 

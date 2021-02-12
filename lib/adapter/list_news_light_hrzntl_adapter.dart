@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
-import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/model/news.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
 
@@ -44,9 +43,12 @@ class ItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){ onItemClick(object); },
+      onTap: () {
+        onItemClick(object);
+      },
       child: Container(
-        height: 110, width: double.infinity,
+        height: 110,
+        width: double.infinity,
         padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
         child: Column(
           children: <Widget>[
@@ -54,20 +56,26 @@ class ItemTile extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   Card(
-                      margin: EdgeInsets.all(0), elevation: 0,
-                      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(8),),
+                      margin: EdgeInsets.all(0),
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                      child: Image.asset(Img.get(object.image), height: 100, width: 100, fit: BoxFit.cover)
-                  ),
+                      child: Image.asset(Img.get(object.image), height: 100, width: 100, fit: BoxFit.cover)),
                   Container(width: 10),
                   Expanded(
                     child: Column(
                       children: <Widget>[
-                        Text(object.title, maxLines:3, style: MyText.subhead(context).copyWith(color: MyColors.grey_80, fontWeight: FontWeight.w500)),
+                        Text(object.title,
+                            maxLines: 3,
+                            style:
+                                MyText.subhead(context).copyWith(color: MyColors.grey_80, fontWeight: FontWeight.w500)),
                         Spacer(),
                         Row(
                           children: <Widget>[
-                            Text(object.subtitle.toUpperCase(), style: MyText.caption(context).copyWith(color: MyColors.grey_40)),
+                            Text(object.subtitle.toUpperCase(),
+                                style: MyText.caption(context).copyWith(color: MyColors.grey_40)),
                             Spacer(),
                             Text(object.date, style: MyText.caption(context).copyWith(color: MyColors.grey_40)),
                           ],

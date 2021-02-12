@@ -1,11 +1,8 @@
-import 'dart:io';
-
 import 'package:materialx_flutter/model/notif.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class SQLiteDb {
-
   static SQLiteDb _sqLiteDb;
   static Database _database;
 
@@ -18,15 +15,15 @@ class SQLiteDb {
     return _sqLiteDb;
   }
 
-  Future<Database> init() async{
+  Future<Database> init() async {
     return openDatabase(
       join(await getDatabasesPath(), 'materialx_flutter.db'),
       onCreate: (db, version) {
         return db.execute(
           "CREATE TABLE notification("
-              "id INTEGER PRIMARY KEY, title TEXT, content TEXT, type TEXT, "
-              "image TEXT, link TEXT, createdAt INTEGER, isRead INTEGER"
-              ")",
+          "id INTEGER PRIMARY KEY, title TEXT, content TEXT, type TEXT, "
+          "image TEXT, link TEXT, createdAt INTEGER, isRead INTEGER"
+          ")",
         );
       },
       version: 1,
@@ -44,7 +41,9 @@ class SQLiteDb {
     Database db = await this.database;
     Map<String, dynamic> map = obj.toJson();
     map["isRead"] = obj.isRead ? 1 : 0;
-    return await db.insert('notification', map,
+    return await db.insert(
+      'notification',
+      map,
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
   }
@@ -53,7 +52,9 @@ class SQLiteDb {
     Database db = await this.database;
     Map<String, dynamic> map = obj.toJson();
     map["isRead"] = obj.isRead ? 1 : 0;
-    return await db.update('notification', map,
+    return await db.update(
+      'notification',
+      map,
       where: "id = ?",
       whereArgs: [obj.id],
     );
@@ -61,7 +62,8 @@ class SQLiteDb {
 
   Future<int> deleteNotification(int id) async {
     Database db = await this.database;
-    return await db.delete('notification',
+    return await db.delete(
+      'notification',
       where: "id = ?",
       whereArgs: [id],
     );
@@ -69,7 +71,8 @@ class SQLiteDb {
 
   Future<int> deleteAll() async {
     Database db = await this.database;
-    return await db.delete('notification',
+    return await db.delete(
+      'notification',
       where: "id > ?",
       whereArgs: [0],
     );
@@ -89,5 +92,4 @@ class SQLiteDb {
       return obj;
     });
   }
-
 }

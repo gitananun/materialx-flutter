@@ -3,19 +3,15 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class ArticleBigHeaderRoute extends StatefulWidget {
-
   ArticleBigHeaderRoute();
 
   @override
   ArticleBigHeaderRouteState createState() => new ArticleBigHeaderRouteState();
 }
 
-
 class ArticleBigHeaderRouteState extends State<ArticleBigHeaderRoute> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,13 +24,14 @@ class ArticleBigHeaderRouteState extends State<ArticleBigHeaderRoute> {
               floating: false,
               pinned: false,
               flexibleSpace: FlexibleSpaceBar(
-                  centerTitle: true,
-                  background: Stack(
-                    children: <Widget>[
-                      Image.asset(Img.get('image_27.jpg'),fit: BoxFit.fitWidth, height: double.infinity, width: double.infinity),
-                      Container(height: double.infinity, width: double.infinity, color: Colors.black.withOpacity(0.2)),
-                    ],
-                  ),
+                centerTitle: true,
+                background: Stack(
+                  children: <Widget>[
+                    Image.asset(Img.get('image_27.jpg'),
+                        fit: BoxFit.fitWidth, height: double.infinity, width: double.infinity),
+                    Container(height: double.infinity, width: double.infinity, color: Colors.black.withOpacity(0.2)),
+                  ],
+                ),
               ),
               bottom: PreferredSize(
                   child: Container(
@@ -42,9 +39,8 @@ class ArticleBigHeaderRouteState extends State<ArticleBigHeaderRoute> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Fusce dictum tristique elit nec iaculis".toUpperCase(), style: MyText.display1(context).copyWith(
-                            color: Colors.white, fontWeight: FontWeight.bold
-                        )),
+                        Text("Fusce dictum tristique elit nec iaculis".toUpperCase(),
+                            style: MyText.display1(context).copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
                         Container(height: 15),
                         Container(
                           padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -54,8 +50,7 @@ class ArticleBigHeaderRouteState extends State<ArticleBigHeaderRoute> {
                       ],
                     ),
                   ),
-                  preferredSize: Size.fromHeight(200)
-              ),
+                  preferredSize: Size.fromHeight(200)),
               leading: IconButton(
                 icon: const Icon(Icons.arrow_back),
                 onPressed: () {
@@ -66,9 +61,9 @@ class ArticleBigHeaderRouteState extends State<ArticleBigHeaderRoute> {
                 IconButton(
                   icon: const Icon(Icons.search),
                   onPressed: () {},
-                ),// overflow menu
+                ), // overflow menu
                 PopupMenuButton<String>(
-                  onSelected: (String value){},
+                  onSelected: (String value) {},
                   itemBuilder: (context) => [
                     PopupMenuItem(
                       value: "Settings",
@@ -87,13 +82,16 @@ class ArticleBigHeaderRouteState extends State<ArticleBigHeaderRoute> {
               children: <Widget>[
                 Container(
                   padding: EdgeInsets.all(15),
-                  child: Text(MyStrings.long_lorem_ipsum, textAlign: TextAlign.justify, style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
+                  child: Text(MyStrings.long_lorem_ipsum,
+                      textAlign: TextAlign.justify, style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
                 ),
-                Image.asset(Img.get('image_15.jpg'),fit: BoxFit.fitWidth, height: 200, width: double.infinity),
-                Text("Image source : pexels.com", textAlign: TextAlign.justify, style: MyText.caption(context).copyWith(color: MyColors.grey_80)),
+                Image.asset(Img.get('image_15.jpg'), fit: BoxFit.fitWidth, height: 200, width: double.infinity),
+                Text("Image source : pexels.com",
+                    textAlign: TextAlign.justify, style: MyText.caption(context).copyWith(color: MyColors.grey_80)),
                 Container(
                   padding: EdgeInsets.all(15),
-                  child: Text(MyStrings.long_lorem_ipsum, textAlign: TextAlign.justify, style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
+                  child: Text(MyStrings.long_lorem_ipsum,
+                      textAlign: TextAlign.justify, style: MyText.medium(context).copyWith(color: MyColors.grey_80)),
                 ),
                 Divider(height: 0, color: MyColors.grey_10),
                 Row(
@@ -101,19 +99,19 @@ class ArticleBigHeaderRouteState extends State<ArticleBigHeaderRoute> {
                   children: <Widget>[
                     IconButton(
                       icon: Icon(Icons.comment, color: MyColors.grey_60),
-                      onPressed: (){},
+                      onPressed: () {},
                     ),
                     IconButton(
                       icon: Icon(Icons.bookmark_border, color: MyColors.grey_60),
-                      onPressed: (){},
+                      onPressed: () {},
                     ),
                     IconButton(
                       icon: Icon(Icons.volume_up, color: MyColors.grey_60),
-                      onPressed: (){},
+                      onPressed: () {},
                     ),
                     IconButton(
                       icon: Icon(Icons.visibility, color: MyColors.grey_60),
-                      onPressed: (){},
+                      onPressed: () {},
                     )
                   ],
                 ),
@@ -125,4 +123,3 @@ class ArticleBigHeaderRouteState extends State<ArticleBigHeaderRoute> {
     );
   }
 }
-

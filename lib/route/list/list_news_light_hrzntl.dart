@@ -5,11 +5,10 @@ import 'package:materialx_flutter/data/dummy.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/model/news.dart';
 import 'package:materialx_flutter/model/people.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
+
 import 'package:toast/toast.dart';
 
 class ListNewsLightHrzntlRoute extends StatefulWidget {
-
   ListNewsLightHrzntlRoute();
 
   @override
@@ -48,13 +47,11 @@ class ListNewsLightHrzntlRouteState extends State<ListNewsLightHrzntlRoute> {
                 IconButton(
                   icon: Icon(Icons.more_vert, color: MyColors.grey_60),
                   onPressed: () {},
-                ),// overflow menu
-              ]
-          ),
+                ), // overflow menu
+              ]),
           ListNewsLightHrzntlAdapter(items, onItemClick).getView()
         ],
       ),
     );
   }
 }
-

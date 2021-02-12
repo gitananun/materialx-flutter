@@ -2,13 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
-import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
-import 'package:toast/toast.dart';
 
 class DialogAddPostRoute extends StatefulWidget {
-
   DialogAddPostRoute();
 
   @override
@@ -22,39 +19,37 @@ class DialogAddPostRouteState extends State<DialogAddPostRoute> {
       backgroundColor: Colors.white,
       appBar: CommonAppBar.getPrimarySettingAppbar(context, "Add Post"),
       body: Container(
-          alignment: Alignment.center,
-          child: Text("Click button to add new post", style: MyText.headline(context).copyWith(
-              color: MyColors.grey_20, fontWeight: FontWeight.bold
-          )),
+        alignment: Alignment.center,
+        child: Text("Click button to add new post",
+            style: MyText.headline(context).copyWith(color: MyColors.grey_20, fontWeight: FontWeight.bold)),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.create),
         onPressed: () {
-          showDialog(context: context,builder: (_) => AddPostDialog() );
+          showDialog(context: context, builder: (_) => AddPostDialog());
         },
       ),
     );
   }
 }
 
-
 class AddPostDialog extends StatefulWidget {
-
   AddPostDialog({Key key}) : super(key: key);
 
   @override
   AddPostDialogState createState() => new AddPostDialogState();
 }
 
-class AddPostDialogState extends State<AddPostDialog>{
-
+class AddPostDialogState extends State<AddPostDialog> {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.all(20),
       child: Card(
-        shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(4),),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
         color: Colors.white,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Column(
@@ -63,7 +58,8 @@ class AddPostDialogState extends State<AddPostDialog>{
               padding: EdgeInsets.fromLTRB(15, 15, 15, 0),
               child: Row(
                 children: <Widget>[
-                  CircleAvatar(radius: 20,
+                  CircleAvatar(
+                    radius: 20,
                     backgroundImage: AssetImage(Img.get("photo_male_8.jpg")),
                   ),
                   Container(width: 15),
@@ -71,12 +67,15 @@ class AddPostDialogState extends State<AddPostDialog>{
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("David Park", style: MyText.subhead(context).copyWith(color: MyColors.grey_90, fontWeight: FontWeight.bold)),
+                        Text("David Park",
+                            style:
+                                MyText.subhead(context).copyWith(color: MyColors.grey_90, fontWeight: FontWeight.bold)),
                         Container(height: 2),
                         Row(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            Icon(Icons.public, color: MyColors.primary, size: 15), Container(width : 2),
+                            Icon(Icons.public, color: MyColors.primary, size: 15),
+                            Container(width: 2),
                             Text("Public", style: MyText.subhead(context).copyWith(color: MyColors.primary)),
                           ],
                         )
@@ -86,11 +85,10 @@ class AddPostDialogState extends State<AddPostDialog>{
                   ButtonTheme(
                     minWidth: 10,
                     child: FlatButton(
-                      child: Text("POST", style: MyText.subhead(context).copyWith(
-                          color: Colors.black, fontWeight: FontWeight.w500
-                      )),
+                      child: Text("POST",
+                          style: MyText.subhead(context).copyWith(color: Colors.black, fontWeight: FontWeight.w500)),
                       color: Colors.grey[300],
-                      onPressed: (){},
+                      onPressed: () {},
                     ),
                   )
                 ],

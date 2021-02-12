@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/img.dart';
-import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/circle_image.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class TimelineSimpleRoute extends StatefulWidget {
-
   TimelineSimpleRoute();
 
   @override
   TimelineSimpleRouteState createState() => new TimelineSimpleRouteState();
 }
 
-
 class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -35,14 +30,18 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
               icon: const Icon(Icons.search),
               onPressed: () {},
             ),
-          ]
-      ),
+          ]),
       floatingActionButton: FloatingActionButton(
         heroTag: "fab3",
         backgroundColor: Colors.green[700],
         elevation: 3,
-        child: Icon(Icons.create, color: Colors.white,),
-        onPressed: () { print('Clicked'); },
+        child: Icon(
+          Icons.create,
+          color: Colors.white,
+        ),
+        onPressed: () {
+          print('Clicked');
+        },
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -61,7 +60,8 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                         Row(
                           children: <Widget>[
                             CircleImage(
-                              imageProvider: AssetImage(Img.get('photo_female_1.jpg')), size: 35,
+                              imageProvider: AssetImage(Img.get('photo_female_1.jpg')),
+                              size: 35,
                             ),
                             Container(width: 10),
                             Column(
@@ -69,15 +69,14 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    Text("Taylor W ", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                    )),
-                                    Text("posted a", style: MyText.caption(context).copyWith(color: Colors.grey[500]
-                                    )),
+                                    Text("Taylor W ",
+                                        style: MyText.caption(context)
+                                            .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                    Text("posted a", style: MyText.caption(context).copyWith(color: Colors.grey[500])),
                                     Container(width: 3),
-                                    Text("Note", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                    ))
+                                    Text("Note",
+                                        style: MyText.caption(context)
+                                            .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold))
                                   ],
                                 ),
                                 Container(height: 5),
@@ -87,7 +86,8 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                           ],
                         ),
                         Container(height: 10),
-                        Text(MyStrings.middle_lorem_ipsum, style: MyText.caption(context).copyWith(color: Colors.grey[600]))
+                        Text(MyStrings.middle_lorem_ipsum,
+                            style: MyText.caption(context).copyWith(color: Colors.grey[600]))
                       ],
                     ),
                   ),
@@ -109,7 +109,8 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                         Row(
                           children: <Widget>[
                             CircleImage(
-                              imageProvider: AssetImage(Img.get('photo_male_8.jpg')), size: 35,
+                              imageProvider: AssetImage(Img.get('photo_male_8.jpg')),
+                              size: 35,
                             ),
                             Container(width: 10),
                             Column(
@@ -117,56 +118,11 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    Text("C. Northrop ", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                    )),
-                                    Text("is now following you ", style: MyText.caption(context).copyWith(
-                                        color: Colors.grey[500]
-                                    )),
-                                  ],
-                                ),
-                                Container(height: 5),
-                                Text("22 minutes ago", style: TextStyle(fontSize: 10, color: Colors.grey[400])),
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(width: 5),
-              ],
-            ),
-            Divider(),
-            Row(
-              children: <Widget>[
-                Container(width: 5),
-                Expanded(
-                  child:
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            CircleImage(
-                              imageProvider: AssetImage(Img.get('photo_male_2.jpg')), size: 35,
-                            ),
-                            Container(width: 10),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Text("Nathaniel ", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                    )),
-                                    Text("is now following you ", style: MyText.caption(context).copyWith(
-                                        color: Colors.grey[500]
-                                    )),
+                                    Text("C. Northrop ",
+                                        style: MyText.caption(context)
+                                            .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                    Text("is now following you ",
+                                        style: MyText.caption(context).copyWith(color: Colors.grey[500])),
                                   ],
                                 ),
                                 Container(height: 5),
@@ -196,7 +152,8 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                         Row(
                           children: <Widget>[
                             CircleImage(
-                              imageProvider: AssetImage(Img.get('photo_female_1.jpg')), size: 35,
+                              imageProvider: AssetImage(Img.get('photo_male_2.jpg')),
+                              size: 35,
                             ),
                             Container(width: 10),
                             Column(
@@ -204,15 +161,57 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    Text("Taylor W ", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                    )),
-                                    Text("posted a", style: MyText.caption(context).copyWith(color: Colors.grey[500]
-                                    )),
+                                    Text("Nathaniel ",
+                                        style: MyText.caption(context)
+                                            .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                    Text("is now following you ",
+                                        style: MyText.caption(context).copyWith(color: Colors.grey[500])),
+                                  ],
+                                ),
+                                Container(height: 5),
+                                Text("22 minutes ago", style: TextStyle(fontSize: 10, color: Colors.grey[400])),
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(width: 5),
+              ],
+            ),
+            Divider(),
+            Row(
+              children: <Widget>[
+                Container(width: 5),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            CircleImage(
+                              imageProvider: AssetImage(Img.get('photo_female_1.jpg')),
+                              size: 35,
+                            ),
+                            Container(width: 10),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Row(
+                                  children: <Widget>[
+                                    Text("Taylor W ",
+                                        style: MyText.caption(context)
+                                            .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                    Text("posted a", style: MyText.caption(context).copyWith(color: Colors.grey[500])),
                                     Container(width: 3),
-                                    Text("Photo", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                    ))
+                                    Text("Photo",
+                                        style: MyText.caption(context)
+                                            .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold))
                                   ],
                                 ),
                                 Container(height: 5),
@@ -222,8 +221,11 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                           ],
                         ),
                         Container(height: 10),
-                        Image.asset(Img.get('image_2.jpg'),
-                          height: 140, width: double.infinity, fit: BoxFit.cover,
+                        Image.asset(
+                          Img.get('image_2.jpg'),
+                          height: 140,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
                         )
                       ],
                     ),
@@ -246,7 +248,8 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                         Row(
                           children: <Widget>[
                             CircleImage(
-                              imageProvider: AssetImage(Img.get('photo_female_6.jpg')), size: 35,
+                              imageProvider: AssetImage(Img.get('photo_female_6.jpg')),
+                              size: 35,
                             ),
                             Container(width: 10),
                             Column(
@@ -254,15 +257,13 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    Text("Lillie Hoyos ", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                    )),
-                                    Text("in ", style: MyText.caption(context).copyWith(
-                                        color: Colors.grey[500]
-                                    )),
-                                    Text("Bangkok, Thailand", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                    )),
+                                    Text("Lillie Hoyos ",
+                                        style: MyText.caption(context)
+                                            .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                    Text("in ", style: MyText.caption(context).copyWith(color: Colors.grey[500])),
+                                    Text("Bangkok, Thailand",
+                                        style: MyText.caption(context)
+                                            .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
                                   ],
                                 ),
                                 Container(height: 5),
@@ -292,7 +293,8 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                         Row(
                           children: <Widget>[
                             CircleImage(
-                              imageProvider: AssetImage(Img.get('photo_male_7.jpg')), size: 35,
+                              imageProvider: AssetImage(Img.get('photo_male_7.jpg')),
+                              size: 35,
                             ),
                             Container(width: 10),
                             Column(
@@ -300,16 +302,14 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    Text("Homer J. Allen ", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                    )),
-                                    Text("posted a", style: MyText.caption(context).copyWith(
-                                        color: Colors.grey[500]
-                                    )),
+                                    Text("Homer J. Allen ",
+                                        style: MyText.caption(context)
+                                            .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                    Text("posted a", style: MyText.caption(context).copyWith(color: Colors.grey[500])),
                                     Container(width: 3),
-                                    Text("Note", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                    ))
+                                    Text("Note",
+                                        style: MyText.caption(context)
+                                            .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold))
                                   ],
                                 ),
                                 Container(height: 5),
@@ -341,7 +341,8 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                         Row(
                           children: <Widget>[
                             CircleImage(
-                              imageProvider: AssetImage(Img.get('photo_female_6.jpg')), size: 35,
+                              imageProvider: AssetImage(Img.get('photo_female_6.jpg')),
+                              size: 35,
                             ),
                             Container(width: 10),
                             Column(
@@ -349,15 +350,13 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    Text("Lillie Hoyos ", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                    )),
-                                    Text("in ", style: MyText.caption(context).copyWith(
-                                        color: Colors.grey[500]
-                                    )),
-                                    Text("Jiangsu, China", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                    )),
+                                    Text("Lillie Hoyos ",
+                                        style: MyText.caption(context)
+                                            .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                    Text("in ", style: MyText.caption(context).copyWith(color: Colors.grey[500])),
+                                    Text("Jiangsu, China",
+                                        style: MyText.caption(context)
+                                            .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
                                   ],
                                 ),
                                 Container(height: 5),
@@ -378,6 +377,4 @@ class TimelineSimpleRouteState extends State<TimelineSimpleRoute> {
       ),
     );
   }
-
 }
-

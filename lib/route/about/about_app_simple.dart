@@ -3,19 +3,15 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class AboutAppSimpleRoute extends StatefulWidget {
-
   AboutAppSimpleRoute();
 
   @override
   AboutAppSimpleRouteState createState() => new AboutAppSimpleRouteState();
 }
 
-
 class AboutAppSimpleRouteState extends State<AboutAppSimpleRoute> {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -26,15 +22,16 @@ class AboutAppSimpleRouteState extends State<AboutAppSimpleRoute> {
           title: Text("About", style: TextStyle(color: MyColors.grey_80)),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: MyColors.grey_80),
-            onPressed: () {Navigator.pop(context);},
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.search, color: MyColors.grey_80),
               onPressed: () {},
             )
-          ]
-      ),
+          ]),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -44,7 +41,8 @@ class AboutAppSimpleRouteState extends State<AboutAppSimpleRoute> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text("MaterialX App", style: MyText.display1(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.w300)),
+            Text("MaterialX App",
+                style: MyText.display1(context).copyWith(color: MyColors.grey_60, fontWeight: FontWeight.w300)),
             Container(height: 5),
             Container(width: 120, height: 3, color: MyColors.primary),
             Container(height: 15),
@@ -63,4 +61,3 @@ class AboutAppSimpleRouteState extends State<AboutAppSimpleRoute> {
     );
   }
 }
-

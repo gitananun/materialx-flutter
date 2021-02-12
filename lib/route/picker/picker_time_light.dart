@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
-import 'package:materialx_flutter/utils/tools.dart';
-import 'package:materialx_flutter/widget/my_text.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
+import 'package:materialx_flutter/widget/my_text.dart';
 
 class PickerTimeLightRoute extends StatefulWidget {
-
   PickerTimeLightRoute();
 
   @override
   PickerTimeLightRouteState createState() => new PickerTimeLightRouteState();
 }
 
-
 class PickerTimeLightRouteState extends State<PickerTimeLightRoute> {
-
   Future<TimeOfDay> selectedTime;
   String time = "-";
 
@@ -30,7 +26,10 @@ class PickerTimeLightRouteState extends State<PickerTimeLightRoute> {
             width: double.infinity,
             height: 45,
             color: Colors.grey[300],
-            child: Text(time, style: MyText.title(context),),
+            child: Text(
+              time,
+              style: MyText.title(context),
+            ),
           ),
           Align(
             child: FlatButton(
@@ -38,7 +37,7 @@ class PickerTimeLightRouteState extends State<PickerTimeLightRoute> {
               child: Text("PICK TIME", style: TextStyle(color: Colors.white)),
               padding: EdgeInsets.symmetric(horizontal: 30),
               color: MyColors.accent,
-              onPressed: (){
+              onPressed: () {
                 showDialogPicker(context);
               },
             ),
@@ -49,9 +48,7 @@ class PickerTimeLightRouteState extends State<PickerTimeLightRoute> {
     );
   }
 
-
-
-  void showDialogPicker(BuildContext context){
+  void showDialogPicker(BuildContext context) {
     selectedTime = showTimePicker(
       context: context,
       initialTime: TimeOfDay.now(),
@@ -64,7 +61,7 @@ class PickerTimeLightRouteState extends State<PickerTimeLightRoute> {
     );
     selectedTime.then((value) {
       setState(() {
-        if(value == null) return;
+        if (value == null) return;
         time = value.hour.toString() + " : " + value.minute.toString();
       });
     }, onError: (error) {
@@ -72,4 +69,3 @@ class PickerTimeLightRouteState extends State<PickerTimeLightRoute> {
     });
   }
 }
-

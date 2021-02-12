@@ -2,19 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class PlayerMusicAlbumSimpleRoute extends StatefulWidget {
-
   PlayerMusicAlbumSimpleRoute();
 
   @override
   PlayerMusicAlbumSimpleRouteState createState() => new PlayerMusicAlbumSimpleRouteState();
 }
 
-
 class PlayerMusicAlbumSimpleRouteState extends State<PlayerMusicAlbumSimpleRoute> {
-
   double value1 = 0.3;
   void setValue1(double value) => setState(() => value1 = value);
 
@@ -27,32 +23,39 @@ class PlayerMusicAlbumSimpleRouteState extends State<PlayerMusicAlbumSimpleRoute
         children: <Widget>[
           Column(
             children: <Widget>[
-              AppBar(elevation: 0, backgroundColor: Colors.transparent,
+              AppBar(
+                  elevation: 0,
+                  backgroundColor: Colors.transparent,
                   centerTitle: true,
                   title: Text("NOW PLAYING", style: MyText.title(context).copyWith(color: Colors.white)),
                   leading: IconButton(
                     icon: Icon(Icons.menu, color: MyColors.primary),
-                    onPressed: () { Navigator.pop(context);},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                   ),
                   actions: <Widget>[
                     IconButton(
                       icon: Icon(Icons.settings, color: MyColors.primary),
                       onPressed: () {},
                     ),
-                  ]
-              ),
+                  ]),
               Spacer(),
-              CircleAvatar(radius: 126,
+              CircleAvatar(
+                radius: 126,
                 backgroundColor: MyColors.grey_20,
-                child: CircleAvatar(radius: 123,
+                child: CircleAvatar(
+                  radius: 123,
                   backgroundColor: Colors.white,
-                  child: CircleAvatar(radius: 120,
+                  child: CircleAvatar(
+                    radius: 120,
                     backgroundImage: AssetImage(Img.get("photo_singer_male.jpg")),
                   ),
                 ),
               ),
               Container(height: 20),
-              Text("Locking Up Your Symptoms", style: MyText.title(context).copyWith(color: MyColors.primaryLight, fontWeight: FontWeight.w400)),
+              Text("Locking Up Your Symptoms",
+                  style: MyText.title(context).copyWith(color: MyColors.primaryLight, fontWeight: FontWeight.w400)),
               Container(height: 5),
               Text("Who He Should Be", style: MyText.subhead(context).copyWith(color: MyColors.grey_40)),
               Container(height: 20),
@@ -63,7 +66,7 @@ class PlayerMusicAlbumSimpleRouteState extends State<PlayerMusicAlbumSimpleRoute
                     Spacer(),
                     IconButton(
                       icon: Icon(Icons.skip_previous, color: MyColors.grey_40),
-                      onPressed: (){},
+                      onPressed: () {},
                     ),
                     Container(width: 20),
                     FloatingActionButton(
@@ -71,12 +74,12 @@ class PlayerMusicAlbumSimpleRouteState extends State<PlayerMusicAlbumSimpleRoute
                       mini: false,
                       elevation: 2,
                       backgroundColor: MyColors.primary,
-                      onPressed: (){},
+                      onPressed: () {},
                     ),
                     Container(width: 20),
                     IconButton(
                       icon: Icon(Icons.skip_next, color: MyColors.grey_40),
-                      onPressed: (){},
+                      onPressed: () {},
                     ),
                     Spacer()
                   ],
@@ -89,6 +92,4 @@ class PlayerMusicAlbumSimpleRouteState extends State<PlayerMusicAlbumSimpleRoute
       ),
     );
   }
-
 }
-

@@ -5,16 +5,13 @@ import 'package:materialx_flutter/model/people.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
 
 class SnacktoastLiftFabRoute extends StatefulWidget {
-
   SnacktoastLiftFabRoute();
 
   @override
   SnacktoastLiftFabRouteState createState() => new SnacktoastLiftFabRouteState();
 }
 
-
 class SnacktoastLiftFabRouteState extends State<SnacktoastLiftFabRoute> {
-
   BuildContext _scaffoldCtx;
 
   void onItemClick(int index, People obj) {
@@ -26,7 +23,6 @@ class SnacktoastLiftFabRouteState extends State<SnacktoastLiftFabRoute> {
 
   @override
   Widget build(BuildContext context) {
-
     List<People> items = Dummy.getPeopleData();
     items.addAll(Dummy.getPeopleData());
     items.addAll(Dummy.getPeopleData());
@@ -48,11 +44,9 @@ class SnacktoastLiftFabRouteState extends State<SnacktoastLiftFabRoute> {
         return ListSectionedAdapter(items, onItemClick).getView();
       }),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: () {},
         child: Icon(Icons.add),
       ),
     );
   }
-
 }
-

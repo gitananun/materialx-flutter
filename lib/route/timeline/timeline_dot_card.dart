@@ -4,19 +4,15 @@ import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/circle_image.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class TimelineDotCardRoute extends StatefulWidget {
-
   TimelineDotCardRoute();
 
   @override
   TimelineDotCardRouteState createState() => new TimelineDotCardRouteState();
 }
 
-
 class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -35,8 +31,7 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
               icon: const Icon(Icons.search),
               onPressed: () {},
             ),
-          ]
-      ),
+          ]),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -52,19 +47,21 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                     children: <Widget>[
                       Container(width: 1, color: Colors.grey[300], height: 115),
                       Container(
-                        margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
-                        child: CircleAvatar(
-                          radius: 4,
-                          backgroundColor: Colors.lightGreen[400],
-                        )
-                      )
+                          margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                          child: CircleAvatar(
+                            radius: 4,
+                            backgroundColor: Colors.lightGreen[400],
+                          ))
                     ],
                   ),
                 ),
                 Expanded(
                   child: Card(
-                    shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(2),),
-                    clipBehavior: Clip.antiAliasWithSaveLayer, elevation: 1,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    elevation: 1,
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Column(
@@ -74,7 +71,8 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           Row(
                             children: <Widget>[
                               CircleImage(
-                                imageProvider: AssetImage(Img.get('photo_female_1.jpg')), size: 35,
+                                imageProvider: AssetImage(Img.get('photo_female_1.jpg')),
+                                size: 35,
                               ),
                               Container(width: 10),
                               Column(
@@ -82,15 +80,15 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      Text("Taylor W ", style: MyText.caption(context).copyWith(
-                                        color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                      )),
-                                      Text("posted a", style: MyText.caption(context).copyWith(color: Colors.grey[500]
-                                      )),
+                                      Text("Taylor W ",
+                                          style: MyText.caption(context)
+                                              .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                      Text("posted a",
+                                          style: MyText.caption(context).copyWith(color: Colors.grey[500])),
                                       Container(width: 3),
-                                      Text("Note", style: MyText.caption(context).copyWith(
-                                          color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                      ))
+                                      Text("Note",
+                                          style: MyText.caption(context)
+                                              .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold))
                                     ],
                                   ),
                                   Container(height: 5),
@@ -100,7 +98,8 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                             ],
                           ),
                           Container(height: 10),
-                          Text(MyStrings.middle_lorem_ipsum, style: MyText.caption(context).copyWith(color: Colors.grey[600]))
+                          Text(MyStrings.middle_lorem_ipsum,
+                              style: MyText.caption(context).copyWith(color: Colors.grey[600]))
                         ],
                       ),
                     ),
@@ -124,15 +123,17 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           child: CircleAvatar(
                             radius: 4,
                             backgroundColor: Colors.lightBlue[400],
-                          )
-                      )
+                          ))
                     ],
                   ),
                 ),
                 Expanded(
                   child: Card(
-                    shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(2),),
-                    clipBehavior: Clip.antiAliasWithSaveLayer, elevation: 1,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    elevation: 1,
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Column(
@@ -142,7 +143,8 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           Row(
                             children: <Widget>[
                               CircleImage(
-                                imageProvider: AssetImage(Img.get('photo_male_8.jpg')), size: 35,
+                                imageProvider: AssetImage(Img.get('photo_male_8.jpg')),
+                                size: 35,
                               ),
                               Container(width: 10),
                               Column(
@@ -150,12 +152,11 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      Text("C. Northrop ", style: MyText.caption(context).copyWith(
-                                          color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                      )),
-                                      Text("is now following you ", style: MyText.caption(context).copyWith(
-                                          color: Colors.grey[500]
-                                      )),
+                                      Text("C. Northrop ",
+                                          style: MyText.caption(context)
+                                              .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                      Text("is now following you ",
+                                          style: MyText.caption(context).copyWith(color: Colors.grey[500])),
                                     ],
                                   ),
                                   Container(height: 5),
@@ -187,15 +188,17 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           child: CircleAvatar(
                             radius: 4,
                             backgroundColor: Colors.lightBlue[400],
-                          )
-                      )
+                          ))
                     ],
                   ),
                 ),
                 Expanded(
                   child: Card(
-                    shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(2),),
-                    clipBehavior: Clip.antiAliasWithSaveLayer, elevation: 1,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    elevation: 1,
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Column(
@@ -205,7 +208,8 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           Row(
                             children: <Widget>[
                               CircleImage(
-                                imageProvider: AssetImage(Img.get('photo_male_2.jpg')), size: 35,
+                                imageProvider: AssetImage(Img.get('photo_male_2.jpg')),
+                                size: 35,
                               ),
                               Container(width: 10),
                               Column(
@@ -213,12 +217,11 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      Text("Nathaniel ", style: MyText.caption(context).copyWith(
-                                          color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                      )),
-                                      Text("is now following you ", style: MyText.caption(context).copyWith(
-                                          color: Colors.grey[500]
-                                      )),
+                                      Text("Nathaniel ",
+                                          style: MyText.caption(context)
+                                              .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                      Text("is now following you ",
+                                          style: MyText.caption(context).copyWith(color: Colors.grey[500])),
                                     ],
                                   ),
                                   Container(height: 5),
@@ -250,15 +253,17 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           child: CircleAvatar(
                             radius: 4,
                             backgroundColor: Colors.red[400],
-                          )
-                      )
+                          ))
                     ],
                   ),
                 ),
                 Expanded(
                   child: Card(
-                    shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(2),),
-                    clipBehavior: Clip.antiAliasWithSaveLayer, elevation: 1,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    elevation: 1,
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Column(
@@ -268,7 +273,8 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           Row(
                             children: <Widget>[
                               CircleImage(
-                                imageProvider: AssetImage(Img.get('photo_female_1.jpg')), size: 35,
+                                imageProvider: AssetImage(Img.get('photo_female_1.jpg')),
+                                size: 35,
                               ),
                               Container(width: 10),
                               Column(
@@ -276,15 +282,15 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      Text("Taylor W ", style: MyText.caption(context).copyWith(
-                                          color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                      )),
-                                      Text("posted a", style: MyText.caption(context).copyWith(color: Colors.grey[500]
-                                      )),
+                                      Text("Taylor W ",
+                                          style: MyText.caption(context)
+                                              .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                      Text("posted a",
+                                          style: MyText.caption(context).copyWith(color: Colors.grey[500])),
                                       Container(width: 3),
-                                      Text("Photo", style: MyText.caption(context).copyWith(
-                                          color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                      ))
+                                      Text("Photo",
+                                          style: MyText.caption(context)
+                                              .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold))
                                     ],
                                   ),
                                   Container(height: 5),
@@ -294,8 +300,11 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                             ],
                           ),
                           Container(height: 10),
-                          Image.asset(Img.get('image_2.jpg'),
-                            height: 140, width: double.infinity, fit: BoxFit.cover,
+                          Image.asset(
+                            Img.get('image_2.jpg'),
+                            height: 140,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
                           )
                         ],
                       ),
@@ -320,15 +329,17 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           child: CircleAvatar(
                             radius: 4,
                             backgroundColor: Colors.amber[500],
-                          )
-                      )
+                          ))
                     ],
                   ),
                 ),
                 Expanded(
                   child: Card(
-                    shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(2),),
-                    clipBehavior: Clip.antiAliasWithSaveLayer, elevation: 1,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    elevation: 1,
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Column(
@@ -338,7 +349,8 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           Row(
                             children: <Widget>[
                               CircleImage(
-                                imageProvider: AssetImage(Img.get('photo_female_6.jpg')), size: 35,
+                                imageProvider: AssetImage(Img.get('photo_female_6.jpg')),
+                                size: 35,
                               ),
                               Container(width: 10),
                               Column(
@@ -346,15 +358,13 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      Text("Lillie Hoyos ", style: MyText.caption(context).copyWith(
-                                          color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                      )),
-                                      Text("in ", style: MyText.caption(context).copyWith(
-                                          color: Colors.grey[500]
-                                      )),
-                                      Text("Bangkok, Thailand", style: MyText.caption(context).copyWith(
-                                          color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                      )),
+                                      Text("Lillie Hoyos ",
+                                          style: MyText.caption(context)
+                                              .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                      Text("in ", style: MyText.caption(context).copyWith(color: Colors.grey[500])),
+                                      Text("Bangkok, Thailand",
+                                          style: MyText.caption(context)
+                                              .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
                                     ],
                                   ),
                                   Container(height: 5),
@@ -386,15 +396,17 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           child: CircleAvatar(
                             radius: 4,
                             backgroundColor: Colors.lightGreen[400],
-                          )
-                      )
+                          ))
                     ],
                   ),
                 ),
                 Expanded(
                   child: Card(
-                    shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(2),),
-                    clipBehavior: Clip.antiAliasWithSaveLayer, elevation: 1,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    elevation: 1,
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Column(
@@ -404,7 +416,8 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           Row(
                             children: <Widget>[
                               CircleImage(
-                                imageProvider: AssetImage(Img.get('photo_male_7.jpg')), size: 35,
+                                imageProvider: AssetImage(Img.get('photo_male_7.jpg')),
+                                size: 35,
                               ),
                               Container(width: 10),
                               Column(
@@ -412,16 +425,15 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      Text("Homer J. Allen ", style: MyText.caption(context).copyWith(
-                                          color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                      )),
-                                      Text("posted a", style: MyText.caption(context).copyWith(
-                                          color: Colors.grey[500]
-                                      )),
+                                      Text("Homer J. Allen ",
+                                          style: MyText.caption(context)
+                                              .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                      Text("posted a",
+                                          style: MyText.caption(context).copyWith(color: Colors.grey[500])),
                                       Container(width: 3),
-                                      Text("Note", style: MyText.caption(context).copyWith(
-                                          color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                      ))
+                                      Text("Note",
+                                          style: MyText.caption(context)
+                                              .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold))
                                     ],
                                   ),
                                   Container(height: 5),
@@ -455,15 +467,17 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           child: CircleAvatar(
                             radius: 4,
                             backgroundColor: Colors.amber[500],
-                          )
-                      )
+                          ))
                     ],
                   ),
                 ),
                 Expanded(
                   child: Card(
-                    shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(2),),
-                    clipBehavior: Clip.antiAliasWithSaveLayer, elevation: 1,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    elevation: 1,
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Column(
@@ -473,7 +487,8 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                           Row(
                             children: <Widget>[
                               CircleImage(
-                                imageProvider: AssetImage(Img.get('photo_female_6.jpg')), size: 35,
+                                imageProvider: AssetImage(Img.get('photo_female_6.jpg')),
+                                size: 35,
                               ),
                               Container(width: 10),
                               Column(
@@ -481,15 +496,13 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
                                 children: <Widget>[
                                   Row(
                                     children: <Widget>[
-                                      Text("Lillie Hoyos ", style: MyText.caption(context).copyWith(
-                                          color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                      )),
-                                      Text("in ", style: MyText.caption(context).copyWith(
-                                          color: Colors.grey[500]
-                                      )),
-                                      Text("Jiangsu, China", style: MyText.caption(context).copyWith(
-                                          color: Colors.lightBlue[400], fontWeight: FontWeight.bold
-                                      )),
+                                      Text("Lillie Hoyos ",
+                                          style: MyText.caption(context)
+                                              .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
+                                      Text("in ", style: MyText.caption(context).copyWith(color: Colors.grey[500])),
+                                      Text("Jiangsu, China",
+                                          style: MyText.caption(context)
+                                              .copyWith(color: Colors.lightBlue[400], fontWeight: FontWeight.bold)),
                                     ],
                                   ),
                                   Container(height: 5),
@@ -511,6 +524,4 @@ class TimelineDotCardRouteState extends State<TimelineDotCardRoute> {
       ),
     );
   }
-
 }
-

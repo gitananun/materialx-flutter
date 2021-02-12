@@ -3,26 +3,23 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/included/include_drawer_content.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
+
 import 'package:toast/toast.dart';
 
 class MenuDrawerWhiteProgressRoute extends StatefulWidget {
-
   MenuDrawerWhiteProgressRoute();
 
   @override
   MenuDrawerWhiteProgressRouteState createState() => new MenuDrawerWhiteProgressRouteState();
 }
 
-
 class MenuDrawerWhiteProgressRouteState extends State<MenuDrawerWhiteProgressRoute> {
-
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   BuildContext context;
 
-  void onDrawerItemClicked(String name){
+  void onDrawerItemClicked(String name) {
     Navigator.pop(context);
-    Toast.show(name+" Selected", context);
+    Toast.show(name + " Selected", context);
   }
 
   @override
@@ -36,7 +33,7 @@ class MenuDrawerWhiteProgressRouteState extends State<MenuDrawerWhiteProgressRou
   @override
   Widget build(BuildContext context) {
     this.context = context;
-    Widget widget =  Scaffold(
+    Widget widget = Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -44,15 +41,18 @@ class MenuDrawerWhiteProgressRouteState extends State<MenuDrawerWhiteProgressRou
           backgroundColor: Colors.white,
           leading: IconButton(
             icon: Icon(Icons.menu, color: MyColors.grey_60),
-            onPressed: () { scaffoldKey.currentState.openDrawer(); },
+            onPressed: () {
+              scaffoldKey.currentState.openDrawer();
+            },
           ),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.close, color: MyColors.grey_60),
-              onPressed: () { Navigator.pop(context); },
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-          ]
-      ),
+          ]),
       drawer: Container(
         width: 230,
         child: Drawer(
@@ -61,8 +61,11 @@ class MenuDrawerWhiteProgressRouteState extends State<MenuDrawerWhiteProgressRou
               children: <Widget>[
                 Stack(
                   children: <Widget>[
-                    Image.asset(Img.get('image_30.jpg'),
-                      width: double.infinity, height: 90, fit: BoxFit.cover,
+                    Image.asset(
+                      Img.get('image_30.jpg'),
+                      width: double.infinity,
+                      height: 90,
+                      fit: BoxFit.cover,
                     ),
                     Container(
                       height: 200,
@@ -79,16 +82,17 @@ class MenuDrawerWhiteProgressRouteState extends State<MenuDrawerWhiteProgressRou
                             ),
                           ),
                           Container(height: 7),
-                          Text("Betty L", style: MyText.body2(context).copyWith(
-                              color: Colors.blueGrey[800], fontWeight: FontWeight.w500
-                          )),
+                          Text("Betty L",
+                              style: MyText.body2(context)
+                                  .copyWith(color: Colors.blueGrey[800], fontWeight: FontWeight.w500)),
                           Container(height: 2),
-                          Text("betty.l@mail.com", style: MyText.caption(context).copyWith(
-                              color: MyColors.grey_20, fontWeight: FontWeight.w500
-                          )),
+                          Text("betty.l@mail.com",
+                              style: MyText.caption(context)
+                                  .copyWith(color: MyColors.grey_20, fontWeight: FontWeight.w500)),
                           Container(height: 10),
                           Container(
-                            height: 4, width: 90,
+                            height: 4,
+                            width: 90,
                             child: LinearProgressIndicator(
                               value: 0.40,
                               valueColor: AlwaysStoppedAnimation<Color>(MyColors.accent),
@@ -101,38 +105,62 @@ class MenuDrawerWhiteProgressRouteState extends State<MenuDrawerWhiteProgressRou
                   ],
                 ),
                 Container(height: 8),
-                InkWell(onTap: (){},
-                  child: Container(height: 40, padding: EdgeInsets.symmetric(horizontal: 30), alignment: Alignment.centerLeft,
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 40,
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    alignment: Alignment.centerLeft,
                     child: Text("My Post", style: MyText.body2(context).copyWith(color: MyColors.grey_80)),
                   ),
                 ),
                 Container(height: 5),
-                InkWell(onTap: (){},
-                  child: Container(height: 40, padding: EdgeInsets.symmetric(horizontal: 30), alignment: Alignment.centerLeft,
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 40,
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    alignment: Alignment.centerLeft,
                     child: Text("Reports", style: MyText.body2(context).copyWith(color: MyColors.grey_80)),
                   ),
                 ),
                 Container(height: 5),
-                InkWell(onTap: (){},
-                  child: Container(height: 40, padding: EdgeInsets.symmetric(horizontal: 30), alignment: Alignment.centerLeft,
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 40,
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    alignment: Alignment.centerLeft,
                     child: Text("Message", style: MyText.body2(context).copyWith(color: MyColors.grey_80)),
                   ),
                 ),
                 Container(height: 5),
-                InkWell(onTap: (){},
-                  child: Container(height: 40, padding: EdgeInsets.symmetric(horizontal: 30), alignment: Alignment.centerLeft,
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 40,
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    alignment: Alignment.centerLeft,
                     child: Text("Profile", style: MyText.body2(context).copyWith(color: MyColors.grey_80)),
                   ),
                 ),
                 Container(height: 5),
-                InkWell(onTap: (){},
-                  child: Container(height: 40, padding: EdgeInsets.symmetric(horizontal: 30), alignment: Alignment.centerLeft,
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 40,
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    alignment: Alignment.centerLeft,
                     child: Text("Notification", style: MyText.body2(context).copyWith(color: MyColors.grey_80)),
                   ),
                 ),
                 Container(height: 5),
-                InkWell(onTap: (){},
-                  child: Container(height: 40, padding: EdgeInsets.symmetric(horizontal: 30), alignment: Alignment.centerLeft,
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 40,
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    alignment: Alignment.centerLeft,
                     child: Text("Logout", style: MyText.body2(context).copyWith(color: MyColors.grey_80)),
                   ),
                 ),

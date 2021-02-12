@@ -3,33 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class VerificationImageRoute extends StatefulWidget {
-
   VerificationImageRoute();
 
   @override
   VerificationImageRouteState createState() => new VerificationImageRouteState();
 }
 
-
 class VerificationImageRouteState extends State<VerificationImageRoute> {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.black,
-      appBar: PreferredSize(
-          child: Container(),
-          preferredSize: Size.fromHeight(0)
-      ),
+      appBar: PreferredSize(child: Container(), preferredSize: Size.fromHeight(0)),
       body: Stack(
         children: <Widget>[
           Container(
             child: Image.asset(Img.get('image_25.jpg'), fit: BoxFit.cover),
-            width: double.infinity, height: double.infinity,
+            width: double.infinity,
+            height: double.infinity,
           ),
           Container(color: Colors.black.withOpacity(0.7)),
           Align(
@@ -40,13 +34,14 @@ class VerificationImageRouteState extends State<VerificationImageRoute> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Container(height:70),
+                  Container(height: 70),
                   Container(
                     child: Image.asset(
                       Img.get('logo_small.png'),
                       color: Colors.white,
                     ),
-                    width: 80, height: 80,
+                    width: 80,
+                    height: 80,
                   ),
                   Container(height: 5),
                   Text("Welcome to MaterialX", style: MyText.title(context).copyWith(color: MyColors.grey_10)),
@@ -54,8 +49,10 @@ class VerificationImageRouteState extends State<VerificationImageRoute> {
                   Spacer(),
                   Text("Enter Code", style: MyText.subhead(context).copyWith(color: MyColors.grey_20)),
                   TextField(
-                    style: TextStyle(color: Colors.white), textAlign: TextAlign.center,
-                    keyboardType: TextInputType.number, cursorColor: Colors.white,
+                    style: TextStyle(color: Colors.white),
+                    textAlign: TextAlign.center,
+                    keyboardType: TextInputType.number,
+                    cursorColor: Colors.white,
                     decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.white, width: 1),
@@ -67,32 +64,36 @@ class VerificationImageRouteState extends State<VerificationImageRoute> {
                   ),
                   Container(height: 15),
                   Text("We sent the confirmation code to your mobile. please check your inbox.",
-                      textAlign: TextAlign.center,
-                      style: MyText.subhead(context).copyWith(color: MyColors.grey_20)
-                  ),
+                      textAlign: TextAlign.center, style: MyText.subhead(context).copyWith(color: MyColors.grey_20)),
                   Container(height: 15),
                   FlatButton(
-                    child: Text("RESEND",
-                      style: TextStyle(color: Colors.white),),
+                    child: Text(
+                      "RESEND",
+                      style: TextStyle(color: Colors.white),
+                    ),
                     color: Colors.transparent,
                     onPressed: () {},
                   ),
                   Container(
                     width: 200,
                     child: FlatButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(18.0)
+                      shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(18.0)),
+                      child: Text(
+                        "CONTINUE",
+                        style: TextStyle(color: Colors.white),
                       ),
-                      child: Text("CONTINUE", style: TextStyle(color: Colors.white),),
                       color: Colors.amber,
-                      onPressed: (){},
+                      onPressed: () {},
                     ),
                   ),
                   Container(
-                    width: double.infinity, height: 20,
+                    width: double.infinity,
+                    height: 20,
                     child: FlatButton(
-                      child: Text("Already have an account? Sign In",
-                        style: TextStyle(color: Colors.white),),
+                      child: Text(
+                        "Already have an account? Sign In",
+                        style: TextStyle(color: Colors.white),
+                      ),
                       color: Colors.transparent,
                       onPressed: () {},
                     ),
@@ -104,12 +105,12 @@ class VerificationImageRouteState extends State<VerificationImageRoute> {
           ),
           IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () { Navigator.pop(context);},
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
         ],
       ),
     );
   }
-
 }
-

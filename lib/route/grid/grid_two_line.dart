@@ -3,7 +3,6 @@ import 'package:materialx_flutter/adapter/grid_single_line_adapter.dart';
 import 'package:materialx_flutter/adapter/grid_two_line_adapter.dart';
 import 'package:materialx_flutter/data/dummy.dart';
 import 'package:materialx_flutter/model/image_obj.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class GridTwoLineRoute extends StatefulWidget {
   GridTwoLineRoute();
@@ -17,8 +16,8 @@ class GridTwoLineRouteState extends State<GridTwoLineRoute> {
 
   void onItemClick(int index, ImageObj obj) {
     Scaffold.of(_scaffoldCtx).showSnackBar(SnackBar(
-        content: Text("Item " + index.toString() + " clicked"),
-        duration: Duration(seconds: 1),
+      content: Text("Item " + index.toString() + " clicked"),
+      duration: Duration(seconds: 1),
     ));
   }
 
@@ -48,9 +47,8 @@ class GridTwoLineRouteState extends State<GridTwoLineRoute> {
             IconButton(
               icon: Icon(Icons.more_vert, color: Colors.white),
               onPressed: () {},
-            ),// overflow menu
-          ]
-      ),
+            ), // overflow menu
+          ]),
       body: new Builder(builder: (BuildContext context) {
         _scaffoldCtx = context;
         return GridTwoLineAdapter(items, onItemClick).getView();

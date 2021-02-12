@@ -4,7 +4,6 @@ import 'package:materialx_flutter/data/dummy.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
 
 class GridBasicRoute extends StatefulWidget {
-
   GridBasicRoute();
 
   @override
@@ -12,14 +11,10 @@ class GridBasicRoute extends StatefulWidget {
 }
 
 class GridBasicRouteState extends State<GridBasicRoute> {
-
-  void onItemClick(int index, String obj) {
-
-  }
+  void onItemClick(int index, String obj) {}
 
   @override
   Widget build(BuildContext context) {
-
     List<String> items = Dummy.getNatureImages();
     items.addAll(Dummy.getNatureImages());
     items.addAll(Dummy.getNatureImages());
@@ -31,4 +26,3 @@ class GridBasicRouteState extends State<GridBasicRoute> {
     );
   }
 }
-

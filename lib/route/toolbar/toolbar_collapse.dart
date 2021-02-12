@@ -3,19 +3,15 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class ToolbarCollapseRoute extends StatefulWidget {
-
   ToolbarCollapseRoute();
 
   @override
   ToolbarCollapseRouteState createState() => new ToolbarCollapseRouteState();
 }
 
-
 class ToolbarCollapseRouteState extends State<ToolbarCollapseRoute> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,8 +23,8 @@ class ToolbarCollapseRouteState extends State<ToolbarCollapseRoute> {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-                  centerTitle: true,
-                  background: Image.asset(Img.get('image_9.jpg'),fit: BoxFit.cover),
+                centerTitle: true,
+                background: Image.asset(Img.get('image_9.jpg'), fit: BoxFit.cover),
               ),
               leading: IconButton(
                 icon: const Icon(Icons.menu),
@@ -40,9 +36,9 @@ class ToolbarCollapseRouteState extends State<ToolbarCollapseRoute> {
                 IconButton(
                   icon: const Icon(Icons.search),
                   onPressed: () {},
-                ),// overflow menu
+                ), // overflow menu
                 PopupMenuButton<String>(
-                  onSelected: (String value){},
+                  onSelected: (String value) {},
                   itemBuilder: (context) => [
                     PopupMenuItem(
                       value: "Settings",
@@ -63,24 +59,24 @@ class ToolbarCollapseRouteState extends State<ToolbarCollapseRoute> {
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
                   color: MyColors.primary,
-                  child: Text("Sport", style: TextStyle(color: Colors.white),),
+                  child: Text(
+                    "Sport",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
                 Container(height: 15),
-                Text(MyStrings.short_lorem_ipsum, style: MyText.headline(context).copyWith(
-                  color: Colors.grey[900], fontWeight: FontWeight.bold
-                )),
+                Text(MyStrings.short_lorem_ipsum,
+                    style: MyText.headline(context).copyWith(color: Colors.grey[900], fontWeight: FontWeight.bold)),
                 Container(height: 5),
                 Row(
                   children: <Widget>[
-                    Icon( Icons.event, size: 20.0, color: Colors.grey),
+                    Icon(Icons.event, size: 20.0, color: Colors.grey),
                     Container(width: 5),
-                    Text("16 Mar 2016", style: MyText.body1(context).copyWith(
-                        color: Colors.grey
-                    )),
+                    Text("16 Mar 2016", style: MyText.body1(context).copyWith(color: Colors.grey)),
                   ],
                 ),
                 Container(height: 20),
-                Text(MyStrings.very_long_lorem_ipsum,textAlign: TextAlign.justify)
+                Text(MyStrings.very_long_lorem_ipsum, textAlign: TextAlign.justify)
               ],
             ),
           ),
@@ -89,4 +85,3 @@ class ToolbarCollapseRouteState extends State<ToolbarCollapseRoute> {
     );
   }
 }
-

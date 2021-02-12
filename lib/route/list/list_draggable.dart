@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:materialx_flutter/adapter/list_basic_adapter.dart';
+import 'package:materialx_flutter/widget/toolbar.dart';
 import 'package:materialx_flutter/adapter/list_draggable_adapter.dart';
 import 'package:materialx_flutter/data/dummy.dart';
 import 'package:materialx_flutter/model/people.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
-import 'package:toast/toast.dart';
 
 class ListDraggableRoute extends StatefulWidget {
-
   ListDraggableRoute();
 
   @override
@@ -38,4 +35,3 @@ class ListDraggableRouteState extends State<ListDraggableRoute> {
     );
   }
 }
-

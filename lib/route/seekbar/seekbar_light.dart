@@ -3,16 +3,13 @@ import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
 
 class SeekbarBasicRoute extends StatefulWidget {
-
   SeekbarBasicRoute();
 
   @override
   SeekbarBasicRouteState createState() => new SeekbarBasicRouteState();
 }
 
-
 class SeekbarBasicRouteState extends State<SeekbarBasicRoute> {
-
   double value1 = 0.7, value2 = 0.3, value3 = 66, value4 = 25;
   void setValue1(double value) => setState(() => value1 = value);
   void setValue2(double value) => setState(() => value2 = value);
@@ -38,9 +35,11 @@ class SeekbarBasicRouteState extends State<SeekbarBasicRoute> {
                       activeTrackColor: MyColors.accent,
                       thumbShape: RoundSliderThumbShape(
                         enabledThumbRadius: 8,
-                      )
+                      )),
+                  child: Slider(
+                    value: value1,
+                    onChanged: setValue1,
                   ),
-                  child: Slider( value: value1, onChanged: setValue1,),
                 ),
                 SliderTheme(
                   data: SliderThemeData(
@@ -49,10 +48,8 @@ class SeekbarBasicRouteState extends State<SeekbarBasicRoute> {
                       activeTrackColor: MyColors.primary,
                       thumbShape: RoundSliderThumbShape(
                         enabledThumbRadius: 8,
-                      )
-                  ),
-                  child:
-                  Slider(value: value2, onChanged: setValue2),
+                      )),
+                  child: Slider(value: value2, onChanged: setValue2),
                 ),
                 SliderTheme(
                   data: SliderThemeData(
@@ -61,12 +58,13 @@ class SeekbarBasicRouteState extends State<SeekbarBasicRoute> {
                       activeTrackColor: MyColors.accent,
                       thumbShape: RoundSliderThumbShape(
                         enabledThumbRadius: 8,
-                      )
-                  ),
-                  child: Slider(value: value3,
+                      )),
+                  child: Slider(
+                    value: value3,
                     onChanged: setValue3,
                     divisions: 3,
-                    min: 0, max: 100,
+                    min: 0,
+                    max: 100,
                   ),
                 ),
                 SliderTheme(
@@ -76,12 +74,13 @@ class SeekbarBasicRouteState extends State<SeekbarBasicRoute> {
                       activeTrackColor: MyColors.primary,
                       thumbShape: RoundSliderThumbShape(
                         enabledThumbRadius: 8,
-                      )
-                  ),
-                  child: Slider(value: value4,
+                      )),
+                  child: Slider(
+                    value: value4,
                     onChanged: setValue4,
                     divisions: 4,
-                    min: 0, max: 100,
+                    min: 0,
+                    max: 100,
                   ),
                 ),
               ],
@@ -92,4 +91,3 @@ class SeekbarBasicRouteState extends State<SeekbarBasicRoute> {
     );
   }
 }
-

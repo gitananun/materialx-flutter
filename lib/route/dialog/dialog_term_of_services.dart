@@ -3,11 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
-import 'package:toast/toast.dart';
 
 class DialogTermOfServicesRoute extends StatefulWidget {
-
   DialogTermOfServicesRoute();
 
   @override
@@ -15,12 +12,11 @@ class DialogTermOfServicesRoute extends StatefulWidget {
 }
 
 class DialogTermOfServicesRouteState extends State<DialogTermOfServicesRoute> {
-
   @override
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 1), () {
-      showDialog(context: context,builder: (_) => GdprBasicDialog() );
+      showDialog(context: context, builder: (_) => GdprBasicDialog());
     });
   }
 
@@ -32,52 +28,53 @@ class DialogTermOfServicesRouteState extends State<DialogTermOfServicesRoute> {
           backgroundColor: Colors.white,
           brightness: Brightness.dark,
           iconTheme: IconThemeData(color: MyColors.grey_60),
-          title: Text("Term of Services", style: MyText.title(context).copyWith(
-              color: MyColors.grey_60
-          )),
-          leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
-            Navigator.pop(context);
-          }),
+          title: Text("Term of Services", style: MyText.title(context).copyWith(color: MyColors.grey_60)),
+          leading: IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Navigator.pop(context);
+              }),
           actions: <Widget>[
             PopupMenuButton<String>(
-              onSelected: (String value){},
+              onSelected: (String value) {},
               itemBuilder: (context) => [
-                PopupMenuItem(value: "Settings", child: Text("Settings"),),
+                PopupMenuItem(
+                  value: "Settings",
+                  child: Text("Settings"),
+                ),
               ],
             )
-          ]
-      ),
+          ]),
       body: Container(
           alignment: Alignment.center,
           child: FloatingActionButton.extended(
-            elevation: 0, backgroundColor: Colors.grey[200],
+            elevation: 0,
+            backgroundColor: Colors.grey[200],
             label: Text("SHOW DIALOG", style: TextStyle(color: Colors.grey[900])),
             onPressed: () {
-              showDialog(context: context,builder: (_) => GdprBasicDialog() );
+              showDialog(context: context, builder: (_) => GdprBasicDialog());
             },
-          )
-      ),
+          )),
     );
   }
 }
 
-
 class GdprBasicDialog extends StatefulWidget {
-
   GdprBasicDialog({Key key}) : super(key: key);
 
   @override
   GdprBasicDialogState createState() => new GdprBasicDialogState();
 }
 
-class GdprBasicDialogState extends State<GdprBasicDialog>{
-
+class GdprBasicDialogState extends State<GdprBasicDialog> {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(15),
       child: Card(
-        shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(4),),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
         color: Colors.white,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Column(
@@ -91,23 +88,24 @@ class GdprBasicDialogState extends State<GdprBasicDialog>{
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Term of Services", style: MyText.title(context).copyWith(
-                            color: Colors.teal[500], fontWeight: FontWeight.bold, fontFamily: "serif"
-                        )),
+                        Text("Term of Services",
+                            style: MyText.title(context)
+                                .copyWith(color: Colors.teal[500], fontWeight: FontWeight.bold, fontFamily: "serif")),
                         Container(height: 2),
-                        Text("last update January 2018", style: MyText.caption(context).copyWith(
-                            color: Colors.teal[200], fontFamily: "serif"
-                        )),
+                        Text("last update January 2018",
+                            style: MyText.caption(context).copyWith(color: Colors.teal[200], fontFamily: "serif")),
                       ],
                     ),
                   ),
                   IconButton(
                     icon: Icon(Icons.file_download, color: MyColors.grey_60),
-                    onPressed: () { },
+                    onPressed: () {},
                   ),
                   IconButton(
                     icon: Icon(Icons.close, color: MyColors.grey_60),
-                    onPressed: () { Navigator.pop(context); },
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                   )
                 ],
               ),
@@ -116,9 +114,9 @@ class GdprBasicDialogState extends State<GdprBasicDialog>{
             Expanded(
               child: SingleChildScrollView(
                 padding: EdgeInsets.all(15),
-                child: Text(MyStrings.very_long_lorem_ipsum, textAlign : TextAlign.justify, style: MyText.body1(context).copyWith(
-                    color: MyColors.grey_80, fontFamily: "serif"
-                )),
+                child: Text(MyStrings.very_long_lorem_ipsum,
+                    textAlign: TextAlign.justify,
+                    style: MyText.body1(context).copyWith(color: MyColors.grey_80, fontFamily: "serif")),
               ),
             ),
             Divider(height: 0, thickness: 0.5),
@@ -126,14 +124,20 @@ class GdprBasicDialogState extends State<GdprBasicDialog>{
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 new FlatButton(
-                  child: Text("DECLINE"), textColor: Colors.teal[500],
+                  child: Text("DECLINE"),
+                  textColor: Colors.teal[500],
                   color: Colors.transparent,
-                  onPressed: (){ Navigator.pop(context); },
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 ),
                 FlatButton(
-                  child: Text("ACCEPT"), textColor: Colors.teal[500],
+                  child: Text("ACCEPT"),
+                  textColor: Colors.teal[500],
                   color: Colors.transparent,
-                  onPressed: (){ Navigator.pop(context); },
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 )
               ],
             )

@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class FormProfileDataRoute extends StatefulWidget {
-
   FormProfileDataRoute();
 
   @override
   FormProfileDataRouteState createState() => new FormProfileDataRouteState();
 }
 
-
 class FormProfileDataRouteState extends State<FormProfileDataRoute> {
-
   TextStyle textStyle = TextStyle(color: Colors.pink[300], height: 1.4, fontSize: 16);
   TextStyle labelStyle = TextStyle(color: Colors.pink[300]);
   UnderlineInputBorder lineStyle1 = UnderlineInputBorder(borderSide: BorderSide(color: Colors.pink[300], width: 1));
@@ -20,7 +16,6 @@ class FormProfileDataRouteState extends State<FormProfileDataRoute> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -37,8 +32,7 @@ class FormProfileDataRouteState extends State<FormProfileDataRoute> {
               icon: Icon(Icons.done),
               onPressed: () {},
             ),
-          ]
-      ),
+          ]),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(15),
         scrollDirection: Axis.vertical,
@@ -49,26 +43,38 @@ class FormProfileDataRouteState extends State<FormProfileDataRoute> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 TextField(
-                  style: textStyle, keyboardType: TextInputType.text, cursorColor: Colors.pink[300],
+                  style: textStyle,
+                  keyboardType: TextInputType.text,
+                  cursorColor: Colors.pink[300],
                   decoration: InputDecoration(
-                    labelText: "Name", labelStyle: labelStyle,
-                    enabledBorder: lineStyle1, focusedBorder: lineStyle2,
+                    labelText: "Name",
+                    labelStyle: labelStyle,
+                    enabledBorder: lineStyle1,
+                    focusedBorder: lineStyle2,
                   ),
                 ),
                 Container(height: 10),
                 TextField(
-                  style: textStyle, keyboardType: TextInputType.text, cursorColor: Colors.pink[300],
+                  style: textStyle,
+                  keyboardType: TextInputType.text,
+                  cursorColor: Colors.pink[300],
                   decoration: InputDecoration(
-                    labelText: "Address", labelStyle: labelStyle,
-                    enabledBorder: lineStyle1, focusedBorder: lineStyle2,
+                    labelText: "Address",
+                    labelStyle: labelStyle,
+                    enabledBorder: lineStyle1,
+                    focusedBorder: lineStyle2,
                   ),
                 ),
                 Container(height: 10),
                 TextField(
-                  style: textStyle, keyboardType: TextInputType.text, cursorColor: Colors.pink[300],
+                  style: textStyle,
+                  keyboardType: TextInputType.text,
+                  cursorColor: Colors.pink[300],
                   decoration: InputDecoration(
-                    labelText: "City", labelStyle: labelStyle,
-                    enabledBorder: lineStyle1, focusedBorder: lineStyle2,
+                    labelText: "City",
+                    labelStyle: labelStyle,
+                    enabledBorder: lineStyle1,
+                    focusedBorder: lineStyle2,
                   ),
                 ),
                 Container(height: 10),
@@ -77,22 +83,29 @@ class FormProfileDataRouteState extends State<FormProfileDataRoute> {
                     Expanded(
                       flex: 1,
                       child: TextField(
-                        style: textStyle, keyboardType: TextInputType.text, cursorColor: Colors.pink[300],
+                        style: textStyle,
+                        keyboardType: TextInputType.text,
+                        cursorColor: Colors.pink[300],
                         decoration: InputDecoration(
-                          labelText: "State", labelStyle: labelStyle,
-                          enabledBorder: lineStyle1, focusedBorder: lineStyle2,
-                          suffixIcon: Icon(Icons.arrow_drop_down)
-                        ),
+                            labelText: "State",
+                            labelStyle: labelStyle,
+                            enabledBorder: lineStyle1,
+                            focusedBorder: lineStyle2,
+                            suffixIcon: Icon(Icons.arrow_drop_down)),
                       ),
                     ),
                     Container(width: 10),
                     Expanded(
                       flex: 2,
                       child: TextField(
-                        style: textStyle, keyboardType: TextInputType.text, cursorColor: Colors.pink[300],
+                        style: textStyle,
+                        keyboardType: TextInputType.text,
+                        cursorColor: Colors.pink[300],
                         decoration: InputDecoration(
-                          labelText: "Zip code*", labelStyle: labelStyle,
-                          enabledBorder: lineStyle1, focusedBorder: lineStyle2,
+                          labelText: "Zip code*",
+                          labelStyle: labelStyle,
+                          enabledBorder: lineStyle1,
+                          focusedBorder: lineStyle2,
                         ),
                       ),
                     )
@@ -100,10 +113,14 @@ class FormProfileDataRouteState extends State<FormProfileDataRoute> {
                 ),
                 Container(height: 10),
                 TextField(
-                  style: textStyle, keyboardType: TextInputType.text, cursorColor: Colors.pink[300],
+                  style: textStyle,
+                  keyboardType: TextInputType.text,
+                  cursorColor: Colors.pink[300],
                   decoration: InputDecoration(
-                    labelText: "Phone number", labelStyle: labelStyle,
-                    enabledBorder: lineStyle1, focusedBorder: lineStyle2,
+                    labelText: "Phone number",
+                    labelStyle: labelStyle,
+                    enabledBorder: lineStyle1,
+                    focusedBorder: lineStyle2,
                   ),
                 ),
                 Container(height: 25),
@@ -116,4 +133,3 @@ class FormProfileDataRouteState extends State<FormProfileDataRoute> {
     );
   }
 }
-

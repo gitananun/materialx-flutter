@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
-import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/model/news.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
 
@@ -44,36 +43,40 @@ class ItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){ onItemClick(object); },
+      onTap: () {
+        onItemClick(object);
+      },
       child: Container(
         padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
         child: Card(
-          margin: EdgeInsets.all(0), elevation: 2,
-          shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(4)),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: Column(
-            children: <Widget>[
-              Image.asset(Img.get(object.image), height: 150, width: double.infinity, fit: BoxFit.cover),
-              Container(
-                padding: EdgeInsets.all(15),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Row(
+            margin: EdgeInsets.all(0),
+            elevation: 2,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            child: Column(
+              children: <Widget>[
+                Image.asset(Img.get(object.image), height: 150, width: double.infinity, fit: BoxFit.cover),
+                Container(
+                    padding: EdgeInsets.all(15),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        Text(object.subtitle, style: MyText.body2(context).copyWith(color: MyColors.grey_40)),
-                        Spacer(),
-                        Text(object.date, style: MyText.body1(context).copyWith(color: MyColors.grey_40)),
+                        Row(
+                          children: <Widget>[
+                            Text(object.subtitle, style: MyText.body2(context).copyWith(color: MyColors.grey_40)),
+                            Spacer(),
+                            Text(object.date, style: MyText.body1(context).copyWith(color: MyColors.grey_40)),
+                          ],
+                        ),
+                        Container(height: 10),
+                        Text(object.title,
+                            style:
+                                MyText.medium(context).copyWith(color: MyColors.grey_80, fontWeight: FontWeight.w500)),
+                        Container(height: 10),
                       ],
-                    ),
-                    Container(height: 10),
-                    Text(object.title, style: MyText.medium(context).copyWith(color: MyColors.grey_80, fontWeight: FontWeight.w500)),
-                    Container(height: 10),
-                  ],
-              )),
-            ],
-          )
-        ),
+                    )),
+              ],
+            )),
       ),
     );
   }

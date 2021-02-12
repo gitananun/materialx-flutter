@@ -5,13 +5,11 @@ import 'package:materialx_flutter/widget/circle_image.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
 
 class CardTimelineRoute extends StatefulWidget {
-
   CardTimelineRoute();
 
   @override
   CardTimelineRouteState createState() => new CardTimelineRouteState();
 }
-
 
 class CardTimelineRouteState extends State<CardTimelineRoute> {
   @override
@@ -25,7 +23,9 @@ class CardTimelineRouteState extends State<CardTimelineRoute> {
         child: Column(
           children: <Widget>[
             Card(
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(4),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4),
+              ),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,30 +45,32 @@ class CardTimelineRouteState extends State<CardTimelineRoute> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text("Bsilico Eat", style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 18, color: Colors.grey[900]
-                                )),
+                                Text("Bsilico Eat",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w500, fontSize: 18, color: Colors.grey[900])),
                                 Container(height: 5),
-                                Text("June 1, 2015", style: TextStyle(
-                                    fontSize: 16, color: Colors.grey[500]
-                                ),),
+                                Text(
+                                  "June 1, 2015",
+                                  style: TextStyle(fontSize: 16, color: Colors.grey[500]),
+                                ),
                               ],
                             )
                           ],
                         ),
                         Container(height: 10),
                         Container(
-                          child: Text(MyStrings.middle_lorem_ipsum, style: TextStyle(
-                              fontSize: 18, color: Colors.grey[700]
-                          )),
+                          child: Text(MyStrings.middle_lorem_ipsum,
+                              style: TextStyle(fontSize: 18, color: Colors.grey[700])),
                         ),
                       ],
                     ),
                   ),
                   Container(height: 15),
-                  Image.asset(Img.get('image_7.jpg'),
-                    height: 150, width: double.infinity, fit: BoxFit.cover,
+                  Image.asset(
+                    Img.get('image_7.jpg'),
+                    height: 150,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                   Container(
                     height: 55,
@@ -77,21 +79,19 @@ class CardTimelineRouteState extends State<CardTimelineRoute> {
                         Container(width: 5),
                         IconButton(
                           icon: Icon(Icons.favorite, color: Colors.grey[700]),
-                          onPressed: (){},
+                          onPressed: () {},
                         ),
                         IconButton(
                           icon: Icon(Icons.share, color: Colors.grey[700]),
-                          onPressed: (){},
+                          onPressed: () {},
                         ),
                         Spacer(),
                         IconButton(
                           icon: Icon(Icons.mode_comment, color: Colors.grey[700]),
-                          onPressed: (){},
+                          onPressed: () {},
                         ),
-                        Text("12", style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                            fontSize: 18, color: Colors.grey[700]
-                        )),
+                        Text("12",
+                            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18, color: Colors.grey[700])),
                         Container(width: 15),
                       ],
                     ),
@@ -102,14 +102,13 @@ class CardTimelineRouteState extends State<CardTimelineRoute> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Sandra Adams", style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18, color: Colors.grey[900]
-                        )),
+                        Text("Sandra Adams",
+                            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18, color: Colors.grey[900])),
                         Container(height: 5),
-                        Text(MyStrings.middle_lorem_ipsum, maxLines: 1, overflow: TextOverflow.ellipsis,
-                            style: TextStyle(fontSize: 18, color: Colors.grey[700])
-                        )
+                        Text(MyStrings.middle_lorem_ipsum,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 18, color: Colors.grey[700]))
                       ],
                     ),
                   )
@@ -118,13 +117,18 @@ class CardTimelineRouteState extends State<CardTimelineRoute> {
             ),
             Container(height: 5),
             Card(
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(4),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4),
+              ),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Image.asset(Img.get('image_8.jpg'),
-                    height: 150, width: double.infinity, fit: BoxFit.cover,
+                  Image.asset(
+                    Img.get('image_8.jpg'),
+                    height: 150,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                   Container(
                     height: 55,
@@ -133,21 +137,19 @@ class CardTimelineRouteState extends State<CardTimelineRoute> {
                         Container(width: 5),
                         IconButton(
                           icon: Icon(Icons.favorite, color: Colors.grey[700]),
-                          onPressed: (){},
+                          onPressed: () {},
                         ),
                         IconButton(
                           icon: Icon(Icons.share, color: Colors.grey[700]),
-                          onPressed: (){},
+                          onPressed: () {},
                         ),
                         Spacer(),
                         IconButton(
                           icon: Icon(Icons.mode_comment, color: Colors.grey[700]),
-                          onPressed: (){},
+                          onPressed: () {},
                         ),
-                        Text("12", style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18, color: Colors.grey[700]
-                        )),
+                        Text("12",
+                            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18, color: Colors.grey[700])),
                         Container(width: 15),
                       ],
                     ),
@@ -162,24 +164,24 @@ class CardTimelineRouteState extends State<CardTimelineRoute> {
                           imageProvider: AssetImage(Img.get('photo_female_8.jpg')),
                           size: 40,
                         ),
-                        Container(width: 15,),
+                        Container(
+                          width: 15,
+                        ),
                         Expanded(
                           flex: 1,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text("Laura Scot", style: TextStyle(
-                                  fontSize: 16, color: Colors.grey[800]
-                              )),
+                              Text("Laura Scot", style: TextStyle(fontSize: 16, color: Colors.grey[800])),
                               Container(height: 4),
-                              Text(MyStrings.middle_lorem_ipsum, style: TextStyle(
-                                  fontSize: 15, color: Colors.grey[600]
-                              )
-                              )
+                              Text(MyStrings.middle_lorem_ipsum,
+                                  style: TextStyle(fontSize: 15, color: Colors.grey[600]))
                             ],
                           ),
                         ),
-                        Container(width: 10,),
+                        Container(
+                          width: 10,
+                        ),
                         Container(
                           child: Text("1d"),
                         )
@@ -197,24 +199,24 @@ class CardTimelineRouteState extends State<CardTimelineRoute> {
                           imageProvider: AssetImage(Img.get('photo_male_8.jpg')),
                           size: 40,
                         ),
-                        Container(width: 15,),
+                        Container(
+                          width: 15,
+                        ),
                         Expanded(
                           flex: 1,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text("David Park", style: TextStyle(
-                                  fontSize: 16, color: Colors.grey[800]
-                              )),
+                              Text("David Park", style: TextStyle(fontSize: 16, color: Colors.grey[800])),
                               Container(height: 4),
-                              Text(MyStrings.middle_lorem_ipsum, style: TextStyle(
-                                  fontSize: 15, color: Colors.grey[600]
-                              )
-                              )
+                              Text(MyStrings.middle_lorem_ipsum,
+                                  style: TextStyle(fontSize: 15, color: Colors.grey[600]))
                             ],
                           ),
                         ),
-                        Container(width: 10,),
+                        Container(
+                          width: 10,
+                        ),
                         Container(
                           child: Text("1d"),
                         )
@@ -227,14 +229,12 @@ class CardTimelineRouteState extends State<CardTimelineRoute> {
                     child: Row(
                       children: <Widget>[
                         Container(width: 15),
-                        Text("VIEW MORE COMMENTS", style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 18, color: Colors.grey[700]
-                        )),
+                        Text("VIEW MORE COMMENTS",
+                            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 18, color: Colors.grey[700])),
                         Spacer(),
                         IconButton(
                           icon: Icon(Icons.expand_more, color: Colors.grey[700]),
-                          onPressed: (){},
+                          onPressed: () {},
                         ),
                         Container(width: 5),
                       ],
@@ -250,4 +250,3 @@ class CardTimelineRouteState extends State<CardTimelineRoute> {
     );
   }
 }
-

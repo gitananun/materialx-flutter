@@ -2,10 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class DashboardWalletRoute extends StatefulWidget {
-
   DashboardWalletRoute();
 
   @override
@@ -13,7 +11,6 @@ class DashboardWalletRoute extends StatefulWidget {
 }
 
 class DashboardWalletRouteState extends State<DashboardWalletRoute> {
-
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -22,25 +19,29 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            AppBar(elevation: 0, backgroundColor: Colors.transparent,
+            AppBar(
+                elevation: 0,
+                backgroundColor: Colors.transparent,
                 leading: IconButton(
                   icon: Icon(Icons.menu, color: Colors.lightBlue[500]),
-                  onPressed: () { Navigator.pop(context);},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 ),
                 actions: <Widget>[
                   IconButton(
                     icon: Icon(Icons.refresh, color: Colors.lightBlue[500]),
                     onPressed: () {},
                   ),
-                ]
-            ),
+                ]),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: Column(
                 children: <Widget>[
                   Card(
-                    shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(6)),
-                    color: Colors.lightBlue[500], elevation: 2,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                    color: Colors.lightBlue[500],
+                    elevation: 2,
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: Column(
                       children: <Widget>[
@@ -48,7 +49,8 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
                           children: <Widget>[
                             Container(width: 10),
                             Expanded(
-                              child: Text("MaterialX Wallet", style: MyText.subhead(context).copyWith(color: Colors.lightBlue[100])),
+                              child: Text("MaterialX Wallet",
+                                  style: MyText.subhead(context).copyWith(color: Colors.lightBlue[100])),
                             ),
                             IconButton(icon: Icon(Icons.add, color: Colors.lightBlue[100]), onPressed: () {}),
                           ],
@@ -67,17 +69,22 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
                       Expanded(
                         child: Card(
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                          color: Colors.white, elevation: 2, clipBehavior: Clip.antiAliasWithSaveLayer,
+                          color: Colors.white,
+                          elevation: 2,
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
                           child: Container(
                             padding: EdgeInsets.all(15),
                             child: Row(
                               children: <Widget>[
                                 CircleAvatar(
                                   radius: 12,
-                                  backgroundColor: MyColors.grey_10, child: Icon(Icons.arrow_upward, color: MyColors.grey_40, size: 15),
+                                  backgroundColor: MyColors.grey_10,
+                                  child: Icon(Icons.arrow_upward, color: MyColors.grey_40, size: 15),
                                 ),
                                 Container(width: 15),
-                                Text("Send", style: MyText.subhead(context).copyWith(color: Colors.indigo[900], fontWeight: FontWeight.w500))
+                                Text("Send",
+                                    style: MyText.subhead(context)
+                                        .copyWith(color: Colors.indigo[900], fontWeight: FontWeight.w500))
                               ],
                             ),
                           ),
@@ -87,17 +94,22 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
                       Expanded(
                         child: Card(
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                          color: Colors.white, elevation: 2, clipBehavior: Clip.antiAliasWithSaveLayer,
+                          color: Colors.white,
+                          elevation: 2,
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
                           child: Container(
                             padding: EdgeInsets.all(15),
                             child: Row(
                               children: <Widget>[
                                 CircleAvatar(
                                   radius: 12,
-                                  backgroundColor: MyColors.grey_10, child: Icon(Icons.arrow_downward, color: MyColors.grey_40, size: 15),
+                                  backgroundColor: MyColors.grey_10,
+                                  child: Icon(Icons.arrow_downward, color: MyColors.grey_40, size: 15),
                                 ),
                                 Container(width: 15),
-                                Text("Receive", style: MyText.subhead(context).copyWith(color: Colors.indigo[900], fontWeight: FontWeight.w500))
+                                Text("Receive",
+                                    style: MyText.subhead(context)
+                                        .copyWith(color: Colors.indigo[900], fontWeight: FontWeight.w500))
                               ],
                             ),
                           ),
@@ -110,7 +122,9 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
                   Container(height: 5),
                   Card(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                    color: Colors.white, elevation: 2, clipBehavior: Clip.antiAliasWithSaveLayer,
+                    color: Colors.white,
+                    elevation: 2,
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: Container(
                       padding: EdgeInsets.all(15),
                       child: Row(
@@ -118,15 +132,19 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
                         children: <Widget>[
                           CircleAvatar(
                             radius: 12,
-                            backgroundColor: MyColors.grey_10, child: Icon(Icons.arrow_downward, color: MyColors.grey_40, size: 15),
+                            backgroundColor: MyColors.grey_10,
+                            child: Icon(Icons.arrow_downward, color: MyColors.grey_40, size: 15),
                           ),
                           Container(width: 15),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text("Receive", style: MyText.subhead(context).copyWith(color: Colors.indigo[900], fontWeight: FontWeight.w500)),
+                              Text("Receive",
+                                  style: MyText.subhead(context)
+                                      .copyWith(color: Colors.indigo[900], fontWeight: FontWeight.w500)),
                               Container(height: 5),
-                              Text("10 jan 2018 11:20", style: MyText.caption(context).copyWith(color: MyColors.grey_40)),
+                              Text("10 jan 2018 11:20",
+                                  style: MyText.caption(context).copyWith(color: MyColors.grey_40)),
                             ],
                           ),
                           Spacer(),
@@ -144,7 +162,9 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
                   ),
                   Card(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                    color: Colors.white, elevation: 2, clipBehavior: Clip.antiAliasWithSaveLayer,
+                    color: Colors.white,
+                    elevation: 2,
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: Container(
                       padding: EdgeInsets.all(15),
                       child: Row(
@@ -152,15 +172,19 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
                         children: <Widget>[
                           CircleAvatar(
                             radius: 12,
-                            backgroundColor: MyColors.grey_10, child: Icon(Icons.arrow_downward, color: MyColors.grey_40, size: 15),
+                            backgroundColor: MyColors.grey_10,
+                            child: Icon(Icons.arrow_downward, color: MyColors.grey_40, size: 15),
                           ),
                           Container(width: 15),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text("Receive", style: MyText.subhead(context).copyWith(color: Colors.indigo[900], fontWeight: FontWeight.w500)),
+                              Text("Receive",
+                                  style: MyText.subhead(context)
+                                      .copyWith(color: Colors.indigo[900], fontWeight: FontWeight.w500)),
                               Container(height: 5),
-                              Text("10 jan 2018 08:55", style: MyText.caption(context).copyWith(color: MyColors.grey_40)),
+                              Text("10 jan 2018 08:55",
+                                  style: MyText.caption(context).copyWith(color: MyColors.grey_40)),
                             ],
                           ),
                           Spacer(),
@@ -178,7 +202,9 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
                   ),
                   Card(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                    color: Colors.white, elevation: 2, clipBehavior: Clip.antiAliasWithSaveLayer,
+                    color: Colors.white,
+                    elevation: 2,
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: Container(
                       padding: EdgeInsets.all(15),
                       child: Row(
@@ -186,15 +212,19 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
                         children: <Widget>[
                           CircleAvatar(
                             radius: 12,
-                            backgroundColor: MyColors.grey_10, child: Icon(Icons.arrow_upward, color: MyColors.grey_40, size: 15),
+                            backgroundColor: MyColors.grey_10,
+                            child: Icon(Icons.arrow_upward, color: MyColors.grey_40, size: 15),
                           ),
                           Container(width: 15),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text("Sent", style: MyText.subhead(context).copyWith(color: Colors.indigo[900], fontWeight: FontWeight.w500)),
+                              Text("Sent",
+                                  style: MyText.subhead(context)
+                                      .copyWith(color: Colors.indigo[900], fontWeight: FontWeight.w500)),
                               Container(height: 5),
-                              Text("10 jan 2018 08:55", style: MyText.caption(context).copyWith(color: MyColors.grey_40)),
+                              Text("10 jan 2018 08:55",
+                                  style: MyText.caption(context).copyWith(color: MyColors.grey_40)),
                             ],
                           ),
                           Spacer(),
@@ -212,7 +242,9 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
                   ),
                   Card(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-                    color: Colors.white, elevation: 2, clipBehavior: Clip.antiAliasWithSaveLayer,
+                    color: Colors.white,
+                    elevation: 2,
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: Container(
                       padding: EdgeInsets.all(15),
                       child: Row(
@@ -220,15 +252,19 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
                         children: <Widget>[
                           CircleAvatar(
                             radius: 12,
-                            backgroundColor: MyColors.grey_10, child: Icon(Icons.arrow_upward, color: MyColors.grey_40, size: 15),
+                            backgroundColor: MyColors.grey_10,
+                            child: Icon(Icons.arrow_upward, color: MyColors.grey_40, size: 15),
                           ),
                           Container(width: 15),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text("Sent", style: MyText.subhead(context).copyWith(color: Colors.indigo[900], fontWeight: FontWeight.w500)),
+                              Text("Sent",
+                                  style: MyText.subhead(context)
+                                      .copyWith(color: Colors.indigo[900], fontWeight: FontWeight.w500)),
                               Container(height: 5),
-                              Text("10 jan 2018 07:20", style: MyText.caption(context).copyWith(color: MyColors.grey_40)),
+                              Text("10 jan 2018 07:20",
+                                  style: MyText.caption(context).copyWith(color: MyColors.grey_40)),
                             ],
                           ),
                           Spacer(),
@@ -247,15 +283,16 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
                   Container(height: 20)
                 ],
               ),
-            )
-            ,
+            ),
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.white, unselectedItemColor: Colors.grey[400],
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey[400],
         currentIndex: currentIndex,
-        showSelectedLabels: false, showUnselectedLabels: false,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         onTap: (int index) {
           setState(() {
             currentIndex = index;
@@ -264,11 +301,11 @@ class DashboardWalletRouteState extends State<DashboardWalletRoute> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(backgroundColor: Colors.blue[700], icon: Icon(Icons.equalizer), title: Text('')),
           BottomNavigationBarItem(backgroundColor: Colors.blue[700], icon: Icon(Icons.credit_card), title: Text('')),
-          BottomNavigationBarItem(backgroundColor: Colors.blue[700], icon: Icon(Icons.pie_chart_outlined), title: Text('')),
+          BottomNavigationBarItem(
+              backgroundColor: Colors.blue[700], icon: Icon(Icons.pie_chart_outlined), title: Text('')),
           BottomNavigationBarItem(backgroundColor: Colors.blue[700], icon: Icon(Icons.person), title: Text('')),
         ],
       ),
     );
   }
 }
-

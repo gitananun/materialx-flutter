@@ -4,16 +4,13 @@ import 'package:materialx_flutter/widget/my_text.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
 
 class FormSignUpRoute extends StatefulWidget {
-
   FormSignUpRoute();
 
   @override
   FormSignUpRouteState createState() => new FormSignUpRouteState();
 }
 
-
 class FormSignUpRouteState extends State<FormSignUpRoute> {
-
   String gender = "Female";
 
   @override
@@ -59,9 +56,8 @@ class FormSignUpRouteState extends State<FormSignUpRoute> {
                   decoration: InputDecoration(labelText: "Re-type Password"),
                 ),
                 Container(height: 10),
-                Text("Gender", style: MyText.subhead(context).copyWith(
-                    color: Colors.grey[800], fontWeight: FontWeight.w500
-                )),
+                Text("Gender",
+                    style: MyText.subhead(context).copyWith(color: Colors.grey[800], fontWeight: FontWeight.w500)),
                 Row(
                   children: <Widget>[
                     Radio(
@@ -69,7 +65,9 @@ class FormSignUpRouteState extends State<FormSignUpRoute> {
                       groupValue: gender,
                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       onChanged: (String value) {
-                        setState(() { gender = value;});
+                        setState(() {
+                          gender = value;
+                        });
                       },
                     ),
                     Text("Female", style: MyText.body1(context).copyWith(color: Colors.grey[800])),
@@ -79,32 +77,36 @@ class FormSignUpRouteState extends State<FormSignUpRoute> {
                       groupValue: gender,
                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       onChanged: (String value) {
-                        setState(() { gender = value;});
+                        setState(() {
+                          gender = value;
+                        });
                       },
                     ),
                     Text("Male", style: MyText.body1(context).copyWith(color: Colors.grey[800])),
                   ],
                 ),
                 Container(
-                    width: double.infinity,
-                    child: FlatButton(
-                      shape: RoundedRectangleBorder(
-                         borderRadius: new BorderRadius.circular(18.0)
-                      ),
-                      child: Text("REGISTER", style: TextStyle(color: Colors.white),),
-                      color: MyColors.accent,
-                      onPressed: (){},
-                   ),
+                  width: double.infinity,
+                  child: FlatButton(
+                    shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(18.0)),
+                    child: Text(
+                      "REGISTER",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    color: MyColors.accent,
+                    onPressed: () {},
+                  ),
                 ),
                 Container(
                   width: double.infinity,
                   child: FlatButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(18.0)
+                    shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(18.0)),
+                    child: Text(
+                      "REGISTER WITH FACEBOOK",
+                      style: TextStyle(color: Colors.white),
                     ),
-                    child: Text("REGISTER WITH FACEBOOK", style: TextStyle(color: Colors.white),),
                     color: Colors.blue[800],
-                    onPressed: (){},
+                    onPressed: () {},
                   ),
                 ),
               ],
@@ -115,4 +117,3 @@ class FormSignUpRouteState extends State<FormSignUpRoute> {
     );
   }
 }
-

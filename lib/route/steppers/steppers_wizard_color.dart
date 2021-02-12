@@ -5,19 +5,15 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/model/wizard.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class SteppersWizardColorRoute extends StatefulWidget {
-
   SteppersWizardColorRoute();
 
   @override
   SteppersWizardColorRouteState createState() => new SteppersWizardColorRouteState();
 }
 
-
 class SteppersWizardColorRouteState extends State<SteppersWizardColorRoute> {
-
   List<Wizard> wizardData = Dummy.getWizard();
   PageController pageController = PageController(
     initialPage: 0,
@@ -33,11 +29,11 @@ class SteppersWizardColorRouteState extends State<SteppersWizardColorRoute> {
 
   @override
   Widget build(BuildContext context) {
-
     return new Scaffold(
       appBar: PreferredSize(preferredSize: Size.fromHeight(0), child: Container(color: wizard.color)),
       body: Container(
-        width: double.infinity, height: double.infinity,
+        width: double.infinity,
+        height: double.infinity,
         child: Column(children: <Widget>[
           Expanded(
             child: Stack(
@@ -53,11 +49,10 @@ class SteppersWizardColorRouteState extends State<SteppersWizardColorRoute> {
                     ButtonTheme(
                       minWidth: 10,
                       child: FlatButton(
-                        child: Text("SKIP", style: MyText.subhead(context).copyWith(
-                            color: Colors.white, fontWeight: FontWeight.w500
-                        )),
+                        child: Text("SKIP",
+                            style: MyText.subhead(context).copyWith(color: Colors.white, fontWeight: FontWeight.w500)),
                         color: Colors.transparent,
-                        onPressed: (){
+                        onPressed: () {
                           Navigator.pop(context);
                         },
                       ),
@@ -69,19 +64,22 @@ class SteppersWizardColorRouteState extends State<SteppersWizardColorRoute> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      isLast ? Container(
-                        width: 100,
-                        child: FlatButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(18.0)
-                          ),
-                          child: Text("GOT IT", style: TextStyle(color: MyColors.grey_80),),
-                          color: Colors.white,
-                          onPressed: (){
-                            Navigator.pop(context);
-                          },
-                        ),
-                      ) : Container(),
+                      isLast
+                          ? Container(
+                              width: 100,
+                              child: FlatButton(
+                                shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(18.0)),
+                                child: Text(
+                                  "GOT IT",
+                                  style: TextStyle(color: MyColors.grey_80),
+                                ),
+                                color: Colors.white,
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            )
+                          : Container(),
                       Container(height: 10),
                       Container(
                         height: 45,
@@ -103,22 +101,23 @@ class SteppersWizardColorRouteState extends State<SteppersWizardColorRoute> {
 
   void onPageViewChange(int _page) {
     page = _page;
-    isLast = _page == wizardData.length-1;
+    isLast = _page == wizardData.length - 1;
     setState(() {
       wizard = wizardData[_page];
     });
   }
 
-  List<Widget> buildPageViewItem(){
+  List<Widget> buildPageViewItem() {
     List<Widget> widgets = [];
-    for(Wizard wz in wizardData){
+    for (Wizard wz in wizardData) {
       Widget wg = Container(
         color: wz.color,
         padding: EdgeInsets.all(35),
         alignment: Alignment.center,
-        width: double.infinity, height: double.infinity,
+        width: double.infinity,
+        height: double.infinity,
         child: Wrap(
-          children : <Widget>[
+          children: <Widget>[
             Container(
                 width: 280,
                 child: Stack(
@@ -130,18 +129,18 @@ class SteppersWizardColorRouteState extends State<SteppersWizardColorRoute> {
                           padding: EdgeInsets.all(35),
                           child: Image.asset(Img.get(wz.image), width: 150, height: 150, color: Colors.white),
                         ),
-                        Text(wz.title, style: MyText.medium(context).copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
+                        Text(wz.title,
+                            style: MyText.medium(context).copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                          child: Text(wz.brief, textAlign : TextAlign.center, style: MyText.subhead(context).copyWith(
-                              color: MyColors.grey_10
-                          )),
+                          child: Text(wz.brief,
+                              textAlign: TextAlign.center,
+                              style: MyText.subhead(context).copyWith(color: MyColors.grey_10)),
                         ),
                       ],
                     )
                   ],
-                )
-            )
+                ))
           ],
         ),
       );
@@ -150,11 +149,11 @@ class SteppersWizardColorRouteState extends State<SteppersWizardColorRoute> {
     return widgets;
   }
 
-  Widget buildDots(BuildContext context){
+  Widget buildDots(BuildContext context) {
     Widget widget;
 
     List<Widget> dots = [];
-    for(int i=0; i<wizardData.length; i++){
+    for (int i = 0; i < wizardData.length; i++) {
       Widget w = Container(
         margin: EdgeInsets.symmetric(horizontal: 5),
         height: 8,
@@ -171,6 +170,4 @@ class SteppersWizardColorRouteState extends State<SteppersWizardColorRoute> {
     );
     return widget;
   }
-
 }
-

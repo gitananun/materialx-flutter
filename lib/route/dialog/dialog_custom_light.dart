@@ -7,11 +7,10 @@ import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/model/people.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
+
 import 'package:toast/toast.dart';
 
 class DialogCustomLightRoute extends StatefulWidget {
-
   DialogCustomLightRoute();
 
   @override
@@ -19,7 +18,6 @@ class DialogCustomLightRoute extends StatefulWidget {
 }
 
 class DialogCustomLightRouteState extends State<DialogCustomLightRoute> {
-
   BuildContext context;
   List<People> items;
   void onItemClick(int index, People obj) {
@@ -60,17 +58,14 @@ class DialogCustomLightRouteState extends State<DialogCustomLightRoute> {
             IconButton(
               icon: Icon(Icons.more_vert, color: MyColors.grey_60),
               onPressed: () {},
-            ),// overflow menu
-          ]
-      ),
+            ), // overflow menu
+          ]),
       body: ListBasicAdapter(items, onItemClick).getView(),
     );
   }
 }
 
-
 class CustomEventDialog extends StatefulWidget {
-
   final People obj;
 
   CustomEventDialog(this.obj);
@@ -79,15 +74,17 @@ class CustomEventDialog extends StatefulWidget {
   CustomEventDialogState createState() => new CustomEventDialogState();
 }
 
-class CustomEventDialogState extends State<CustomEventDialog>{
-
+class CustomEventDialogState extends State<CustomEventDialog> {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Dialog(
       backgroundColor: Colors.transparent,
-      child: Container(width: 160,
+      child: Container(
+        width: 160,
         child: Card(
-          shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(4),),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
           color: Colors.white,
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Wrap(
@@ -97,7 +94,10 @@ class CustomEventDialogState extends State<CustomEventDialog>{
                 children: <Widget>[
                   Spacer(),
                   IconButton(
-                    icon: const Icon(Icons.close, color: MyColors.grey_20,),
+                    icon: const Icon(
+                      Icons.close,
+                      color: MyColors.grey_20,
+                    ),
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
@@ -115,21 +115,24 @@ class CustomEventDialogState extends State<CustomEventDialog>{
               ),
               Container(
                 padding: EdgeInsets.all(20),
-                width : double.infinity,
+                width: double.infinity,
                 child: Column(
                   children: <Widget>[
-                    Text(widget.obj.name, textAlign : TextAlign.center, style: MyText.title(context).copyWith(color: MyColors.grey_80)),
+                    Text(widget.obj.name,
+                        textAlign: TextAlign.center, style: MyText.title(context).copyWith(color: MyColors.grey_80)),
                     Container(height: 5),
-                    Text(MyStrings.short_lorem_ipsum, textAlign : TextAlign.center, style: MyText.subhead(context).copyWith(color: MyColors.grey_40)),
+                    Text(MyStrings.short_lorem_ipsum,
+                        textAlign: TextAlign.center, style: MyText.subhead(context).copyWith(color: MyColors.grey_40)),
                     Container(height: 20),
                     FlatButton(
                       padding: EdgeInsets.symmetric(vertical: 0, horizontal: 40),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(18.0)
+                      shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(18.0)),
+                      child: Text(
+                        "FOLLOW",
+                        style: TextStyle(color: Colors.white),
                       ),
-                      child: Text("FOLLOW", style: TextStyle(color: Colors.white),),
                       color: Colors.red[300],
-                      onPressed: (){
+                      onPressed: () {
                         Toast.show("FOLLOW clicked", context);
                       },
                     ),
@@ -140,9 +143,9 @@ class CustomEventDialogState extends State<CustomEventDialog>{
                           flex: 1,
                           child: Column(
                             children: <Widget>[
-                              Text("35.7K", style: MyText.title(context).copyWith(
-                                  color: MyColors.grey_80, fontWeight: FontWeight.bold
-                              )),
+                              Text("35.7K",
+                                  style: MyText.title(context)
+                                      .copyWith(color: MyColors.grey_80, fontWeight: FontWeight.bold)),
                               Container(height: 5),
                               Text("Following", style: MyText.medium(context).copyWith(color: Colors.grey[500]))
                             ],
@@ -152,9 +155,9 @@ class CustomEventDialogState extends State<CustomEventDialog>{
                           flex: 1,
                           child: Column(
                             children: <Widget>[
-                              Text("215", style: MyText.title(context).copyWith(
-                                  color: MyColors.grey_80, fontWeight: FontWeight.bold
-                              )),
+                              Text("215",
+                                  style: MyText.title(context)
+                                      .copyWith(color: MyColors.grey_80, fontWeight: FontWeight.bold)),
                               Container(height: 5),
                               Text("Followers", style: MyText.medium(context).copyWith(color: Colors.grey[500]))
                             ],
@@ -173,6 +176,3 @@ class CustomEventDialogState extends State<CustomEventDialog>{
     );
   }
 }
-
-
-

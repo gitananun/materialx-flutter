@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:materialx_flutter/widget/my_text.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
+
+import 'package:materialx_flutter/widget/my_text.dart';
 
 class BottomSheetFilterRoute extends StatefulWidget {
   BottomSheetFilterRoute();
@@ -17,8 +18,7 @@ class BottomSheetFilterRouteState extends State<BottomSheetFilterRoute> {
       appBar: CommonAppBar.getPrimaryAppbar(context, "Filter"),
       body: Center(
         child: Text("Press button \nbelow",
-            textAlign: TextAlign.center,
-            style: MyText.display1(context).copyWith(color: Colors.grey[300])),
+            textAlign: TextAlign.center, style: MyText.display1(context).copyWith(color: Colors.grey[300])),
       ),
       floatingActionButton: FloatingActionButton(
         heroTag: "fab",
@@ -37,7 +37,7 @@ class BottomSheetFilterRouteState extends State<BottomSheetFilterRoute> {
 }
 
 void showSheet(context) {
-      TextStyle(color: Colors.white, height: 1.4, fontSize: 16);
+  TextStyle(color: Colors.white, height: 1.4, fontSize: 16);
   showModalBottomSheet(
       context: context,
       builder: (BuildContext bc) {
@@ -50,7 +50,9 @@ void showSheet(context) {
               child: new Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Container(height: 20,),
+                  Container(
+                    height: 20,
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(left: 10.0),
                     child: Align(
@@ -96,7 +98,7 @@ void showSheet(context) {
                       child: Row(
                         children: <Widget>[
                           new Flexible(
-                            child:  Column(
+                            child: Column(
                               children: <Widget>[
                                 new Padding(
                                   padding: const EdgeInsets.only(bottom: 10),
@@ -109,7 +111,7 @@ void showSheet(context) {
                                   ),
                                 ),
                                 new Container(
-                                    width:  double.infinity,
+                                    width: double.infinity,
                                     height: 40,
                                     decoration: myBoxDecoration(),
                                     child: Stack(
@@ -118,7 +120,7 @@ void showSheet(context) {
                                           padding: const EdgeInsets.only(left: 10.0),
                                           child: new Align(
                                               alignment: Alignment.centerLeft,
-                                              child: Text(new String.fromCharCodes(new Runes('\u0024'))+"50,000",
+                                              child: Text(new String.fromCharCodes(new Runes('\u0024')) + "50,000",
                                                   style: TextStyle(
                                                     color: Colors.black,
                                                   ))),
@@ -137,10 +139,13 @@ void showSheet(context) {
                                     ))
                               ],
                             ),
-                            flex: 1,),
-                          Container(width: 40,),
+                            flex: 1,
+                          ),
+                          Container(
+                            width: 40,
+                          ),
                           new Flexible(
-                            child:  Column(
+                            child: Column(
                               children: <Widget>[
                                 new Padding(
                                   padding: const EdgeInsets.only(bottom: 10),
@@ -153,7 +158,7 @@ void showSheet(context) {
                                   ),
                                 ),
                                 new Container(
-                                    width:  double.infinity,
+                                    width: double.infinity,
                                     height: 40,
                                     decoration: myBoxDecoration(),
                                     child: Stack(
@@ -162,7 +167,7 @@ void showSheet(context) {
                                           padding: const EdgeInsets.only(left: 10.0),
                                           child: new Align(
                                               alignment: Alignment.centerLeft,
-                                              child: Text(new String.fromCharCodes(new Runes('\u0024'))+"50,000",
+                                              child: Text(new String.fromCharCodes(new Runes('\u0024')) + "50,000",
                                                   style: TextStyle(
                                                     color: Colors.black,
                                                   ))),
@@ -181,17 +186,16 @@ void showSheet(context) {
                                     ))
                               ],
                             ),
-                            flex: 1,),
-
+                            flex: 1,
+                          ),
                         ],
-                      )
-                  ),
+                      )),
                   Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
                         children: <Widget>[
                           new Flexible(
-                            child:  Column(
+                            child: Column(
                               children: <Widget>[
                                 new Padding(
                                   padding: const EdgeInsets.only(bottom: 10),
@@ -204,7 +208,7 @@ void showSheet(context) {
                                   ),
                                 ),
                                 new Container(
-                                    width:  double.infinity,
+                                    width: double.infinity,
                                     height: 40,
                                     decoration: myBoxDecoration(),
                                     child: Stack(
@@ -232,10 +236,13 @@ void showSheet(context) {
                                     ))
                               ],
                             ),
-                            flex: 1,),
-                          Container(width: 40,),
+                            flex: 1,
+                          ),
+                          Container(
+                            width: 40,
+                          ),
                           new Flexible(
-                            child:  Column(
+                            child: Column(
                               children: <Widget>[
                                 new Padding(
                                   padding: const EdgeInsets.only(bottom: 10),
@@ -248,7 +255,7 @@ void showSheet(context) {
                                   ),
                                 ),
                                 new Container(
-                                    width:  double.infinity,
+                                    width: double.infinity,
                                     height: 40,
                                     decoration: myBoxDecoration(),
                                     child: Stack(
@@ -276,13 +283,12 @@ void showSheet(context) {
                                     ))
                               ],
                             ),
-                            flex: 1,),
-
+                            flex: 1,
+                          ),
                         ],
-                      )
-                  ),
+                      )),
                   Padding(
-                    padding: const EdgeInsets.only(left: 10.0,top:10),
+                    padding: const EdgeInsets.only(left: 10.0, top: 10),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text("Min Land Size ( m\u00B2 )",
@@ -322,17 +328,21 @@ void showSheet(context) {
                         )),
                   ),
                   Padding(
-                      padding: const EdgeInsets.only(left: 10,right: 10),
-                      child:  SizedBox(
+                      padding: const EdgeInsets.only(left: 10, right: 10),
+                      child: SizedBox(
                         width: double.infinity, // match_parent
-                        child:  RaisedButton(
-                          child: Text("SEARCH", style: TextStyle(color: Colors.white),),
+                        child: RaisedButton(
+                          child: Text(
+                            "SEARCH",
+                            style: TextStyle(color: Colors.white),
+                          ),
                           color: Colors.black,
-                          onPressed: (){},
+                          onPressed: () {},
                         ),
-                      )
-                  ),
-                  Container(height: 10,)
+                      )),
+                  Container(
+                    height: 10,
+                  )
                 ],
               ),
             ),

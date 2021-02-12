@@ -3,10 +3,10 @@ import 'package:materialx_flutter/adapter/list_basic_adapter.dart';
 import 'package:materialx_flutter/data/dummy.dart';
 import 'package:materialx_flutter/model/people.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
+
 import 'package:toast/toast.dart';
 
 class ListBasicRoute extends StatefulWidget {
-
   ListBasicRoute();
 
   @override
@@ -32,4 +32,3 @@ class ListBasicRouteState extends State<ListBasicRoute> {
     );
   }
 }
-

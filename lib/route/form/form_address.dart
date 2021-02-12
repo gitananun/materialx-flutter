@@ -2,19 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class FormAddressRoute extends StatefulWidget {
-
   FormAddressRoute();
 
   @override
   FormAddressRouteState createState() => new FormAddressRouteState();
 }
 
-
 class FormAddressRouteState extends State<FormAddressRoute> {
-
   final TextEditingController inputController1 = new TextEditingController();
   final TextEditingController inputController2 = new TextEditingController();
   final TextEditingController inputController3 = new TextEditingController();
@@ -37,7 +33,6 @@ class FormAddressRouteState extends State<FormAddressRoute> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: MyColors.grey_5,
       appBar: AppBar(
@@ -53,8 +48,7 @@ class FormAddressRouteState extends State<FormAddressRoute> {
               icon: Icon(Icons.more_vert),
               onPressed: () {},
             ),
-          ]
-      ),
+          ]),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
         scrollDirection: Axis.vertical,
@@ -67,16 +61,23 @@ class FormAddressRouteState extends State<FormAddressRoute> {
                 Text("FIRST NAME", style: MyText.body1(context).copyWith(color: MyColors.grey_60)),
                 Container(height: 5),
                 Card(
-                  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(3),
+                  ),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                  margin: EdgeInsets.all(0), elevation: 0,
+                  margin: EdgeInsets.all(0),
+                  elevation: 0,
                   child: Container(
                     height: 40,
                     alignment: Alignment.centerLeft,
                     padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: TextField(maxLines: 1,
+                    child: TextField(
+                      maxLines: 1,
                       controller: inputController1,
-                      decoration: InputDecoration(contentPadding: EdgeInsets.all(-12), border: InputBorder.none,),
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(-12),
+                        border: InputBorder.none,
+                      ),
                     ),
                   ),
                 ),
@@ -84,16 +85,23 @@ class FormAddressRouteState extends State<FormAddressRoute> {
                 Text("LAST NAME", style: MyText.body1(context).copyWith(color: MyColors.grey_60)),
                 Container(height: 5),
                 Card(
-                  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(3),
+                  ),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                  margin: EdgeInsets.all(0), elevation: 0,
+                  margin: EdgeInsets.all(0),
+                  elevation: 0,
                   child: Container(
                     height: 40,
                     alignment: Alignment.centerLeft,
                     padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: TextField(maxLines: 1,
+                    child: TextField(
+                      maxLines: 1,
                       controller: inputController2,
-                      decoration: InputDecoration(contentPadding: EdgeInsets.all(-12), border: InputBorder.none,),
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(-12),
+                        border: InputBorder.none,
+                      ),
                     ),
                   ),
                 ),
@@ -101,16 +109,24 @@ class FormAddressRouteState extends State<FormAddressRoute> {
                 Text("EMAIL", style: MyText.body1(context).copyWith(color: MyColors.grey_60)),
                 Container(height: 5),
                 Card(
-                  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(3),
+                  ),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                  margin: EdgeInsets.all(0), elevation: 0,
+                  margin: EdgeInsets.all(0),
+                  elevation: 0,
                   child: Container(
                     height: 40,
                     alignment: Alignment.centerLeft,
                     padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: TextField(maxLines: 1, keyboardType: TextInputType.emailAddress,
+                    child: TextField(
+                      maxLines: 1,
+                      keyboardType: TextInputType.emailAddress,
                       controller: inputController3,
-                      decoration: InputDecoration(contentPadding: EdgeInsets.all(-12), border: InputBorder.none,),
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(-12),
+                        border: InputBorder.none,
+                      ),
                     ),
                   ),
                 ),
@@ -118,16 +134,24 @@ class FormAddressRouteState extends State<FormAddressRoute> {
                 Text("PHONE", style: MyText.body1(context).copyWith(color: MyColors.grey_60)),
                 Container(height: 5),
                 Card(
-                  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(3),
+                  ),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                  margin: EdgeInsets.all(0), elevation: 0,
+                  margin: EdgeInsets.all(0),
+                  elevation: 0,
                   child: Container(
                     height: 40,
                     alignment: Alignment.centerLeft,
                     padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: TextField(maxLines: 1, keyboardType: TextInputType.phone,
+                    child: TextField(
+                      maxLines: 1,
+                      keyboardType: TextInputType.phone,
                       controller: inputController4,
-                      decoration: InputDecoration(contentPadding: EdgeInsets.all(-12), border: InputBorder.none,),
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(-12),
+                        border: InputBorder.none,
+                      ),
                     ),
                   ),
                 ),
@@ -141,9 +165,12 @@ class FormAddressRouteState extends State<FormAddressRoute> {
                           Text("STATE", style: MyText.body1(context).copyWith(color: MyColors.grey_60)),
                           Container(height: 5),
                           Card(
-                            shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(3),
+                            ),
                             clipBehavior: Clip.antiAliasWithSaveLayer,
-                            margin: EdgeInsets.all(0), elevation: 0,
+                            margin: EdgeInsets.all(0),
+                            elevation: 0,
                             child: Container(
                               height: 40,
                               alignment: Alignment.centerLeft,
@@ -152,10 +179,13 @@ class FormAddressRouteState extends State<FormAddressRoute> {
                                 children: <Widget>[
                                   Container(width: 15),
                                   Expanded(
-                                    child: TextField(maxLines: 1, keyboardType: TextInputType.phone,
+                                    child: TextField(
+                                      maxLines: 1,
+                                      keyboardType: TextInputType.phone,
                                       controller: inputController5,
                                       decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.all(-12), border: InputBorder.none,
+                                        contentPadding: EdgeInsets.all(-12),
+                                        border: InputBorder.none,
                                       ),
                                     ),
                                   ),
@@ -175,16 +205,24 @@ class FormAddressRouteState extends State<FormAddressRoute> {
                           Text("ZIP CODE", style: MyText.body1(context).copyWith(color: MyColors.grey_60)),
                           Container(height: 5),
                           Card(
-                            shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(3),
+                            ),
                             clipBehavior: Clip.antiAliasWithSaveLayer,
-                            margin: EdgeInsets.all(0), elevation: 0,
+                            margin: EdgeInsets.all(0),
+                            elevation: 0,
                             child: Container(
                               height: 40,
                               alignment: Alignment.centerLeft,
                               padding: EdgeInsets.symmetric(horizontal: 20),
-                              child: TextField(maxLines: 1, keyboardType: TextInputType.phone,
+                              child: TextField(
+                                maxLines: 1,
+                                keyboardType: TextInputType.phone,
                                 controller: inputController6,
-                                decoration: InputDecoration(contentPadding: EdgeInsets.all(-12), border: InputBorder.none,),
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.all(-12),
+                                  border: InputBorder.none,
+                                ),
                               ),
                             ),
                           ),
@@ -197,9 +235,12 @@ class FormAddressRouteState extends State<FormAddressRoute> {
                 Text("COUNTRY", style: MyText.body1(context).copyWith(color: MyColors.grey_60)),
                 Container(height: 5),
                 Card(
-                  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(3),
+                  ),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                  margin: EdgeInsets.all(0), elevation: 0,
+                  margin: EdgeInsets.all(0),
+                  elevation: 0,
                   child: Container(
                     height: 40,
                     alignment: Alignment.centerLeft,
@@ -208,10 +249,13 @@ class FormAddressRouteState extends State<FormAddressRoute> {
                       children: <Widget>[
                         Container(width: 15),
                         Expanded(
-                          child: TextField(maxLines: 1, keyboardType: TextInputType.phone,
+                          child: TextField(
+                            maxLines: 1,
+                            keyboardType: TextInputType.phone,
                             controller: inputController7,
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(-12), border: InputBorder.none,
+                              contentPadding: EdgeInsets.all(-12),
+                              border: InputBorder.none,
                             ),
                           ),
                         ),
@@ -222,11 +266,12 @@ class FormAddressRouteState extends State<FormAddressRoute> {
                 ),
                 Container(height: 15),
                 Container(
-                  width: double.infinity, height: 45,
+                  width: double.infinity,
+                  height: 45,
                   child: FlatButton(
                     child: Text("SUBMIT", style: MyText.subhead(context).copyWith(color: Colors.white)),
                     color: MyColors.primary,
-                    onPressed: (){ },
+                    onPressed: () {},
                   ),
                 )
               ],
@@ -237,4 +282,3 @@ class FormAddressRouteState extends State<FormAddressRoute> {
     );
   }
 }
-

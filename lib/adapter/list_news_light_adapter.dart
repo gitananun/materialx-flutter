@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
-import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/model/news.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
 
@@ -44,17 +43,21 @@ class ItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){ onItemClick(object); },
+      onTap: () {
+        onItemClick(object);
+      },
       child: Container(
         padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
         child: Column(
           children: <Widget>[
             Card(
-              margin: EdgeInsets.all(0), elevation: 0,
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(8),),
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              child: Image.asset(Img.get(object.image), height: 180, width: double.infinity, fit: BoxFit.cover)
-            ),
+                margin: EdgeInsets.all(0),
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                child: Image.asset(Img.get(object.image), height: 180, width: double.infinity, fit: BoxFit.cover)),
             Container(height: 10),
             Row(
               children: <Widget>[
@@ -64,7 +67,8 @@ class ItemTile extends StatelessWidget {
               ],
             ),
             Container(height: 10),
-            Text(object.title, style: MyText.medium(context).copyWith(color: MyColors.grey_80, fontWeight: FontWeight.w500)),
+            Text(object.title,
+                style: MyText.medium(context).copyWith(color: MyColors.grey_80, fontWeight: FontWeight.w500)),
             Container(height: 10),
             Divider(height: 0),
           ],

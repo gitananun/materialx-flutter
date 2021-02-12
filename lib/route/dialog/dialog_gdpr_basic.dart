@@ -4,11 +4,10 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
+
 import 'package:toast/toast.dart';
 
 class DialogGDPRBasicRoute extends StatefulWidget {
-
   DialogGDPRBasicRoute();
 
   @override
@@ -16,12 +15,11 @@ class DialogGDPRBasicRoute extends StatefulWidget {
 }
 
 class DialogGDPRBasicRouteState extends State<DialogGDPRBasicRoute> {
-
   @override
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 1), () {
-      showDialog(context: context,builder: (_) => GdprBasicDialog() );
+      showDialog(context: context, builder: (_) => GdprBasicDialog());
     });
   }
 
@@ -33,53 +31,54 @@ class DialogGDPRBasicRouteState extends State<DialogGDPRBasicRoute> {
           backgroundColor: Colors.white,
           brightness: Brightness.dark,
           iconTheme: IconThemeData(color: MyColors.grey_60),
-          title: Text("GDPR Basic", style: MyText.title(context).copyWith(
-              color: MyColors.grey_60
-          )),
-          leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
-            Navigator.pop(context);
-          }),
+          title: Text("GDPR Basic", style: MyText.title(context).copyWith(color: MyColors.grey_60)),
+          leading: IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Navigator.pop(context);
+              }),
           actions: <Widget>[
             PopupMenuButton<String>(
-              onSelected: (String value){},
+              onSelected: (String value) {},
               itemBuilder: (context) => [
-                PopupMenuItem(value: "Settings", child: Text("Settings"),),
+                PopupMenuItem(
+                  value: "Settings",
+                  child: Text("Settings"),
+                ),
               ],
             )
-          ]
-      ),
+          ]),
       body: Container(
           alignment: Alignment.center,
           child: FloatingActionButton.extended(
-            elevation: 0, backgroundColor: Colors.grey[200],
+            elevation: 0,
+            backgroundColor: Colors.grey[200],
             label: Text("SHOW DIALOG", style: TextStyle(color: Colors.grey[900])),
             onPressed: () {
-              showDialog(context: context,builder: (_) => GdprBasicDialog() );
+              showDialog(context: context, builder: (_) => GdprBasicDialog());
             },
-          )
-      ),
+          )),
     );
   }
 }
 
-
 class GdprBasicDialog extends StatefulWidget {
-
   GdprBasicDialog({Key key}) : super(key: key);
 
   @override
   GdprBasicDialogState createState() => new GdprBasicDialogState();
 }
 
-class GdprBasicDialogState extends State<GdprBasicDialog>{
-
+class GdprBasicDialogState extends State<GdprBasicDialog> {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Dialog(
       backgroundColor: Colors.transparent,
       child: Container(
         child: Card(
-          shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(4),),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
           color: Colors.white,
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Column(
@@ -88,26 +87,34 @@ class GdprBasicDialogState extends State<GdprBasicDialog>{
               Container(
                 alignment: Alignment.centerLeft,
                 padding: EdgeInsets.symmetric(horizontal: 15),
-                width: double.infinity, height: 50,
+                width: double.infinity,
+                height: 50,
                 color: Colors.cyan[700],
                 child: Text("Privacy & Policy", style: MyText.title(context).copyWith(color: Colors.white)),
               ),
               Container(
                 padding: EdgeInsets.fromLTRB(15, 15, 15, 0),
-                child: Text(MyStrings.gdpr_privacy_policy, style: MyText.body1(context).copyWith(color: MyColors.grey_60)),
+                child:
+                    Text(MyStrings.gdpr_privacy_policy, style: MyText.body1(context).copyWith(color: MyColors.grey_60)),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   new FlatButton(
-                    child: Text("DECLINE"), textColor: Colors.cyan[700],
+                    child: Text("DECLINE"),
+                    textColor: Colors.cyan[700],
                     color: Colors.transparent,
-                    onPressed: (){ Navigator.pop(context); },
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                   ),
                   FlatButton(
-                    child: Text("ACCEPT"), textColor: Colors.cyan[700],
+                    child: Text("ACCEPT"),
+                    textColor: Colors.cyan[700],
                     color: Colors.transparent,
-                    onPressed: (){ Navigator.pop(context); },
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                   )
                 ],
               )

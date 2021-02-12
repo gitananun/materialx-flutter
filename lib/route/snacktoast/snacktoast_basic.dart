@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
+
 import 'package:toast/toast.dart';
+import 'package:materialx_flutter/widget/toolbar.dart';
 
 class SnacktoastBasicRoute extends StatefulWidget {
-
   SnacktoastBasicRoute();
 
   @override
   SnacktoastBasicRouteState createState() => new SnacktoastBasicRouteState();
 }
 
-
 class SnacktoastBasicRouteState extends State<SnacktoastBasicRoute> {
-
   BuildContext _scaffoldCtx;
 
   double value1 = 0.7, value2 = 0.3, value3 = 66, value4 = 25;
@@ -45,7 +43,9 @@ class SnacktoastBasicRouteState extends State<SnacktoastBasicRoute> {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       child: Text("SIMPLE", style: TextStyle(color: Colors.white)),
                       color: MyColors.accent,
-                      onPressed: (){ showSimpleToast(context); },
+                      onPressed: () {
+                        showSimpleToast(context);
+                      },
                     ),
                   ),
                   Container(
@@ -54,7 +54,9 @@ class SnacktoastBasicRouteState extends State<SnacktoastBasicRoute> {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       child: Text("COLORED PRIMARY", style: TextStyle(color: Colors.white)),
                       color: MyColors.accent,
-                      onPressed: (){showColoredPrimaryToast(context);},
+                      onPressed: () {
+                        showColoredPrimaryToast(context);
+                      },
                     ),
                   ),
                   Container(
@@ -63,7 +65,9 @@ class SnacktoastBasicRouteState extends State<SnacktoastBasicRoute> {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       child: Text("COLORED ACCENT", style: TextStyle(color: Colors.white)),
                       color: MyColors.accent,
-                      onPressed: (){showColoredAccentToast(context);},
+                      onPressed: () {
+                        showColoredAccentToast(context);
+                      },
                     ),
                   ),
                   Container(height: 10, width: 0),
@@ -77,7 +81,9 @@ class SnacktoastBasicRouteState extends State<SnacktoastBasicRoute> {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       child: Text("SIMPLE", style: TextStyle(color: Colors.white)),
                       color: MyColors.accent,
-                      onPressed: (){showSimpleSnackbar(context);},
+                      onPressed: () {
+                        showSimpleSnackbar(context);
+                      },
                     ),
                   ),
                   Container(
@@ -86,7 +92,9 @@ class SnacktoastBasicRouteState extends State<SnacktoastBasicRoute> {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       child: Text("WITH ACTION", style: TextStyle(color: Colors.white)),
                       color: MyColors.accent,
-                      onPressed: (){snackBarWithAction(context);},
+                      onPressed: () {
+                        snackBarWithAction(context);
+                      },
                     ),
                   ),
                   Container(
@@ -95,7 +103,9 @@ class SnacktoastBasicRouteState extends State<SnacktoastBasicRoute> {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       child: Text("WITH ACTION INDEFINITE", style: TextStyle(color: Colors.white)),
                       color: MyColors.accent,
-                      onPressed: (){snackBarWithActionIndefinite(context);},
+                      onPressed: () {
+                        snackBarWithActionIndefinite(context);
+                      },
                     ),
                   ),
                 ],
@@ -107,43 +117,43 @@ class SnacktoastBasicRouteState extends State<SnacktoastBasicRoute> {
     );
   }
 
-  void showSimpleToast(BuildContext context){
+  void showSimpleToast(BuildContext context) {
     Toast.show("Simple Toast", context);
   }
 
-  void showColoredPrimaryToast(BuildContext context){
+  void showColoredPrimaryToast(BuildContext context) {
     Toast.show("Colored Primary", context, backgroundColor: MyColors.primary);
   }
 
-  void showColoredAccentToast(BuildContext context){
+  void showColoredAccentToast(BuildContext context) {
     Toast.show("Colored Primary", context, backgroundColor: MyColors.accent);
   }
 
-  void showSimpleSnackbar(BuildContext context){
+  void showSimpleSnackbar(BuildContext context) {
     Scaffold.of(_scaffoldCtx).showSnackBar(SnackBar(
       content: Text("Simple Snackbar"),
       duration: Duration(seconds: 1),
     ));
   }
 
-  void snackBarWithAction(BuildContext context){
+  void snackBarWithAction(BuildContext context) {
     Scaffold.of(_scaffoldCtx).showSnackBar(SnackBar(
       content: Text("Snackbar With Action"),
       duration: Duration(seconds: 2),
       action: SnackBarAction(
         label: "UNDO",
-        onPressed: (){},
+        onPressed: () {},
       ),
     ));
   }
 
-  void snackBarWithActionIndefinite(BuildContext context){
+  void snackBarWithActionIndefinite(BuildContext context) {
     Scaffold.of(_scaffoldCtx).showSnackBar(SnackBar(
       content: Text("Snackbar With Action INDEFINITE"),
       duration: Duration(days: 2),
       action: SnackBarAction(
         label: "UNDO",
-        onPressed: (){
+        onPressed: () {
           Scaffold.of(_scaffoldCtx).showSnackBar(SnackBar(
             content: Text("UNDO CLICKED!"),
             duration: Duration(seconds: 1),
@@ -152,6 +162,4 @@ class SnacktoastBasicRouteState extends State<SnacktoastBasicRoute> {
       ),
     ));
   }
-
 }
-

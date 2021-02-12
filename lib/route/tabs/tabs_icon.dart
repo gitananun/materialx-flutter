@@ -1,30 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/included/include_releases_content.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
 
 class TabsIconRoute extends StatefulWidget {
-
   TabsIconRoute();
 
   @override
   TabsIconRouteState createState() => new TabsIconRouteState();
 }
 
-
-class TabsIconRouteState extends State<TabsIconRoute> with SingleTickerProviderStateMixin{
-
+class TabsIconRouteState extends State<TabsIconRoute> with SingleTickerProviderStateMixin {
   TabController _tabController;
   ScrollController _scrollController;
   String title;
-  List <String> titles = ["Music", "Movies", "Books", "Games"];
+  List<String> titles = ["Music", "Movies", "Books", "Games"];
 
   @override
   void initState() {
     title = titles[0];
     _scrollController = ScrollController();
     _tabController = TabController(length: 4, vsync: this);
-    _tabController.addListener((){
+    _tabController.addListener(() {
       setState(() {
         title = titles[_tabController.index];
       });
@@ -45,21 +41,25 @@ class TabsIconRouteState extends State<TabsIconRoute> with SingleTickerProviderS
       backgroundColor: Colors.grey[200],
       body: NestedScrollView(
         controller: _scrollController,
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScroller){
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScroller) {
           return <Widget>[
             SliverAppBar(
-              title: Text(title), pinned: true, floating: true,
+              title: Text(title),
+              pinned: true,
+              floating: true,
               backgroundColor: Colors.blueGrey[600],
-              leading: IconButton(icon: const Icon(Icons.menu), onPressed: () {
-                Navigator.pop(context);
-              }),
+              leading: IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
               actions: <Widget>[
                 IconButton(
                   icon: const Icon(Icons.search),
                   onPressed: () {},
-                ),// overflow menu
+                ), // overflow menu
                 PopupMenuButton<String>(
-                  onSelected: (String value){},
+                  onSelected: (String value) {},
                   itemBuilder: (context) => [
                     PopupMenuItem(
                       value: "Settings",
@@ -70,7 +70,8 @@ class TabsIconRouteState extends State<TabsIconRoute> with SingleTickerProviderS
               ],
               bottom: TabBar(
                 indicatorColor: Colors.white,
-                indicatorSize: TabBarIndicatorSize.tab, indicatorWeight: 4,
+                indicatorSize: TabBarIndicatorSize.tab,
+                indicatorWeight: 4,
                 labelStyle: MyText.subhead(context).copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                 unselectedLabelColor: Colors.grey[400],
                 tabs: [
@@ -97,4 +98,3 @@ class TabsIconRouteState extends State<TabsIconRoute> with SingleTickerProviderS
     );
   }
 }
-

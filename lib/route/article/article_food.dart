@@ -4,19 +4,15 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class ArticleFoodRoute extends StatefulWidget {
-
   ArticleFoodRoute();
 
   @override
   ArticleFoodRouteState createState() => new ArticleFoodRouteState();
 }
 
-
 class ArticleFoodRouteState extends State<ArticleFoodRoute> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,21 +21,26 @@ class ArticleFoodRouteState extends State<ArticleFoodRoute> {
           return <Widget>[
             SliverAppBar(
               expandedHeight: 300.0,
-              floating: false, pinned: false,
+              floating: false,
+              pinned: false,
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
-                background: Image.asset(Img.get('image_24.jpg'),fit: BoxFit.cover),
+                background: Image.asset(Img.get('image_24.jpg'), fit: BoxFit.cover),
               ),
               leading: IconButton(
                 icon: Icon(Icons.arrow_back),
-                onPressed: () {Navigator.pop(context); },
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
               actions: <Widget>[
                 IconButton(
-                  icon: Icon(Icons.share), onPressed: () {},
-                ),// overflow menu
+                  icon: Icon(Icons.share),
+                  onPressed: () {},
+                ), // overflow menu
                 IconButton(
-                  icon: Icon(Icons.bookmark_border), onPressed: () {},
+                  icon: Icon(Icons.bookmark_border),
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -51,13 +52,13 @@ class ArticleFoodRouteState extends State<ArticleFoodRoute> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text("Soy-Glazed Salmon", style: MyText.headline(context).copyWith(
-                    color: MyColors.grey_90, fontWeight: FontWeight.bold
-                )),
+                Text("Soy-Glazed Salmon",
+                    style: MyText.headline(context).copyWith(color: MyColors.grey_90, fontWeight: FontWeight.bold)),
                 Container(height: 5),
-                Text(MyStrings.medium_lorem_ipsum, style: MyText.subhead(context).copyWith(
-                  color: MyColors.grey_40,
-                )),
+                Text(MyStrings.medium_lorem_ipsum,
+                    style: MyText.subhead(context).copyWith(
+                      color: MyColors.grey_40,
+                    )),
                 Divider(),
                 Column(
                   children: <Widget>[
@@ -161,13 +162,14 @@ class ArticleFoodRouteState extends State<ArticleFoodRoute> {
                   ],
                 ),
                 Divider(),
-                Text("Description", style: MyText.medium(context).copyWith(
-                    color: MyColors.grey_90, fontWeight: FontWeight.bold
-                )),
+                Text("Description",
+                    style: MyText.medium(context).copyWith(color: MyColors.grey_90, fontWeight: FontWeight.bold)),
                 Container(height: 10),
-                Text(MyStrings.long_lorem_ipsum, textAlign: TextAlign.justify, style: MyText.medium(context).copyWith(
-                  color: MyColors.grey_60,
-                )),
+                Text(MyStrings.long_lorem_ipsum,
+                    textAlign: TextAlign.justify,
+                    style: MyText.medium(context).copyWith(
+                      color: MyColors.grey_60,
+                    )),
               ],
             ),
           ),
@@ -176,4 +178,3 @@ class ArticleFoodRouteState extends State<ArticleFoodRoute> {
     );
   }
 }
-

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/model/people.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
 
@@ -47,7 +46,7 @@ class ItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         onItemClick(object);
       },
       child: Padding(
@@ -62,8 +61,7 @@ class ItemTile extends StatelessWidget {
                   backgroundImage: AssetImage(object.image),
                 ),
                 width: 45,
-                height: 45
-            ),
+                height: 45),
             Container(width: 15),
             Expanded(
               child: Text(

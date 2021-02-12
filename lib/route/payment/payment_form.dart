@@ -2,30 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class PaymentFormRoute extends StatefulWidget {
-
   PaymentFormRoute();
 
   @override
   PaymentFormRouteState createState() => new PaymentFormRouteState();
 }
 
-
 class PaymentFormRouteState extends State<PaymentFormRoute> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.grey_5,
       appBar: AppBar(
-          backgroundColor: MyColors.primary,
-          title: Text("Add new card"),
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {Navigator.pop(context);},
-          ),
+        backgroundColor: MyColors.primary,
+        title: Text("Add new card"),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -42,12 +40,15 @@ class PaymentFormRouteState extends State<PaymentFormRoute> {
             ),
             Container(height: 10),
             Container(
-              color: Colors.white, padding: EdgeInsets.all(15),
+              color: Colors.white,
+              padding: EdgeInsets.all(15),
               child: Column(
                 children: <Widget>[
                   TextField(
                     controller: TextEditingController(text: "2258 9913 0286 5521"),
-                    maxLines: 1, minLines: 1, keyboardType: TextInputType.text,
+                    maxLines: 1,
+                    minLines: 1,
+                    keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       hintText: "Credit card number",
                     ),
@@ -58,7 +59,9 @@ class PaymentFormRouteState extends State<PaymentFormRoute> {
                       Expanded(
                         child: TextField(
                           controller: TextEditingController(text: "08/25"),
-                          maxLines: 1, minLines: 1, keyboardType: TextInputType.text,
+                          maxLines: 1,
+                          minLines: 1,
+                          keyboardType: TextInputType.text,
                           decoration: InputDecoration(
                             hintText: "Valid until (MM/YY)",
                           ),
@@ -67,7 +70,9 @@ class PaymentFormRouteState extends State<PaymentFormRoute> {
                       Container(width: 10),
                       Expanded(
                         child: TextField(
-                          maxLines: 1, minLines: 1, keyboardType: TextInputType.text,
+                          maxLines: 1,
+                          minLines: 1,
+                          keyboardType: TextInputType.text,
                           decoration: InputDecoration(
                             hintText: "3-digit CVV",
                           ),
@@ -78,7 +83,9 @@ class PaymentFormRouteState extends State<PaymentFormRoute> {
                   Container(height: 10),
                   TextField(
                     controller: TextEditingController(text: "Betty L"),
-                    maxLines: 1, minLines: 1, keyboardType: TextInputType.text,
+                    maxLines: 1,
+                    minLines: 1,
+                    keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       hintText: "Name on card",
                     ),
@@ -89,18 +96,17 @@ class PaymentFormRouteState extends State<PaymentFormRoute> {
             ),
             Container(
               padding: EdgeInsets.all(15),
-              child: Text(
-                  "By tapping the button, you agree to MaterialX Term & Condition and Privacy Policy.",
-                  style: MyText.body1(context).copyWith(color: MyColors.grey_60)
-              ),
+              child: Text("By tapping the button, you agree to MaterialX Term & Condition and Privacy Policy.",
+                  style: MyText.body1(context).copyWith(color: MyColors.grey_60)),
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity, height: 45,
+              width: double.infinity,
+              height: 45,
               child: FlatButton(
                 child: Text("Add Card", style: MyText.medium(context).copyWith(color: Colors.white)),
                 color: Colors.orange,
-                onPressed: (){},
+                onPressed: () {},
               ),
             ),
           ],
@@ -109,4 +115,3 @@ class PaymentFormRouteState extends State<PaymentFormRoute> {
     );
   }
 }
-

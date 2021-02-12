@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class LoginImageTealRoute extends StatefulWidget {
-
   LoginImageTealRoute();
 
   @override
@@ -13,22 +11,18 @@ class LoginImageTealRoute extends StatefulWidget {
 }
 
 class LoginImageTealRouteState extends State<LoginImageTealRoute> {
-
   @override
   Widget build(BuildContext context) {
-
     return new Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.cyan[800],
-      appBar: PreferredSize(
-          child: Container(),
-          preferredSize: Size.fromHeight(0)
-      ),
+      appBar: PreferredSize(child: Container(), preferredSize: Size.fromHeight(0)),
       body: Stack(
         children: <Widget>[
           Container(
             child: Image.asset(Img.get('image_26.jpg'), fit: BoxFit.cover),
-            width: double.infinity, height: double.infinity,
+            width: double.infinity,
+            height: double.infinity,
           ),
           Container(color: Colors.cyan[800].withOpacity(0.9)),
           Container(
@@ -41,20 +35,19 @@ class LoginImageTealRouteState extends State<LoginImageTealRoute> {
                 Container(height: 30),
                 Text("Welcome!", style: MyText.display2(context).copyWith(color: Colors.white)),
                 Container(height: 5),
-                Text("Hope you enjoy the stay", style: MyText.title(context).copyWith(
-                    color: Colors.white, fontWeight: FontWeight.w300
-                )),
+                Text("Hope you enjoy the stay",
+                    style: MyText.title(context).copyWith(color: Colors.white, fontWeight: FontWeight.w300)),
                 Spacer(),
-                Container(height: 3, width:40, color: Colors.white),
+                Container(height: 3, width: 40, color: Colors.white),
                 Container(height: 5),
-                Text("Log in", style: MyText.medium(context).copyWith(
-                    color: Colors.white, fontWeight: FontWeight.bold
-                )),
+                Text("Log in",
+                    style: MyText.medium(context).copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
                 Spacer(),
                 TextField(
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: "USERNAME", labelStyle: TextStyle(color: Colors.white),
+                    labelText: "USERNAME",
+                    labelStyle: TextStyle(color: Colors.white),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.white, width: 1),
                     ),
@@ -67,7 +60,8 @@ class LoginImageTealRouteState extends State<LoginImageTealRoute> {
                 TextField(
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: "PASSWORD", labelStyle: TextStyle(color: Colors.white),
+                    labelText: "PASSWORD",
+                    labelStyle: TextStyle(color: Colors.white),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.white, width: 1),
                     ),
@@ -78,17 +72,22 @@ class LoginImageTealRouteState extends State<LoginImageTealRoute> {
                 ),
                 Container(height: 15),
                 FloatingActionButton(
-                  heroTag: "fab", elevation: 0,
+                  heroTag: "fab",
+                  elevation: 0,
                   backgroundColor: Colors.white,
                   child: Icon(Icons.chevron_right, color: Colors.cyan[800]),
-                  onPressed: () { print('Clicked'); },
+                  onPressed: () {
+                    print('Clicked');
+                  },
                 ),
                 Spacer(),
                 Container(
                   width: double.infinity,
                   child: FlatButton(
-                    child: Text("Sign up for an account?",
-                      style: TextStyle(color: Colors.white),),
+                    child: Text(
+                      "Sign up for an account?",
+                      style: TextStyle(color: Colors.white),
+                    ),
                     color: Colors.transparent,
                     onPressed: () {},
                   ),
@@ -101,4 +100,3 @@ class LoginImageTealRouteState extends State<LoginImageTealRoute> {
     );
   }
 }
-

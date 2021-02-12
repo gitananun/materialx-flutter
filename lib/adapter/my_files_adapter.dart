@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:materialx_flutter/data/img.dart';
-import 'package:materialx_flutter/data/my_strings.dart';
+
 import 'package:materialx_flutter/model/folder_file.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
 
@@ -48,16 +47,17 @@ class ItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget widget;
-    if(object.section){ // for section view
+    if (object.section) {
+      // for section view
       widget = Padding(
         padding: EdgeInsets.fromLTRB(78, 15, 0, 15),
-        child: Text(object.name, style: MyText.subhead(context).copyWith(
-          color: Colors.grey, fontWeight: FontWeight.bold
-        )),
+        child:
+            Text(object.name, style: MyText.subhead(context).copyWith(color: Colors.grey, fontWeight: FontWeight.bold)),
       );
-    } else { // for FolderFile vew
+    } else {
+      // for FolderFile vew
       widget = InkWell(
-        onTap: (){
+        onTap: () {
           onItemClick(object);
         },
         child: Padding(
@@ -79,17 +79,12 @@ class ItemTile extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       object.name,
-                      style: MyText.title(context).copyWith(
-                          color: Colors.grey[800],
-                          fontWeight: FontWeight.normal
-                      ),
+                      style: MyText.title(context).copyWith(color: Colors.grey[800], fontWeight: FontWeight.normal),
                     ),
                     Container(height: 5),
                     Text(
                       object.date,
-                      style: MyText.subhead(context).copyWith(
-                          color: Colors.grey
-                      ),
+                      style: MyText.subhead(context).copyWith(color: Colors.grey),
                     ),
                   ],
                 ),

@@ -3,10 +3,10 @@ import 'package:materialx_flutter/adapter/list_sectioned_adapter.dart';
 import 'package:materialx_flutter/data/dummy.dart';
 import 'package:materialx_flutter/model/people.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
+
 import 'package:toast/toast.dart';
 
 class ListSectionedRoute extends StatefulWidget {
-
   ListSectionedRoute();
 
   @override
@@ -41,4 +41,3 @@ class ListSectionedRouteState extends State<ListSectionedRoute> {
     );
   }
 }
-

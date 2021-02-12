@@ -4,9 +4,9 @@ import 'dart:math' as math;
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/toolbar.dart';
+import 'package:materialx_flutter/widget/toolbar.dart';
 
 class ExpandBasicRoute extends StatefulWidget {
-
   ExpandBasicRoute();
 
   @override
@@ -14,7 +14,6 @@ class ExpandBasicRoute extends StatefulWidget {
 }
 
 class ExpandBasicRouteState extends State<ExpandBasicRoute> with TickerProviderStateMixin {
-
   bool expand1 = false;
   bool expand2 = false;
   AnimationController controller1, controller2;
@@ -25,8 +24,12 @@ class ExpandBasicRouteState extends State<ExpandBasicRoute> with TickerProviderS
   @override
   void initState() {
     super.initState();
-    controller1 = AnimationController(vsync: this, duration: Duration(milliseconds: 200),);
-    controller2 = AnimationController(vsync: this, duration: Duration(milliseconds: 200),);
+    controller1 = AnimationController(
+      duration: Duration(milliseconds: 200),
+    );
+    controller2 = AnimationController(
+      duration: Duration(milliseconds: 200),
+    );
 
     animation1 = Tween(begin: 0.0, end: 180.0).animate(controller1);
     animation1View = CurvedAnimation(parent: controller1, curve: Curves.linear);
@@ -34,51 +37,55 @@ class ExpandBasicRouteState extends State<ExpandBasicRoute> with TickerProviderS
     animation2 = Tween(begin: 0.0, end: 180.0).animate(controller2);
     animation2View = CurvedAnimation(parent: controller2, curve: Curves.linear);
 
-    controller1.addListener(() { setState(() {}); });
-    controller2.addListener(() { setState(() {}); });
+    controller1.addListener(() {
+      setState(() {});
+    });
+    controller2.addListener(() {
+      setState(() {});
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Colors.grey[200],
-      appBar: CommonAppBar.getPrimarySettingAppbar(context, "Basic"),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(8),
-        scrollDirection: Axis.vertical,
-        child: Column(
-            children: <Widget>[
+        backgroundColor: Colors.grey[200],
+        appBar: CommonAppBar.getPrimarySettingAppbar(context, "Basic"),
+        body: SingleChildScrollView(
+            padding: EdgeInsets.all(8),
+            scrollDirection: Axis.vertical,
+            child: Column(children: <Widget>[
               buildPanel1(),
               buildPanel2(),
-            ]
-        )
-      )
-    );
+            ])));
   }
 
-  Widget buildPanel1(){
+  Widget buildPanel1() {
     return Card(
-      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(3),
+      ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
             alignment: Alignment.centerLeft,
-            height : 50,
+            height: 50,
             child: Row(
               children: <Widget>[
                 Container(width: 15, height: 0),
-                Text("Text", style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.grey[800]
-                ),),
+                Text(
+                  "Text",
+                  style: TextStyle(fontSize: 20, color: Colors.grey[800]),
+                ),
                 Spacer(flex: 1),
                 Transform.rotate(
                   angle: animation1.value * math.pi / 180,
                   child: IconButton(
                     icon: Icon(Icons.expand_more),
-                    onPressed: (){togglePanel1();},
+                    onPressed: () {
+                      togglePanel1();
+                    },
                   ),
                 ),
                 Container(width: 5, height: 0),
@@ -99,15 +106,20 @@ class ExpandBasicRouteState extends State<ExpandBasicRoute> with TickerProviderS
                 Divider(height: 0, thickness: 0.5),
                 Container(
                   alignment: Alignment.centerLeft,
-                  height : 50,
+                  height: 50,
                   child: Row(
                     children: <Widget>[
                       Spacer(),
                       FlatButton(
-                        child: Text("HIDE", style: TextStyle(color: Colors.grey[800]),),
+                        child: Text(
+                          "HIDE",
+                          style: TextStyle(color: Colors.grey[800]),
+                        ),
                         padding: EdgeInsets.all(0),
                         color: Colors.transparent,
-                        onPressed: (){togglePanel1();},
+                        onPressed: () {
+                          togglePanel1();
+                        },
                       ),
                     ],
                   ),
@@ -120,29 +132,33 @@ class ExpandBasicRouteState extends State<ExpandBasicRoute> with TickerProviderS
     );
   }
 
-  Widget buildPanel2(){
+  Widget buildPanel2() {
     return Card(
-      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(3),),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(3),
+      ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
             alignment: Alignment.centerLeft,
-            height : 50,
+            height: 50,
             child: Row(
               children: <Widget>[
                 Container(width: 15, height: 0),
-                Text("Input", style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.grey[800]
-                ),),
+                Text(
+                  "Input",
+                  style: TextStyle(fontSize: 20, color: Colors.grey[800]),
+                ),
                 Spacer(flex: 1),
                 Transform.rotate(
                   angle: animation2.value * math.pi / 180,
                   child: IconButton(
                     icon: Icon(Icons.expand_more),
-                    onPressed: (){togglePanel2();},
+                    onPressed: () {
+                      togglePanel2();
+                    },
                   ),
                 ),
                 Container(width: 5, height: 0),
@@ -163,7 +179,8 @@ class ExpandBasicRouteState extends State<ExpandBasicRoute> with TickerProviderS
                         child: TextField(
                           style: TextStyle(fontSize: 18),
                           decoration: InputDecoration(
-                            hintText: "Name", hintStyle: TextStyle(color: Colors.grey),
+                            hintText: "Name",
+                            hintStyle: TextStyle(color: Colors.grey),
                             border: InputBorder.none,
                           ),
                         ),
@@ -179,7 +196,9 @@ class ExpandBasicRouteState extends State<ExpandBasicRoute> with TickerProviderS
                       groupValue: gender,
                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       onChanged: (String value) {
-                        setState(() { gender = value;});
+                        setState(() {
+                          gender = value;
+                        });
                       },
                     ),
                     Text("Male")
@@ -193,7 +212,9 @@ class ExpandBasicRouteState extends State<ExpandBasicRoute> with TickerProviderS
                       groupValue: gender,
                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       onChanged: (String value) {
-                        setState(() { gender = value; });
+                        setState(() {
+                          gender = value;
+                        });
                       },
                     ),
                     Text("Female")
@@ -202,21 +223,31 @@ class ExpandBasicRouteState extends State<ExpandBasicRoute> with TickerProviderS
                 Divider(height: 0, thickness: 0.5),
                 Container(
                   alignment: Alignment.centerLeft,
-                  height : 50,
+                  height: 50,
                   child: Row(
                     children: <Widget>[
                       Spacer(),
                       FlatButton(
-                        child: Text("HIDE", style: TextStyle(color: Colors.grey[800]),),
+                        child: Text(
+                          "HIDE",
+                          style: TextStyle(color: Colors.grey[800]),
+                        ),
                         padding: EdgeInsets.all(0),
                         color: Colors.transparent,
-                        onPressed: (){togglePanel2();},
+                        onPressed: () {
+                          togglePanel2();
+                        },
                       ),
                       FlatButton(
-                        child: Text("SAVE", style: TextStyle(color: MyColors.accent),),
+                        child: Text(
+                          "SAVE",
+                          style: TextStyle(color: MyColors.accent),
+                        ),
                         padding: EdgeInsets.all(0),
                         color: Colors.transparent,
-                        onPressed: (){togglePanel2();},
+                        onPressed: () {
+                          togglePanel2();
+                        },
                       ),
                     ],
                   ),
@@ -229,8 +260,8 @@ class ExpandBasicRouteState extends State<ExpandBasicRoute> with TickerProviderS
     );
   }
 
-  void togglePanel1(){
-    if(!expand1){
+  void togglePanel1() {
+    if (!expand1) {
       controller1.forward();
     } else {
       controller1.reverse();
@@ -238,8 +269,8 @@ class ExpandBasicRouteState extends State<ExpandBasicRoute> with TickerProviderS
     expand1 = !expand1;
   }
 
-  void togglePanel2(){
-    if(!expand2){
+  void togglePanel2() {
+    if (!expand2) {
       controller2.forward();
     } else {
       controller2.reverse();

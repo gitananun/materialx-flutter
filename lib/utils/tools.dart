@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
@@ -8,12 +7,11 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Tools {
   static void setStatusBarColor(Color color) {
-    SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: color));
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: color));
   }
 
   static String allCaps(String str) {
-    if(str != null && str.isNotEmpty){
+    if (str != null && str.isNotEmpty) {
       return str.toUpperCase();
     }
     return str;
@@ -38,8 +36,9 @@ class Tools {
     DateFormat newFormat = new DateFormat("h:mm a");
     return newFormat.format(new DateTime.fromMillisecondsSinceEpoch(time));
   }
-  static String getFormattedCardNo(String cardNo){
-    if(cardNo.length < 5) return cardNo;
+
+  static String getFormattedCardNo(String cardNo) {
+    if (cardNo.length < 5) return cardNo;
     return cardNo.replaceAllMapped(RegExp(r".{4}"), (match) => "${match.group(0)} ");
   }
 
@@ -48,5 +47,4 @@ class Tools {
       await launch(link);
     }
   }
-
 }

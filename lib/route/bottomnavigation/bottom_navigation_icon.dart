@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/included/include_releases_content.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class BottomNavigationIconRoute extends StatefulWidget {
-
   BottomNavigationIconRoute();
 
   @override
@@ -14,14 +12,13 @@ class BottomNavigationIconRoute extends StatefulWidget {
 }
 
 class BottomNavigationIconRouteState extends State<BottomNavigationIconRoute> with SingleTickerProviderStateMixin {
-
   TabController _tabController;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 5, vsync: this);
-    _tabController.addListener((){ });
+    _tabController.addListener(() {});
   }
 
   @override
@@ -38,16 +35,15 @@ class BottomNavigationIconRouteState extends State<BottomNavigationIconRoute> wi
           backgroundColor: Colors.white,
           brightness: Brightness.dark,
           iconTheme: IconThemeData(color: MyColors.grey_60),
-          title: Text("Home", style: MyText.title(context).copyWith(
-              color: MyColors.grey_60
-          )),
-          leading: IconButton(icon: Icon(Icons.menu), onPressed: () {
-            Navigator.pop(context);
-          }),
+          title: Text("Home", style: MyText.title(context).copyWith(color: MyColors.grey_60)),
+          leading: IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Navigator.pop(context);
+              }),
           actions: <Widget>[
-            IconButton(icon: Icon(Icons.search), onPressed: () {}),// overflow menu
-          ]
-      ),
+            IconButton(icon: Icon(Icons.search), onPressed: () {}), // overflow menu
+          ]),
       body: Container(
         child: Column(
           children: <Widget>[
@@ -56,7 +52,9 @@ class BottomNavigationIconRouteState extends State<BottomNavigationIconRoute> wi
             ),
             Card(
               elevation: 4,
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(0),),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+              ),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               margin: EdgeInsets.all(0),
               color: Colors.white,
@@ -64,8 +62,10 @@ class BottomNavigationIconRouteState extends State<BottomNavigationIconRoute> wi
                 padding: EdgeInsets.symmetric(vertical: 4),
                 child: TabBar(
                   indicatorColor: Colors.transparent,
-                  indicatorSize: TabBarIndicatorSize.tab, indicatorWeight: 1,
-                  unselectedLabelColor: Colors.grey[600], labelColor: Colors.deepOrange[500],
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  indicatorWeight: 1,
+                  unselectedLabelColor: Colors.grey[600],
+                  labelColor: Colors.deepOrange[500],
                   tabs: [
                     Tab(icon: Icon(Icons.home)),
                     Tab(icon: Icon(Icons.search)),
@@ -82,6 +82,4 @@ class BottomNavigationIconRouteState extends State<BottomNavigationIconRoute> wi
       ),
     );
   }
-
 }
-

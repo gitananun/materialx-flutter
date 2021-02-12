@@ -3,19 +3,15 @@ import 'package:materialx_flutter/data/img.dart';
 import 'package:materialx_flutter/data/my_colors.dart';
 import 'package:materialx_flutter/data/my_strings.dart';
 import 'package:materialx_flutter/widget/my_text.dart';
-import 'package:materialx_flutter/widget/toolbar.dart';
 
 class ProfileImageAppbarRoute extends StatefulWidget {
-
   ProfileImageAppbarRoute();
 
   @override
   ProfileImageAppbarRouteState createState() => new ProfileImageAppbarRouteState();
 }
 
-
 class ProfileImageAppbarRouteState extends State<ProfileImageAppbarRoute> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +21,11 @@ class ProfileImageAppbarRouteState extends State<ProfileImageAppbarRoute> {
             SliverAppBar(
               title: Text("Profile"),
               expandedHeight: 260,
-              floating: false, pinned: true,
+              floating: false,
+              pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
-                background: Image.asset(Img.get('photo_female_8.jpg'),fit: BoxFit.cover),
+                background: Image.asset(Img.get('photo_female_8.jpg'), fit: BoxFit.cover),
               ),
               leading: IconButton(
                 icon: Icon(Icons.menu),
@@ -40,9 +37,9 @@ class ProfileImageAppbarRouteState extends State<ProfileImageAppbarRoute> {
                 IconButton(
                   icon: Icon(Icons.search),
                   onPressed: () {},
-                ),// overflow menu
+                ), // overflow menu
                 PopupMenuButton<String>(
-                  onSelected: (String value){},
+                  onSelected: (String value) {},
                   itemBuilder: (context) => [
                     PopupMenuItem(
                       value: "Settings",
@@ -78,11 +75,12 @@ class ProfileImageAppbarRouteState extends State<ProfileImageAppbarRoute> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(height: 2),
-                          Text("About Me", style: MyText.medium(context).copyWith(color: MyColors.primary, fontWeight: FontWeight.bold)),
+                          Text("About Me",
+                              style: MyText.medium(context)
+                                  .copyWith(color: MyColors.primary, fontWeight: FontWeight.bold)),
                           Container(height: 5),
-                          Text(MyStrings.lorem_ipsum, style: MyText.subhead(context).copyWith(
-                              color: MyColors.grey_60, height: 1.4
-                          )),
+                          Text(MyStrings.lorem_ipsum,
+                              style: MyText.subhead(context).copyWith(color: MyColors.grey_60, height: 1.4)),
                         ],
                       ),
                     )
@@ -99,11 +97,12 @@ class ProfileImageAppbarRouteState extends State<ProfileImageAppbarRoute> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(height: 2),
-                          Text("About Me", style: MyText.medium(context).copyWith(color: MyColors.primary, fontWeight: FontWeight.bold)),
+                          Text("About Me",
+                              style: MyText.medium(context)
+                                  .copyWith(color: MyColors.primary, fontWeight: FontWeight.bold)),
                           Container(height: 5),
-                          Text("Swimming, playing tennis, cooking are my favorite hobbie", style: MyText.subhead(context).copyWith(
-                              color: MyColors.grey_60, height: 1.4
-                          )),
+                          Text("Swimming, playing tennis, cooking are my favorite hobbie",
+                              style: MyText.subhead(context).copyWith(color: MyColors.grey_60, height: 1.4)),
                         ],
                       ),
                     )
@@ -120,16 +119,22 @@ class ProfileImageAppbarRouteState extends State<ProfileImageAppbarRoute> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(height: 2),
-                          Text("Photos", style: MyText.medium(context).copyWith(color: MyColors.primary, fontWeight: FontWeight.bold)),
+                          Text("Photos",
+                              style: MyText.medium(context)
+                                  .copyWith(color: MyColors.primary, fontWeight: FontWeight.bold)),
                           Container(height: 5),
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Row(
                               children: <Widget>[
-                                Image.asset(Img.get('image_5.jpg'), width: 90, height: 90, fit: BoxFit.cover), Container(width : 5),
-                                Image.asset(Img.get('image_6.jpg'), width: 90, height: 90, fit: BoxFit.cover), Container(width : 5),
-                                Image.asset(Img.get('image_7.jpg'), width: 90, height: 90, fit: BoxFit.cover), Container(width : 5),
-                                Image.asset(Img.get('image_8.jpg'), width: 90, height: 90, fit: BoxFit.cover), Container(width : 5),
+                                Image.asset(Img.get('image_5.jpg'), width: 90, height: 90, fit: BoxFit.cover),
+                                Container(width: 5),
+                                Image.asset(Img.get('image_6.jpg'), width: 90, height: 90, fit: BoxFit.cover),
+                                Container(width: 5),
+                                Image.asset(Img.get('image_7.jpg'), width: 90, height: 90, fit: BoxFit.cover),
+                                Container(width: 5),
+                                Image.asset(Img.get('image_8.jpg'), width: 90, height: 90, fit: BoxFit.cover),
+                                Container(width: 5),
                                 Image.asset(Img.get('image_10.jpg'), width: 90, height: 90, fit: BoxFit.cover)
                               ],
                             ),
@@ -147,4 +152,3 @@ class ProfileImageAppbarRouteState extends State<ProfileImageAppbarRoute> {
     );
   }
 }
-
