@@ -1,4 +1,4 @@
-# materialx_flutter
+# MaterialX Flutter
 
 Material X Flutter
 
